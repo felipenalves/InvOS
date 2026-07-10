@@ -1,0 +1,105 @@
+# Hormozi Business Frameworks Reference
+# Referenced by specialist agents for structured methodology application
+
+frameworks:
+  value_equation:
+    source: "Alex Hormozi — $100M Offers"
+    description: "The core equation for creating irresistible offers by maximizing value perception"
+    components:
+      - name: "Dream Outcome"
+        description: "The ideal end result the customer wants — make it vivid, specific, and emotionally compelling. The bigger the outcome, the higher the value."
+      - name: "Perceived Likelihood of Achievement"
+        description: "How confident the buyer is that they will actually get the result. Increased by proof, guarantees, track record, and specificity."
+      - name: "Time Delay"
+        description: "How long until the buyer gets their first meaningful result. The shorter the delay, the higher the value. Compress time to result aggressively."
+      - name: "Effort and Sacrifice"
+        description: "How much work, discomfort, or sacrifice the buyer must endure. The less effort required, the higher the value. Do it for them where possible."
+    when_to_use: "Every offer creation, pricing decision, or offer audit. This is the foundational framework."
+
+  closer_framework:
+    source: "Alex Hormozi — $100M Offers, refined in Gym Launch"
+    description: "Six-step sales closing framework for high-ticket conversations"
+    components:
+      - name: "C — Clarify"
+        description: "Ask questions to understand their current situation, goals, and what they have tried before. Never pitch before you understand."
+      - name: "L — Label"
+        description: "Restate their problem back to them in their own words. When they say 'exactly,' you have earned the right to present."
+      - name: "O — Overview"
+        description: "Present the 3-step path from where they are to where they want to be. Keep it simple and logical."
+      - name: "S — Sell the Vacation"
+        description: "Sell the outcome, not the process. Paint the picture of their life after the transformation."
+      - name: "E — Explain Away Concerns"
+        description: "Handle objections by isolating them and reframing. If we solved X, would you be ready?"
+      - name: "R — Reinforce and Close"
+        description: "Ask for the decision. Use an assumptive close. Reinforce the value and the urgency."
+    when_to_use: "Phone sales, Zoom calls, in-person consultations, DM selling — any conversation-based sales"
+
+  lead_magnets_taxonomy:
+    source: "Alex Hormozi — $100M Leads"
+    description: "Classification of lead magnets by type, effort, and effectiveness"
+    components:
+      - name: "Free Trial / Sample"
+        description: "Give them a taste of the paid product. Highest conversion to paid but highest cost to deliver."
+      - name: "Free Tool / Calculator"
+        description: "Software or spreadsheet that solves a specific problem. High perceived value, builds habit."
+      - name: "Free Training / Workshop"
+        description: "Educational content that demonstrates expertise. Builds authority and trust."
+      - name: "Checklist / Cheat Sheet"
+        description: "Condensed actionable resource. Low cost to create, high perceived value if specific."
+      - name: "Assessment / Quiz"
+        description: "Personalized diagnosis that generates curiosity about the result. High engagement."
+      - name: "Template / Swipe File"
+        description: "Ready-to-use resource they can implement immediately. Saves them effort."
+      - name: "Community Access"
+        description: "Free membership to a group. Builds belonging and opens relationship loop."
+    when_to_use: "Lead generation design, opt-in page creation, content strategy planning"
+
+  hundred_million_offers:
+    source: "Alex Hormozi — $100M Offers"
+    description: "The complete offer creation methodology for building Grand Slam Offers"
+    components:
+      - name: "Dream Outcome Identification"
+        description: "Define what the customer truly wants in their own words, not what you think they want."
+      - name: "Problem-Solution Mapping"
+        description: "List every problem between the customer and their dream outcome. For each problem, list sub-problems."
+      - name: "Solution Vehicle Creation"
+        description: "Transform each problem into a deliverable — course, tool, template, service, community."
+      - name: "Proprietary Naming"
+        description: "Name each solution vehicle with a unique, branded name that implies the transformation."
+      - name: "Value Stack Assembly"
+        description: "Stack core offer + speed bonuses + effort bonuses + proof bonuses into an irresistible package."
+      - name: "Guarantee Design"
+        description: "Create a guarantee so strong it becomes a selling point: unconditional, conditional, performance, or anti-guarantee."
+      - name: "Scarcity and Urgency"
+        description: "Add real constraints — quantity limits, time windows, bonus expiration — to drive immediate action."
+    when_to_use: "Creating a new offer, redesigning an underperforming offer, launching a new product"
+
+  hundred_million_leads:
+    source: "Alex Hormozi — $100M Leads"
+    description: "The four core methods of getting leads, organized by cost and speed"
+    components:
+      - name: "Warm Outreach"
+        description: "Reaching out to people who already know you — past clients, contacts, friends. Free, fast, but limited scale."
+      - name: "Cold Outreach"
+        description: "Reaching out to strangers — email, DM, phone. Free to low cost, scalable, but requires volume and skill."
+      - name: "Content (Free)"
+        description: "Creating content that attracts leads organically — social media, blog, YouTube, podcast. Free, slow to start, compounds over time."
+      - name: "Paid Ads"
+        description: "Buying attention through advertising — Facebook, Google, YouTube, TikTok. Fast, scalable, requires budget and skill."
+    when_to_use: "Lead generation strategy, channel selection, marketing budget allocation"
+
+  laire:
+    source: "Alex Hormozi — $100M Leads"
+    description: "The customer acquisition and retention lifecycle"
+    components:
+      - name: "L — Lead"
+        description: "Attract attention and generate leads through the 4 core methods."
+      - name: "A — Audience"
+        description: "Build an engaged audience that trusts you before you sell. Give value first."
+      - name: "I — Invite"
+        description: "Invite the audience to take the next step — webinar, call, purchase. Make the offer."
+      - name: "R — Retain"
+        description: "Keep customers engaged, getting results, and staying longer. Retention is cheaper than acquisition."
+      - name: "E — Earn"
+        description: "Earn referrals and repeat purchases from satisfied customers. The cheapest lead source."
+    when_to_use: "Business model design, customer lifecycle mapping, retention strategy"

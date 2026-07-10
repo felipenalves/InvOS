@@ -1,0 +1,178 @@
+# Mental Models Catalog
+# Frameworks and thinking tools from each advisor
+# Version: 1.0.0
+
+catalog:
+  version: "1.0.0"
+  last_updated: "2026-03-05"
+
+advisors:
+  charlie_munger:
+    name: "Charlie Munger's Mental Models"
+    source: "Poor Charlie's Almanack, Berkshire Hathaway letters"
+    principle: "You must have multiple models from multiple disciplines — a latticework of mental models"
+    models:
+      inversion:
+        description: "Think backwards. Instead of asking how to succeed, ask what would guarantee failure — then avoid those things."
+        application: "Apply to any decision by asking: 'What would make this a disaster?'"
+        example: "Want a great marriage? List everything that destroys marriages, then don't do those things."
+      circle_of_competence:
+        description: "Know what you know and what you don't. The edges of your competence are where danger lives."
+        application: "Before any decision, honestly assess: 'Do I truly understand this domain?'"
+        example: "Buffett avoids tech investments not because tech is bad, but because it's outside his circle."
+      second_order_thinking:
+        description: "First-order: 'What happens?' Second-order: 'And then what?' Most people only think first-order."
+        application: "For every action, trace the consequences through 2-3 levels."
+        example: "Price controls (1st order: lower prices) → (2nd order: supply shortages) → (3rd order: black markets)"
+      margin_of_safety:
+        description: "Build in a buffer for error. If a bridge can hold 10 tons, only drive 5 tons across it."
+        application: "In any estimate, calculate what happens if you're wrong by 50%."
+        example: "If an investment needs 8% growth to break even, only invest if you expect 16%+"
+      lollapalooza_effect:
+        description: "When multiple psychological tendencies combine, the effect is massively larger than any single force."
+        application: "Look for situations where multiple biases or incentives align — these create extreme outcomes."
+        example: "Enron: incentive-caused bias + social proof + commitment/consistency + authority → catastrophe"
+      opportunity_cost:
+        description: "The true cost of anything is what you give up to get it."
+        application: "Always ask: 'What else could I do with this time, money, or attention?'"
+        example: "The cost of a bad hire isn't just salary — it's all the productive things that seat could have done."
+      bias_awareness:
+        description: "Humans are predictably irrational. Know the 25 standard causes of misjudgment."
+        key_biases:
+          - "Incentive-caused bias (follow the incentives)"
+          - "Confirmation bias (seeking what confirms our beliefs)"
+          - "Social proof (doing what others do)"
+          - "Anchoring (over-relying on first information)"
+          - "Sunk cost fallacy (throwing good money after bad)"
+          - "Availability bias (overweighting recent/vivid events)"
+          - "Authority bias (deferring to status)"
+
+  ray_dalio:
+    name: "Ray Dalio's Principles"
+    source: "Principles: Life and Work (2017)"
+    principle: "Principles are fundamental truths that serve as the foundations for behavior that gets you what you want out of life."
+    frameworks:
+      radical_transparency:
+        description: "Be radically open about what you think and what you don't know. Hide nothing."
+        application: "Create environments where uncomfortable truths are welcomed, not punished."
+        practice: "Ask: 'What am I not seeing?' and 'What uncomfortable truth am I avoiding?'"
+      believability_weighted_decisions:
+        description: "Not all opinions are equal. Weight input by the person's track record in that specific domain."
+        application: "For each advisor, assess: How many times have they been right about THIS type of decision?"
+        practice: "Create a believability score for each input source."
+      pain_plus_reflection:
+        description: "Pain + Reflection = Progress. Every failure is a learning opportunity if you reflect honestly."
+        application: "After every mistake or failure, do a structured post-mortem."
+        practice: "Ask: 'What did I learn? What would I do differently? What principle can I extract?'"
+      five_step_process:
+        description: "Goals → Problems → Diagnoses → Designs → Actions. Keep them separate."
+        steps:
+          - "Set clear goals"
+          - "Identify problems that stand in the way"
+          - "Diagnose root causes (not symptoms)"
+          - "Design solutions"
+          - "Execute with discipline"
+      expected_value_calculation:
+        description: "Multiply probability by payoff. Choose the option with the highest expected value."
+        application: "For each option: (probability of success x payoff) - (probability of failure x cost)"
+        practice: "Force yourself to assign actual probabilities, even if approximate."
+      stress_testing:
+        description: "Test your assumptions against extreme scenarios. What if you're wrong by 50%?"
+        application: "For every projection, run pessimistic, base, and optimistic scenarios."
+        practice: "If the pessimistic scenario is survivable, the decision is lower risk."
+
+  peter_thiel:
+    name: "Peter Thiel's Frameworks"
+    source: "Zero to One (2014)"
+    principle: "The best companies are built on secrets — things that are true but that most people don't know or agree with."
+    frameworks:
+      zero_to_one:
+        description: "Creating something new (0→1) is fundamentally different from copying what works (1→n)."
+        application: "Ask: 'Am I building something new, or competing for a slightly better version of what exists?'"
+        question: "What important company is nobody building?"
+      contrarian_truth:
+        description: "Progress comes from believing something true that most people disagree with."
+        application: "Ask: 'What important truth do very few people agree with me on?'"
+        test: "If everyone agrees, it's probably already priced in."
+      definite_optimism:
+        description: "Have a specific plan to make the future better, not just vague hope."
+        quadrant:
+          definite_optimist: "Has a plan to make the future better (BEST)"
+          indefinite_optimist: "Believes future will be better but has no plan"
+          definite_pessimist: "Has a plan for a declining future"
+          indefinite_pessimist: "Believes future will be worse with no plan (WORST)"
+      monopoly_thinking:
+        description: "Competition is for losers. Build a monopoly in a small market, then expand."
+        characteristics:
+          - "Proprietary technology (10x better)"
+          - "Network effects (gets better with scale)"
+          - "Economies of scale (cheaper at scale)"
+          - "Branding (unique identity)"
+        strategy: "Start small, dominate, expand. Never compete head-to-head."
+      last_mover_advantage:
+        description: "It's not about being first — it's about being the last company in the space."
+        application: "Ask: 'Will this be the definitive solution, or will someone else replace it?'"
+      power_law:
+        description: "A small number of things produce the vast majority of results."
+        application: "Focus on the one thing that could be a 100x return. Everything else is a distraction."
+
+  naval_ravikant:
+    name: "Naval Ravikant's Frameworks"
+    source: "The Almanack of Naval Ravikant (2020), Twitter/Podcast"
+    principle: "Seek wealth, not money or status. Wealth is assets that earn while you sleep."
+    frameworks:
+      specific_knowledge:
+        description: "Knowledge that cannot be trained. It's found by pursuing your genuine curiosity."
+        characteristics:
+          - "Cannot be taught in a school"
+          - "Found by following obsessive curiosity"
+          - "Feels like play to you, looks like work to others"
+          - "Often at the intersection of multiple fields"
+        application: "Ask: 'What do I know deeply that's hard for others to learn?'"
+      leverage:
+        description: "Business leverage comes from capital, people, and products with no marginal cost of replication."
+        hierarchy:
+          code: "Software — infinite leverage, zero marginal cost"
+          media: "Content — scales without permission"
+          capital: "Money — scales but needs other people's trust"
+          labor: "People — least scalable, highest management cost"
+        application: "Always ask: 'How can I apply more leverage to this problem?'"
+      judgment:
+        description: "Judgment is the ability to make good decisions. It's the most valuable skill."
+        components:
+          - "Clear thinking (avoid biases)"
+          - "Long-term orientation (compound effects)"
+          - "Skin in the game (accountability)"
+          - "Specific knowledge (domain expertise)"
+      accountability:
+        description: "Take responsibility under your own name. Society rewards accountability with leverage."
+        application: "Put your name on it. Take the risk. Bear the consequences."
+      compounding:
+        description: "The most powerful force in the universe. Small advantages compound into massive ones."
+        application: "Prefer decisions that compound over time. Avoid decisions that reset your progress."
+      escape_competition:
+        description: "Escape competition through authenticity. Nobody can compete with you on being you."
+        application: "Stop trying to be a better version of someone else. Build something only you can build."
+
+  simon_sinek:
+    name: "Simon Sinek's Frameworks"
+    source: "Start with Why (2009), The Infinite Game (2019)"
+    frameworks:
+      golden_circle:
+        description: "WHY (belief) → HOW (process) → WHAT (product). Most people start with WHAT."
+        layers:
+          why: "The purpose, cause, or belief. Why does your organization exist?"
+          how: "The specific actions taken to realize the WHY."
+          what: "The result — the product or service."
+        principle: "People don't buy what you do; they buy why you do it."
+      infinite_game:
+        description: "Business is an infinite game — there is no winning, only advancing."
+        requirements:
+          - "Just Cause — a vision of a future state worth pursuing"
+          - "Trusting Teams — people feel safe to be vulnerable"
+          - "Worthy Rivals — competitors who reveal our weaknesses"
+          - "Existential Flexibility — willingness to change strategy to advance the cause"
+          - "Courage to Lead — choosing long-term just cause over short-term pressure"
+      leaders_eat_last:
+        description: "Great leaders sacrifice their own comfort for the good of those in their care."
+        application: "Create circles of safety where people can focus on threats outside, not inside."

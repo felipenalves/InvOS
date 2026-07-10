@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════════════
+# Routing Catalog: Advisory Board Squad
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+domains:
+  investment_decisions:
+    keywords: [investment, portfolio, asset allocation, risk management, macro, hedge fund, capital, returns]
+    primary_agent: ray-dalio
+    secondary_agent: charlie-munger
+    description: "Investment strategy, portfolio construction, risk management, and macroeconomic analysis"
+
+  mental_models:
+    keywords: [mental models, multidisciplinary, latticework, inversion, second-order thinking, biases, rationality]
+    primary_agent: charlie-munger
+    secondary_agent: ray-dalio
+    description: "Mental model frameworks, multidisciplinary thinking, cognitive biases, and rational decision making"
+
+  startup_strategy:
+    keywords: [startup, zero to one, monopoly, contrarian, product-market fit, venture, competition]
+    primary_agent: peter-thiel
+    secondary_agent: naval-ravikant
+    description: "Startup strategy, contrarian thinking, monopoly building, and venture philosophy"
+
+  wealth_creation:
+    keywords: [wealth, leverage, specific knowledge, accountability, compounding, passive income, freedom]
+    primary_agent: naval-ravikant
+    secondary_agent: charlie-munger
+    description: "Wealth creation principles, leverage types, specific knowledge, and long-term compounding"
+
+  scaling_decisions:
+    keywords: [scaling, blitzscaling, growth, network effects, marketplace, platform, hypergrowth]
+    primary_agent: reid-hoffman
+    secondary_agent: peter-thiel
+    description: "When and how to scale, blitzscaling framework, network effects, and platform strategy"
+
+  network_building:
+    keywords: [network, connections, alliance, partnerships, ecosystem, relationship capital, professional network]
+    primary_agent: reid-hoffman
+    secondary_agent: naval-ravikant
+    description: "Strategic network building, alliance formation, and relationship-driven strategy"
+
+  purpose_leadership:
+    keywords: [purpose, why, infinite game, inspiration, leadership, vision, mission, golden circle]
+    primary_agent: simon-sinek
+    secondary_agent: brene-brown
+    description: "Purpose-driven leadership, the Golden Circle, infinite game mindset, and inspirational leadership"
+
+  team_dysfunction:
+    keywords: [team, dysfunction, trust, conflict, accountability, commitment, results, team health]
+    primary_agent: patrick-lencioni
+    secondary_agent: brene-brown
+    description: "Team health assessment, Five Dysfunctions framework, building trust, and productive conflict"
+
+  vulnerability_courage:
+    keywords: [vulnerability, courage, shame, empathy, belonging, daring, wholehearted, brave leadership]
+    primary_agent: brene-brown
+    secondary_agent: simon-sinek
+    description: "Courage-based leadership, vulnerability as strength, shame resilience, and brave cultures"
+
+  trust_building:
+    keywords: [trust, psychological safety, emotional intelligence, connection, authenticity, relationships]
+    primary_agent: brene-brown
+    secondary_agent: patrick-lencioni
+    description: "Building organizational trust, psychological safety, and authentic connection"
+
+  minimalist_business:
+    keywords: [minimalist, simplicity, hell yeah or no, enough, small business, lifestyle business, indie]
+    primary_agent: derek-sivers
+    secondary_agent: yvon-chouinard
+    description: "Minimalist entrepreneurship, contrarian simplicity, and intentional business building"
+
+  mission_driven:
+    keywords: [mission, environment, sustainability, responsible business, activism, purpose-driven, B-corp]
+    primary_agent: yvon-chouinard
+    secondary_agent: simon-sinek
+    description: "Mission-driven business, environmental activism, responsible capitalism"
+
+  contrarian_thinking:
+    keywords: [contrarian, unconventional, secrets, hidden truth, independent thinking, non-consensus]
+    primary_agent: peter-thiel
+    secondary_agent: derek-sivers
+    description: "Contrarian strategy, finding hidden truths, thinking independently, and non-consensus bets"
+
+  decision_frameworks:
+    keywords: [decision, framework, principles, systematic, process, criteria, evaluation, trade-offs]
+    primary_agent: ray-dalio
+    secondary_agent: charlie-munger
+    description: "Systematic decision frameworks, principles-based evaluation, and structured decision processes"

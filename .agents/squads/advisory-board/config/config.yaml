@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════════
+# Squad: Advisory Board
+# Domain: Strategic Advisory
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+squad:
+  name: advisory-board
+  display_name: "Advisory Board Squad"
+  version: "1.0.0"
+  domain: "Strategic Advisory"
+  description: |
+    A virtual board of the world's most influential strategic thinkers, investors, and
+    leadership philosophers. Each advisor brings decades of real-world experience distilled
+    into actionable frameworks. From Ray Dalio's principles-based decision making to
+    Brene Brown's courage-based leadership.
+
+    This board covers investment strategy, mental models, network intelligence, scaling,
+    purpose-driven leadership, team dynamics, minimalist entrepreneurship, and mission-driven
+    business. Four advisory domains: financial, entrepreneurial, organizational, and philosophical.
+  keywords: [strategy, investment, leadership, mental-models, scaling, purpose, teams, entrepreneurship, culture, decision-frameworks]
+  entry_agent: board-chair
+  created_at: "2026-03-05"
+
+tiers:
+  tier_0:
+    name: "Orchestration"
+    agents: [board-chair]
+    purpose: "Triage, routing, quality control, advisory session facilitation"
+  tier_1:
+    name: "Strategic Advisors"
+    agents: [ray-dalio, charlie-munger, naval-ravikant, peter-thiel, reid-hoffman, simon-sinek, brene-brown, patrick-lencioni, derek-sivers, yvon-chouinard]
+    purpose: "Domain expertise across investment, venture, leadership, culture, and founder philosophy"
+
+agents:
+  board-chair:       { file: agents/board-chair.md, tier: 0, icon: "🏛️", focus: "Triage, routing, advisory facilitation" }
+  ray-dalio:         { file: agents/ray-dalio.md, tier: 1, icon: "📈", focus: "Principles-based decisions, risk management" }
+  charlie-munger:    { file: agents/charlie-munger.md, tier: 1, icon: "🧠", focus: "Mental models, capital allocation" }
+  naval-ravikant:    { file: agents/naval-ravikant.md, tier: 1, icon: "⚡", focus: "Wealth creation, leverage, first principles" }
+  peter-thiel:       { file: agents/peter-thiel.md, tier: 1, icon: "🚀", focus: "Contrarian thinking, monopoly, zero to one" }
+  reid-hoffman:      { file: agents/reid-hoffman.md, tier: 1, icon: "🌐", focus: "Network effects, blitzscaling" }
+  simon-sinek:       { file: agents/simon-sinek.md, tier: 1, icon: "🎯", focus: "Purpose-driven leadership, infinite game" }
+  brene-brown:       { file: agents/brene-brown.md, tier: 1, icon: "💛", focus: "Vulnerability, courage, trust" }
+  patrick-lencioni:  { file: agents/patrick-lencioni.md, tier: 1, icon: "👥", focus: "Team health, organizational dysfunction" }
+  derek-sivers:      { file: agents/derek-sivers.md, tier: 1, icon: "🎵", focus: "Minimalist entrepreneurship, contrarian simplicity" }
+  yvon-chouinard:    { file: agents/yvon-chouinard.md, tier: 1, icon: "🏔️", focus: "Mission-driven business, environmental activism" }
+
+handoffs:
+  board-chair: { routes_to: [ray-dalio, charlie-munger, naval-ravikant, peter-thiel, reid-hoffman, simon-sinek, brene-brown, patrick-lencioni, derek-sivers, yvon-chouinard] }
+  ray-dalio: { escalates_to: [board-chair] }
+  charlie-munger: { escalates_to: [board-chair] }
+  naval-ravikant: { escalates_to: [board-chair] }
+  peter-thiel: { escalates_to: [board-chair] }
+  reid-hoffman: { escalates_to: [board-chair] }
+  simon-sinek: { escalates_to: [board-chair] }
+  brene-brown: { escalates_to: [board-chair] }
+  patrick-lencioni: { escalates_to: [board-chair] }
+  derek-sivers: { escalates_to: [board-chair] }
+  yvon-chouinard: { escalates_to: [board-chair] }
+
+cross_cutting:
+  quality_standards: { min_score: 7.0 }
+
+settings:
+  activation:
+    prefix: "advisory-board"
+    example: "@advisory-board:ray-dalio"

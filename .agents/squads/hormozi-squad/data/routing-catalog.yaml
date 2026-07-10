@@ -1,0 +1,94 @@
+# Routing Catalog: Hormozi Squad
+# Maps keywords to specialist agents for fast routing
+# Referenced by: tasks/diagnose.md
+
+domains:
+  offer_creation:
+    keywords: [offer, grand slam offer, irresistible offer, value stack, bonuses, guarantee, risk reversal, dream outcome]
+    primary_agent: hormozi-offers
+    secondary_agent: hormozi-pricing
+    description: "Create irresistible offers using the Grand Slam Offer framework"
+
+  lead_generation:
+    keywords: [leads, lead generation, lead magnet, customer acquisition, traffic, lead list, $100M leads, warm outreach, cold outreach]
+    primary_agent: hormozi-leads
+    secondary_agent: hormozi-ads
+    description: "Get more leads and customers using the $100M Leads framework"
+
+  pricing_strategy:
+    keywords: [pricing, charge more, price point, value-based pricing, premium pricing, price increase, margins]
+    primary_agent: hormozi-pricing
+    secondary_agent: hormozi-offers
+    description: "Set pricing and charge more using value-based pricing strategy"
+
+  sales_copy:
+    keywords: [sales copy, copywriting, landing page copy, sales page, ad text, write copy]
+    primary_agent: hormozi-copy
+    secondary_agent: hormozi-hooks
+    description: "Write Hormozi-style sales copy that converts"
+
+  paid_ads:
+    keywords: [ads, paid ads, Facebook ads, Google ads, advertising, ad spend, media buying, paid traffic]
+    primary_agent: hormozi-ads
+    secondary_agent: hormozi-hooks
+    description: "Run paid ads with Hormozi's advertising strategy"
+
+  content_strategy:
+    keywords: [content, content strategy, content machine, social media, organic, YouTube, posting schedule]
+    primary_agent: hormozi-content
+    secondary_agent: hormozi-hooks
+    description: "Create content strategy using the content machine methodology"
+
+  hooks_headlines:
+    keywords: [hooks, headlines, attention, scroll stopper, thumbnail, opening, first line, subject line]
+    primary_agent: hormozi-hooks
+    secondary_agent: hormozi-copy
+    description: "Write hooks and headlines that capture attention"
+
+  product_launch:
+    keywords: [launch, product launch, business launch, go to market, MVP, first customers, launch strategy]
+    primary_agent: hormozi-launch
+    secondary_agent: hormozi-offers
+    description: "Launch a product or business with Hormozi's launch strategy"
+
+  sales_closing:
+    keywords: [close, closing, sales call, objections, CLOSER framework, phone sales, high ticket, enrollment]
+    primary_agent: hormozi-closer
+    secondary_agent: hormozi-offers
+    description: "Close more sales using the CLOSER framework"
+
+  workshop_design:
+    keywords: [workshop, seminar, event, training, masterclass, group coaching, presentation, webinar]
+    primary_agent: hormozi-workshop
+    secondary_agent: hormozi-closer
+    description: "Design and deliver workshops that sell"
+
+  churn_retention:
+    keywords: [churn, retention, cancel, LTV, lifetime value, keep customers, reduce churn, ascension, onboarding]
+    primary_agent: hormozi-retention
+    secondary_agent: hormozi-scale
+    description: "Reduce churn and maximize customer lifetime value"
+
+  business_scaling:
+    keywords: [scale, scaling, grow, $1M, $10M, $100M, growth, expand, hire, systems, leverage]
+    primary_agent: hormozi-scale
+    secondary_agent: hormozi-models
+    description: "Scale business from $1M to $100M+ using Hormozi's scaling framework"
+
+  business_model:
+    keywords: [business model, model, recurring revenue, subscription, agency, SaaS, licensing, portfolio]
+    primary_agent: hormozi-models
+    secondary_agent: hormozi-scale
+    description: "Choose or fix business model for maximum scalability"
+
+  business_audit:
+    keywords: [audit, evaluate, diagnose, assessment, bottleneck, constraint, improvement, problems]
+    primary_agent: hormozi-audit
+    secondary_agent: hormozi-models
+    description: "Audit and evaluate a business for improvement opportunities"
+
+  general_strategy:
+    keywords: [strategy, advice, business strategy, what should I do, direction, next step, mentor]
+    primary_agent: hormozi-advisor
+    secondary_agent: hormozi-chief
+    description: "General business strategy and advice in Hormozi's voice"

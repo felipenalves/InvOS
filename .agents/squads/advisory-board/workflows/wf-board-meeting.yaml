@@ -1,0 +1,115 @@
+# Board Meeting Workflow
+# Full advisory board session with parallel advisor consultation
+
+workflow:
+  id: wf-board-meeting
+  name: "Reuniao do Conselho Consultivo"
+  trigger: "*board-meeting"
+  entry_agent: board-chair
+  estimated_duration: "1-2 hours"
+  description: |
+    Workflow estruturado de reuniao do conselho onde uma questao estrategica e apresentada
+    a multiplos conselheiros, cada um contribui com sua expertise de dominio, e o
+    presidente do conselho sintetiza uma recomendacao unificada.
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: convene-board
+      creates: agenda
+    - agent: "{advisors}"
+      action: counsel
+      creates: perspectives
+    - agent: board-chair
+      action: synthesize
+      creates: recommendation
+
+phases:
+  - id: phase_1_frame
+    name: "Frame the Question"
+    agent: board-chair
+    task: convene-board.md
+    depends_on: []
+    description: "Define the strategic question, constraints, and select relevant advisors"
+    checkpoint:
+      gate: "Question precisely framed, 3-5 advisors selected with reasoning"
+      veto: "HALT if question is too vague for meaningful advisory input"
+    outputs:
+      - framed_question
+      - advisor_selection
+      - agenda
+
+  - id: phase_2_consult
+    name: "Advisor Consultation (Parallel)"
+    agent: "{3-5 selected advisors}"
+    task: convene-board.md
+    depends_on: [phase_1_frame]
+    description: "Each advisor weighs in through their specific framework"
+    parallel: true
+    advisor_slots:
+      - slot: "advisor_1"
+        framework: "{advisor's primary framework}"
+        deliverable: "Analysis + recommendation + confidence level"
+      - slot: "advisor_2"
+        framework: "{advisor's primary framework}"
+        deliverable: "Analysis + recommendation + confidence level"
+      - slot: "advisor_3"
+        framework: "{advisor's primary framework}"
+        deliverable: "Analysis + recommendation + confidence level"
+      - slot: "advisor_4"
+        framework: "{advisor's primary framework (if selected)}"
+        deliverable: "Analysis + recommendation + confidence level"
+      - slot: "advisor_5"
+        framework: "{advisor's primary framework (if selected)}"
+        deliverable: "Analysis + recommendation + confidence level"
+    checkpoint:
+      gate: "All selected advisors have provided their analysis and recommendation"
+      veto: "HALT if any advisor lacks sufficient context to provide meaningful input"
+    outputs:
+      - individual_perspectives
+      - recommendations_per_advisor
+
+  - id: phase_3_synthesis
+    name: "Synthesis & Debate"
+    agent: board-chair
+    task: convene-board.md
+    depends_on: [phase_2_consult]
+    description: "Cross-reference perspectives, identify agreements, disagreements, and tensions"
+    checkpoint:
+      gate: "Agreement and disagreement areas mapped, blind spots identified"
+      veto: "HALT if all advisors agree without tension — check for groupthink"
+    outputs:
+      - synthesis_analysis
+      - tension_map
+      - blind_spots
+
+  - id: phase_4_recommend
+    name: "Unified Recommendation"
+    agent: board-chair
+    task: convene-board.md
+    depends_on: [phase_3_synthesis]
+    description: "Deliver synthesized recommendation with dissenting views and next steps"
+    checkpoint:
+      gate: "Recommendation includes reasoning, dissent, contrarian check, and next steps"
+      veto: "HALT if recommendation ignores strong dissenting arguments without addressing them"
+    outputs:
+      - unified_recommendation
+      - contrarian_check
+      - next_steps
+
+completion_criteria:
+  - "Strategic question framed precisely with constraints"
+  - "3-5 advisors consulted with individual perspectives documented"
+  - "Synthesis identifies convergence, divergence, and blind spots"
+  - "Unified recommendation includes dissenting views and contrarian check"
+  - "Clear next steps defined for implementation"
+
+routing_guide:
+  investment_decisions: [ray-dalio, charlie-munger, peter-thiel]
+  scaling_strategy: [reid-hoffman, peter-thiel, naval-ravikant]
+  culture_crisis: [simon-sinek, brene-brown, patrick-lencioni]
+  founder_crossroads: [derek-sivers, yvon-chouinard, naval-ravikant]
+  leadership_challenge: [simon-sinek, brene-brown, patrick-lencioni]
+  market_entry: [peter-thiel, reid-hoffman, ray-dalio]
+  team_building: [patrick-lencioni, reid-hoffman, brene-brown]
+  exit_strategy: [charlie-munger, naval-ravikant, derek-sivers]

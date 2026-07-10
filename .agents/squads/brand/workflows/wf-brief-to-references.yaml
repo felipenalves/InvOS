@@ -1,0 +1,141 @@
+workflow:
+  id: wf-brief-to-references
+  name: "Brief to References"
+  description: "Transforms raw meeting brief into structured brand references — entry point for client onboarding. Output feeds directly into wf-brand-from-zero."
+  version: "1.0.0"
+  estimated_duration: "30-60 min"
+  orchestrator: brand-chief
+  trigger: "*brief-to-references"
+
+phases:
+  - id: phase_1_extract
+    name: "EXTRACT — Read the Brief"
+    agent: marty-neumeier
+    description: "Pull every brand signal from raw meeting notes — no interpretation yet"
+    duration: "10-15 min"
+
+    inputs:
+      - "Raw meeting brief (notes, transcript, or voice memo transcription)"
+
+    steps:
+      - "Run research-references.md Step 1 (Extract Brand Signals)"
+      - "List all explicit mentions: brands, adjectives, tone words, price signals"
+      - "Flag what the client said they DON'T want — critical, often clearer than what they want"
+
+    outputs:
+      - "Structured signal list (sector, audience, value prop clues, tone words, explicit references, anti-references, price tier, cultural context)"
+
+    checkpoint:
+      question: "Are enough signals extracted to map references?"
+      pass_criteria:
+        - "Sector identified"
+        - "At least 3 tone words extracted"
+        - "Price positioning clear"
+      fail_action: "Ask client 3 clarifying questions before proceeding"
+
+  - id: phase_2_map
+    name: "MAP — Brand References"
+    agent: marty-neumeier
+    description: "Match signals to real brands — aspirational, anti, and adjacent"
+    duration: "15-20 min"
+
+    inputs:
+      - "Structured signal list from Phase 1"
+      - "data/brand-pantheon.md (reference brands database)"
+
+    steps:
+      - "Run research-references.md Steps 2-3 (Map References + Visual Mood)"
+      - "Select 3-5 aspirational references with rationale"
+      - "Select 2-3 anti-references with rationale"
+      - "Select 2-3 adjacent references for cross-category inspiration"
+      - "Define visual tension axis"
+      - "Map color territory and typography direction"
+
+    outputs:
+      - "Reference board (aspirational + anti + adjacent)"
+      - "Visual mood direction (tension axis, typography, color territory, imagery style)"
+
+    checkpoint:
+      question: "Are references specific and differentiated from each other?"
+      pass_criteria:
+        - "No two aspirational references are from the same visual territory"
+        - "Each reference has a one-sentence rationale tied to client signals"
+        - "Color territory avoids dominant competitor colors"
+      fail_action: "Replace generic references with more specific ones"
+
+  - id: phase_3_verbal
+    name: "VERBAL — Tone & Voice References"
+    agent: marty-neumeier
+    description: "Map verbal identity direction from brief signals"
+    duration: "10-15 min"
+
+    inputs:
+      - "Structured signal list from Phase 1"
+      - "data/brand-voice-matrix.md"
+
+    steps:
+      - "Run research-references.md Step 4 (Verbal/Tone References)"
+      - "Score tone on 5 axes (Formal/Casual, Serious/Playful, Technical/Accessible, Understated/Bold, Warm/Cool)"
+      - "Identify 2-3 brands with matching verbal identity"
+      - "Define Voice Dos and Don'ts (3-5 each)"
+
+    outputs:
+      - "Tone axis scores"
+      - "Verbal references with rationale"
+      - "Voice Dos and Don'ts"
+
+  - id: phase_4_competitive
+    name: "COMPETITIVE — Landscape & White Space"
+    agent: marty-neumeier
+    description: "Map direct competitors and identify unclaimed territory"
+    duration: "10-15 min"
+
+    inputs:
+      - "Sector and competitors identified in Phase 1"
+
+    steps:
+      - "Run research-references.md Step 5 (Competitive Snapshot)"
+      - "Map each competitor: visual territory, tone, positioning claim"
+      - "Identify visual and verbal white space"
+      - "Flag any risk of blending with dominant competitor"
+
+    outputs:
+      - "Competitive landscape table"
+      - "White space identification (visual + verbal)"
+
+  - id: phase_5_structured_brief
+    name: "BRIEF — Structured Output"
+    agent: brand-chief
+    description: "Compile everything into a structured brief ready for brand-diagnosis"
+    duration: "5-10 min"
+
+    inputs:
+      - "All outputs from Phases 1-4"
+
+    steps:
+      - "Run research-references.md Step 6 (Structured Brief)"
+      - "Compile: sector, audience, value prop hypothesis, archetype hypothesis"
+      - "Summarize visual direction (3 sentences)"
+      - "Summarize tone direction (3 sentences)"
+      - "List top references and white space"
+
+    outputs:
+      - "Reference research document (full)"
+      - "Structured brief ready for brand-diagnosis"
+      - "Archetype hypothesis with rationale"
+
+    checkpoint:
+      question: "Is this brief actionable for brand-diagnosis?"
+      pass_criteria:
+        - "Archetype hypothesis present with rationale"
+        - "Visual direction not described as just 'clean' or 'modern'"
+        - "Competitive white space identified"
+        - "References traceable to specific client signals"
+      fail_action: "Return to Phase 2 and sharpen references"
+
+completion:
+  deliverable: "Reference research document + structured brief"
+  next_step: "Feed structured brief into wf-brand-from-zero Phase 1 (brand-diagnosis)"
+  handoff_note: |
+    Structured brief replaces the manual context-gathering in brand-diagnosis Step 1.
+    Skip straight to Brand Gap Analysis (Step 2) — signals already extracted.

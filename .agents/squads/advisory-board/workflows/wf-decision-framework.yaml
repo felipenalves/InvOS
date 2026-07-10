@@ -1,0 +1,135 @@
+# Decision Framework Workflow
+# Structured multi-lens decision analysis
+
+workflow:
+  id: wf-decision-framework
+  name: "Framework de Decisao"
+  trigger: "*decision-framework"
+  entry_agent: board-chair
+  estimated_duration: "45-90 minutes"
+  description: |
+    Aplicar um framework estruturado de decisao combinando modelos mentais (Munger),
+    principios (Dalio), pensamento contrario (Thiel) e raciocinio por primeiros
+    principios (Naval) para chegar a uma decisao de alta qualidade.
+
+  type: sequential
+  sequence:
+    - agent: board-chair
+      action: frame-decision
+      creates: decision_context
+    - agent: charlie-munger
+      action: mental-models
+      creates: model_analysis
+    - agent: ray-dalio
+      action: principles
+      creates: principles_analysis
+    - agent: peter-thiel
+      action: contrarian
+      creates: contrarian_view
+    - agent: board-chair
+      action: synthesize
+      creates: final_decision
+
+phases:
+  - id: phase_1_problem
+    name: "Problem Definition"
+    agent: board-chair
+    task: convene-board.md
+    depends_on: []
+    description: "Define the problem clearly, identify decision type, and map constraints"
+    checkpoint:
+      gate: "Problem stated precisely with decision criteria and constraints defined"
+      veto: "HALT if the problem is actually multiple problems — decompose first"
+    outputs:
+      - problem_statement
+      - decision_criteria
+      - constraints_map
+
+  - id: phase_2_mental_models
+    name: "Mental Models Analysis"
+    agent: charlie-munger
+    task: seek-investment-counsel.md
+    depends_on: [phase_1_problem]
+    description: "Apply Munger's latticework of mental models to the problem"
+    checkpoint:
+      gate: "At least 3 mental models applied with inversion completed"
+      veto: "HALT if analysis shows clear cognitive bias driving the decision"
+    models_to_apply:
+      - "Inversion — What would make this fail?"
+      - "Circle of Competence — Do we actually understand this domain?"
+      - "Second-Order Thinking — What happens after the first effect?"
+      - "Margin of Safety — What buffer exists if assumptions are wrong?"
+      - "Opportunity Cost — What are we giving up by choosing this?"
+    outputs:
+      - mental_models_analysis
+      - inversion_results
+      - bias_identification
+
+  - id: phase_3_principles
+    name: "Principles-Based Analysis"
+    agent: ray-dalio
+    task: seek-investment-counsel.md
+    depends_on: [phase_1_problem]
+    description: "Apply Dalio's principles framework — radical transparency and believability"
+    checkpoint:
+      gate: "Expected value calculated, stress test completed"
+      veto: "HALT if key assumptions cannot be validated"
+    principles_to_apply:
+      - "Radical Transparency — What are the uncomfortable truths?"
+      - "Believability-Weighted Decision — Whose opinion matters most here?"
+      - "Pain + Reflection = Progress — What does past experience teach?"
+      - "Expected Value — Probability-weighted outcomes"
+      - "Stress Testing — What if assumptions are 50% wrong?"
+    outputs:
+      - principles_analysis
+      - expected_value
+      - stress_test_results
+
+  - id: phase_4_contrarian
+    name: "Contrarian Check"
+    agent: peter-thiel
+    task: seek-investment-counsel.md
+    depends_on: [phase_2_mental_models, phase_3_principles]
+    description: "Challenge conventional wisdom and test for definite optimism"
+    checkpoint:
+      gate: "Contrarian perspective delivered, consensus challenged"
+      veto: "HALT if everyone agrees and no one has challenged the premise"
+    questions:
+      - "What important truth do very few people agree with you on?"
+      - "Is this a 0-to-1 decision or a 1-to-n decision?"
+      - "Are we being definite optimists (specific plan) or indefinite (just hoping)?"
+      - "What is the strongest case AGAINST the emerging consensus?"
+      - "Is there a secret here — something we know that others do not?"
+    outputs:
+      - contrarian_analysis
+      - consensus_challenge
+      - definite_plan_assessment
+
+  - id: phase_5_recommendation
+    name: "Final Recommendation"
+    agent: board-chair
+    task: convene-board.md
+    depends_on: [phase_4_contrarian]
+    support_agents: [naval-ravikant]
+    description: "Synthesize all analyses into a final recommendation"
+    checkpoint:
+      gate: "Recommendation is clear, well-reasoned, and accounts for contrarian view"
+      veto: "HALT if recommendation cannot survive the contrarian check"
+    naval_overlay:
+      - "Which choice creates the most leverage?"
+      - "Which compounds best over decades?"
+      - "Which aligns with specific knowledge?"
+    outputs:
+      - final_recommendation
+      - decision_rationale
+      - risk_mitigation
+      - monitoring_plan
+
+completion_criteria:
+  - "Problem defined precisely with criteria and constraints"
+  - "At least 3 mental models applied (Munger)"
+  - "Principles-based analysis completed with expected value (Dalio)"
+  - "Contrarian check challenged the emerging consensus (Thiel)"
+  - "Leverage and compounding assessed (Naval)"
+  - "Final recommendation survives all analytical lenses"
+  - "Risk mitigation and monitoring plan defined"

@@ -1,0 +1,34 @@
+# === INV Starter Kit — .gitignore ===
+# Segurança: nunca versionar chaves, tokens ou dados sensíveis
+
+# Ambiente
+.env
+.env.*
+.env.local
+.env.production
+.env.development
+
+# Arquivos locais
+*.local
+*.secret
+secrets/
+credentials/
+
+# Dependências
+node_modules/
+vendor/
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+.cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

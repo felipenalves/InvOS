@@ -1,0 +1,104 @@
+workflow:
+  id: wf-business-turnaround
+  name: "Reestruturação de Negócio"
+  version: "1.0.0"
+  description: |
+    Workflow completo de reestruturação de negócio. Audita o estado atual do negócio,
+    redesenha a oferta, constrói o sistema de geração de leads, otimiza precificação
+    e cria um framework de fechamento. Segue o playbook de empresas do portfólio Hormozi:
+    corrigir a oferta primeiro, depois os leads, depois o fechamento.
+  trigger: "*business-turnaround"
+  entry_agent: hormozi-chief
+  estimated_duration: "60-120 minutes"
+
+  type: sequential
+  sequence:
+    - agent: hormozi-audit
+      action: audit-business
+      creates: audit_report
+    - agent: hormozi-offers
+      action: create-offer
+      creates: offer
+    - agent: hormozi-leads
+      action: generate-leads
+      creates: lead_system
+    - agent: hormozi-pricing
+      action: set-pricing
+      creates: pricing_strategy
+    - agent: hormozi-closer
+      action: close-sale
+      creates: closing_framework
+
+phases:
+  - id: phase_0
+    name: "Business Audit"
+    agent: hormozi-audit
+    task: audit-business.md
+    description: "Comprehensive audit of the revenue engine, offer, operations, and growth constraints. Identifies the #1 constraint and establishes baseline metrics."
+    outputs:
+      - audit_report: "markdown"
+      - constraint: "string"
+      - revenue_equation: "object"
+    checkpoint:
+      gate: "Constraint identified with supporting data"
+      veto: "Insufficient data to diagnose — request more metrics"
+
+  - id: phase_1
+    name: "Offer Redesign"
+    agent: hormozi-offers
+    task: create-offer.md
+    depends_on: [phase_0]
+    description: "Redesign the offer using Grand Slam Offer methodology. Apply the Value Equation, build the bonus stack, craft the guarantee, and set value-based pricing."
+    outputs:
+      - offer_architecture: "markdown"
+      - value_equation: "object"
+    checkpoint:
+      gate: "Value-to-price ratio >= 10:1"
+      veto: "Offer does not solve the problems identified in the audit"
+
+  - id: phase_2
+    name: "Lead Generation System"
+    agent: hormozi-leads
+    task: generate-leads.md
+    depends_on: [phase_1]
+    description: "Build the lead generation system using the $100M Leads framework. Design lead magnets, channel strategies, and the 30-day launch plan."
+    outputs:
+      - lead_system: "markdown"
+      - lead_magnet: "object"
+      - channel_plans: "list"
+    checkpoint:
+      gate: "Lead system covers at least 2 of 4 core sources"
+      veto: "No lead magnet designed or channels unreachable for the audience"
+
+  - id: phase_3
+    name: "Pricing Optimization"
+    agent: hormozi-pricing
+    task: set-pricing.md
+    depends_on: [phase_1]
+    description: "Set the pricing strategy based on the redesigned offer. Apply value-based pricing with tiers, payment options, and testing plan."
+    outputs:
+      - pricing_strategy: "markdown"
+      - price_tiers: "list"
+    checkpoint:
+      gate: "Price set with 10x value justification"
+      veto: "Price set based on competitor matching instead of value"
+
+  - id: phase_4
+    name: "Sales Closing Framework"
+    agent: hormozi-closer
+    task: close-sale.md
+    depends_on: [phase_1, phase_3]
+    description: "Build the CLOSER sales framework for the redesigned offer at the new price point. Handle objections specific to the turnaround context."
+    outputs:
+      - closing_framework: "markdown"
+      - objection_matrix: "object"
+    checkpoint:
+      gate: "CLOSER script complete with top 10 objections handled"
+      veto: "Closing framework does not match the new pricing or offer"
+
+completion_criteria:
+  - "Business audited with constraint identified"
+  - "Offer redesigned with Value Equation >= 10:1"
+  - "Lead generation system built with 30-day plan"
+  - "Pricing optimized with value-based justification"
+  - "Sales closing framework complete for new offer"

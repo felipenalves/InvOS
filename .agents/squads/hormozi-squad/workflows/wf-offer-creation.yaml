@@ -1,0 +1,105 @@
+workflow:
+  id: wf-offer-creation
+  name: "Pipeline de Criação de Oferta"
+  version: "1.0.0"
+  description: |
+    Workflow completo de criação de oferta. Da ideação ao design da equação de valor,
+    estratégia de precificação, criação de copy, até o planejamento de lançamento.
+    Produz uma oferta pronta para o mercado com todos os materiais de apoio.
+  trigger: "*offer-pipeline"
+  entry_agent: hormozi-chief
+  estimated_duration: "45-90 minutes"
+
+  type: sequential
+  sequence:
+    - agent: hormozi-offers
+      action: create-offer
+      creates: offer
+    - agent: hormozi-pricing
+      action: set-pricing
+      creates: pricing
+    - agent: hormozi-hooks
+      action: create-hooks
+      creates: hooks
+    - agent: hormozi-closer
+      action: close-sale
+      creates: closing
+    - agent: hormozi-launch
+      action: plan-launch
+      creates: launch_plan
+
+phases:
+  - id: phase_0
+    name: "Offer Ideation"
+    agent: hormozi-offers
+    task: create-offer.md
+    description: "Map dream outcomes, identify all problems between the customer and their goal, and construct the Grand Slam Offer using the Value Equation."
+    outputs:
+      - offer_architecture: "markdown"
+      - value_equation: "object"
+      - bonus_stack: "list"
+      - guarantee: "string"
+    checkpoint:
+      gate: "Value Equation scored with all 4 quadrants, value-to-price ratio >= 10:1"
+      veto: "Offer lacks clear dream outcome or has no guarantee"
+
+  - id: phase_1
+    name: "Value-Based Pricing"
+    agent: hormozi-pricing
+    task: set-pricing.md
+    depends_on: [phase_0]
+    description: "Set the pricing architecture based on the offer's Value Equation. Design tiers, payment options, and price justification narrative."
+    outputs:
+      - pricing_strategy: "markdown"
+      - price_tiers: "list"
+      - payment_options: "list"
+    checkpoint:
+      gate: "Price justified by value with 10x rule applied"
+      veto: "Price set by competitor comparison rather than value delivery"
+
+  - id: phase_2
+    name: "Hooks and Messaging"
+    agent: hormozi-hooks
+    task: create-hooks.md
+    depends_on: [phase_0]
+    description: "Create hooks for the offer across all channels — ads, content, emails, sales conversations. These hooks become the messaging foundation for all copy."
+    outputs:
+      - hook_package: "markdown"
+      - top_hooks: "list"
+    checkpoint:
+      gate: "Minimum 20 hooks scored and ranked across 4+ categories"
+      veto: "Hooks do not match the offer's core promise"
+
+  - id: phase_3
+    name: "Sales Framework"
+    agent: hormozi-closer
+    task: close-sale.md
+    depends_on: [phase_0, phase_1]
+    description: "Build the CLOSER sales framework for selling the offer. Includes discovery questions, objection handling, and closing scripts."
+    outputs:
+      - closing_framework: "markdown"
+      - objection_matrix: "object"
+    checkpoint:
+      gate: "CLOSER script complete with all 6 steps and top 10 objections"
+      veto: "Script does not align with the pricing and guarantee structure"
+
+  - id: phase_4
+    name: "Launch Strategy"
+    agent: hormozi-launch
+    task: plan-launch.md
+    depends_on: [phase_0, phase_1, phase_2]
+    description: "Design the launch plan for the new offer. Pre-launch sequence, cart open/close plan, email sequences, and revenue projections."
+    outputs:
+      - launch_plan: "markdown"
+      - email_sequence: "markdown"
+      - revenue_model: "object"
+    checkpoint:
+      gate: "Launch plan complete with timeline, email sequence, and revenue model"
+      veto: "Launch timeline unrealistic for the preparation required"
+
+completion_criteria:
+  - "Grand Slam Offer designed with Value Equation >= 10:1"
+  - "Pricing set with tiers and payment options"
+  - "Hook package created with 20+ scored hooks"
+  - "CLOSER sales framework built for the offer"
+  - "Launch plan complete with revenue projections"

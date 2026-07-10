@@ -1,0 +1,60 @@
+name: hormozi-squad
+version: "1.0.0"
+short-title: "Hormozi Squad"
+description: "Squad de 16 agentes implementando os frameworks de Alex Hormozi. Offers, leads, pricing, sales, content, hooks, launch, retention, scaling."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "hormozi-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - hormozi
+  - offers
+  - leads
+  - pricing
+  - sales
+  - scaling
+  - content
+  - hooks
+  - business
+
+components:
+  agents:
+    - hormozi-chief.md
+    - hormozi-advisor.md
+    - hormozi-offers.md
+    - hormozi-leads.md
+    - hormozi-pricing.md
+    - hormozi-copy.md
+    - hormozi-ads.md
+    - hormozi-content.md
+    - hormozi-hooks.md
+    - hormozi-launch.md
+    - hormozi-closer.md
+    - hormozi-workshop.md
+    - hormozi-retention.md
+    - hormozi-scale.md
+    - hormozi-models.md
+    - hormozi-audit.md
+  tasks:
+    - audit-business.md
+    - close-sale.md
+    - create-hooks.md
+    - create-offer.md
+    - design-workshop.md
+    - diagnose.md
+    - generate-leads.md
+    - plan-launch.md
+    - review.md
+    - set-pricing.md
+  workflows:
+    - wf-business-turnaround.yaml
+    - wf-offer-creation.yaml
+  checklists:
+    - output-quality.md
+
+config:
+  extends: extend
