@@ -38,13 +38,19 @@ Depois disso, toda sessão começa com ele sabendo quem você é e o que está f
 
 ## Quickstart
 
+1. Baixe o kit (ZIP da Hotmart) ou clone o repo privado após o acesso
+2. Abra a pasta no Cursor, Claude Code, Codex, Grok ou OpenCode
+3. Pronto — o agente detecta a primeira vez e faz a entrevista sozinho
+
 ```bash
-git clone <url> meu-projeto
-cd meu-projeto
-# Pronto. Abre seu agente de IA e começa.
+# Se veio por ZIP:
+unzip invos-kit.zip -d meu-invos && cd meu-invos
+
+# Se veio por acesso ao repo:
+git clone <url-privada> meu-invos && cd meu-invos
 ```
 
-O agente detecta que é a primeira vez e faz a entrevista sozinho. Você só responde.
+Você só responde as 6 perguntas. O resto o agente grava em `memoria/`.
 
 ## Pra quem é isso
 
@@ -56,9 +62,9 @@ O agente detecta que é a primeira vez e faz a entrevista sozinho. Você só res
 
 ## Pré-requisitos
 
-- Saber abrir o terminal
-- Ter um agente de IA (Claude Code, Codex, OpenCode, Grok, Cursor — qualquer um)
-- Git instalado
+- Um agente de IA (Claude Code, Cursor, Codex, OpenCode, Grok — qualquer um)
+- Saber abrir a pasta do projeto no agente
+- Git opcional (só se for clonar em vez de ZIP)
 
 Zero dependências. Zero configuração manual.
 
