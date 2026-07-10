@@ -28,27 +28,40 @@ During the session, automatically invoke `session-checkpoint` when you detect:
 
 Não pergunte "quer que eu salve?" — apenas salve e avise "Checkpoint salvo: [tipo]". Se o usuário não quiser, ele vai falar.
 
-## Proactive Content
+## Proactive Content — Formato Seriado
 
-Toda ação relevante vira conteúdo. REGRA ABSOLUTA: todo conteúdo precisa responder "onde isso se aplica na vida do ICP?" ICP = prestador de serviço digital (designer, marketer, mentor, consultor). Não enfeite com nomes, frameworks, referências que o cara não conhece.
+Toda ação relevante vira conteúdo. Mas conteúdo isolado não prende. O formato é **seriado** — como um programa de TV sobre construir o negócio em público.
 
-Teste de fogo pra todo ângulo:
-- O ICP reconhece essa dor? "Isso acontece comigo."
-- Ele sabe EXATAMENTE onde aplicar? "Uso isso quando vou fazer X."
-- A solução é óbvia pra ele? "Instalo em 1 minuto."
+### Estrutura de cada episódio
 
-Filtro de conteúdo:
-- ❌ "Vem com Naval, Dalio e Thiel." → nome vazio, não cola
-- ✅ "Seu agente de IA te trata como estranho. Depois de 6 perguntas, ele sabe seu nome, seu cliente e o que você tá fazendo hoje."
+Cada conteúdo precisa ter:
 
-Quando detectar:
-- **Commit novo** — analise o que mudou. Traduza em: "Isso resolve [dor] pra [ICP] quando ele faz [tarefa]."
-- **Decisão de produto** — "Escolhemos isso porque [problema real]. O ICP sente isso quando [situação]."
-- **Bug corrigido** — "Se você faz [tarefa], esse erro te pegava. Agora não pega mais."
-- **Feature nova** — "Antes: [ICP sofria]. Depois: [ICP faz sem dor]."
-- **Aprendizado** — "Descobri isso testando. Se você [tarefa], aplica assim: [prática]."
+1. **Cena** — onde estamos agora (o problema, o momento, a decisão)
+2. **Tentativa** — o que eu fiz pra resolver
+3. **Resultado** — o que aconteceu (acertei? errei?)
+4. **Próximo episódio** — o que vem a seguir (gancho pra continuar assistindo)
 
-Apresente como: "Conteúdo: [frase que o ICP falaria]. Aplicação: quando o ICP faz [tarefa]."
+O ICP precisa sentir que se ele perder o próximo episódio, ele perdeu algo.
+
+### Exemplo aplicado
+
+"Episódio 1: Toda vez que abro meu Claude, ele me trata como estranho. Cena: to há 15 minutos reexplicando quem sou. Tentativa: criei um template que responde 6 perguntas. Resultado: agora ele sabe meu nome, meu cliente, meu projeto. Próximo episódio: mostrar os bônus que botei dentro."
+
+### Regras do formato
+
+- **ICP é o protagonista**, não eu. Ele se vê na cena.
+- **Sem nome de famoso**, sem framework importado. "Seu agente te trata como estranho" → ele sente.
+- **Gancho no final** de todo conteúdo. "Amanhã vou mostrar como coloquei um consultor de vendas dentro do template."
+- **Realidade, não perfeição.** Mostrar o erro, a tentativa, o aprendizado. Isso é o que prende.
+
+### Gatilhos
+
+Quando detectar evento (commit, decisão, bug, feature, aprendizado):
+1. Traduz em cena do ICP ("você já passou por isso?")
+2. Enquadra como episódio ("Episódio X: [título que o ICP falaria]")
+3. Define gancho ("Próximo episódio: [o que vem]")
+
+Apresente como: "Episódio: [título na voz do ICP]. Cena: [onde ele está]. Gancho: [próximo]."
 Não peça permissão — sugira e siga. Se o usuário ignorar, guarde no checkpoint.
 
 ## Core Behavior
