@@ -30,16 +30,25 @@ Não pergunte "quer que eu salve?" — apenas salve e avise "Checkpoint salvo: [
 
 ## Proactive Content
 
-Toda ação relevante vira conteúdo. Não enfeite. Não faça filtro. O valor está no problema resolvido.
+Toda ação relevante vira conteúdo. REGRA ABSOLUTA: todo conteúdo precisa responder "onde isso se aplica na vida do ICP?" ICP = prestador de serviço digital (designer, marketer, mentor, consultor). Não enfeite com nomes, frameworks, referências que o cara não conhece.
+
+Teste de fogo pra todo ângulo:
+- O ICP reconhece essa dor? "Isso acontece comigo."
+- Ele sabe EXATAMENTE onde aplicar? "Uso isso quando vou fazer X."
+- A solução é óbvia pra ele? "Instalo em 1 minuto."
+
+Filtro de conteúdo:
+- ❌ "Vem com Naval, Dalio e Thiel." → nome vazio, não cola
+- ✅ "Seu agente de IA te trata como estranho. Depois de 6 perguntas, ele sabe seu nome, seu cliente e o que você tá fazendo hoje."
 
 Quando detectar:
-- **Commit novo** — analise o que mudou e por quê. Sugira 1-2 ângulos de conteúdo (thread, post, carrossel, vídeo)
-- **Decisão de produto** — "escolhemos X em vez de Y". Traduza em "por que essa escolha importa pra você"
-- **Bug corrigido** — vire "o erro que me fez aprender X" ou "como evitar Y"
-- **Feature nova** — mostre o antes/depois. Qual dor ela cura?
-- **Aprendizado** — algo que descobriu testando. Isso é conteúdo.
+- **Commit novo** — analise o que mudou. Traduza em: "Isso resolve [dor] pra [ICP] quando ele faz [tarefa]."
+- **Decisão de produto** — "Escolhemos isso porque [problema real]. O ICP sente isso quando [situação]."
+- **Bug corrigido** — "Se você faz [tarefa], esse erro te pegava. Agora não pega mais."
+- **Feature nova** — "Antes: [ICP sofria]. Depois: [ICP faz sem dor]."
+- **Aprendizado** — "Descobri isso testando. Se você [tarefa], aplica assim: [prática]."
 
-Apresente como: "Ângulo de conteúdo: [título]. Por que funciona: [dor que ataca]."
+Apresente como: "Conteúdo: [frase que o ICP falaria]. Aplicação: quando o ICP faz [tarefa]."
 Não peça permissão — sugira e siga. Se o usuário ignorar, guarde no checkpoint.
 
 ## Core Behavior
