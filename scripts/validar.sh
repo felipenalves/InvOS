@@ -32,7 +32,7 @@ echo ""
 
 # 1. Arquivos essenciais
 echo "1/5 — Arquivos essenciais:"
-for f in AGENTS.md MEMORY.md README.md SECURITY.md .env.example; do
+for f in AGENTS.md MEMORY.md README.md SECURITY.md .env.example COMECE-AQUI.md; do
   if [ -f "$f" ]; then
     echo "  ✅ $f"
   else

@@ -10,6 +10,7 @@ This file defines how agents should operate in this repository. Universal for an
 
 **Leitura obrigatória no início de TODA sessão:**
 
+0. Se for **primeira abertura** do kit, user pediu instalar/setup/“como começo”, ou pasta ainda se chama `invos-kit`: leia e siga **`COMECE-AQUI.md`** (instalação, renomear pasta, duplicar template de cliente).
 1. Carregar skill `session-start` — lê `memoria/perfil.md`, `memoria/empresa.md`, `memoria/projetos.md`, `memoria/decisoes.md`, `memoria/insights.md`, `memoria/regras/*`, `memoria/ativo.md`, último histórico
 2. **Onboard obrigatório se a memória ainda for template.** Disparar skill `onboard` **antes** de anunciar estado ou continuar o trabalho se **qualquer** um for verdadeiro:
    - `memoria/empresa.md` contém `[o que` **ou** `[seu nome]` **ou** `PREENCHA`
@@ -32,7 +33,7 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 |-------------------------|----------|
 | “O que importa hoje?” / “por onde começo?” | Lê `memoria/ativo.md` + `projetos.md` (+ cliente se houver). Responde com **1 prioridade** e próximo passo concreto. |
 | “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/`. |
-| “Cria o cliente …” | Copia estrutura do `_template`, preenche o que o user der, confirma caminho. |
+| “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche o que o user der. Detalhe: `COMECE-AQUI.md` passo 4. |
 | “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`** (`.agents/skills/proposta/SKILL.md`). Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
 

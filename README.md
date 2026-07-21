@@ -4,6 +4,9 @@
 
 Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · ZIP na Hotmart
 
+**Setup (agente ou humano):** abra **[COMECE-AQUI.md](./COMECE-AQUI.md)** — renomear pasta, onboard, duplicar template de cliente, rituais.  
+O agente deve **seguir** esse arquivo no primeiro uso (não só linkar).
+
 ---
 
 ## O fator wow (o que você sente em minutos)
@@ -133,50 +136,28 @@ Depois siga o **Começar do zero** abaixo.
 
 ---
 
-## Começar do zero (passo a passo de leigo)
+## Começar do zero
 
-### O que você precisa ter
+**Instrução completa (ideal pro agente executar):** → **[COMECE-AQUI.md](./COMECE-AQUI.md)**
 
-1. **Um agente de IA** que abre pastas de projeto, por exemplo:
-   - [Cursor](https://cursor.com)  
-   - Claude Code (no terminal)  
-   - Codex, OpenCode, Grok, etc.  
-2. O **ZIP** da Hotmart (`invos-kit.zip`).  
-3. Uns **10 minutos** na primeira vez.
+Resumo pro humano:
 
-Não precisa instalar Node, Docker nem “deploy”. Zero dependências mágicas.
-
-### Extrair o ZIP
-
-No terminal (ou extraindo pelo Finder):
+1. Baixe o **ZIP** Hotmart e extraia.  
+2. **Renomeie** a pasta `invos-kit` (ex.: `meu-negocio-invos`).  
+3. Abra essa pasta no Cursor / Claude / Codex / Grok…  
+4. Diga: *“Segue o COMECE-AQUI”* ou *“Roda o onboard do INVOS”*.  
+5. Responda a entrevista **uma pergunta por vez**.  
+6. **Teste do wow:** chat novo → *“Quem eu sou e no que estou trabalhando?”*  
+7. Prestador: *“Cria o cliente …”* (o agente **duplica** `clientes/_template`, não mexe no template original).
 
 ```bash
-unzip invos-kit.zip -d meu-invos
-cd meu-invos/invos-kit
+unzip invos-kit.zip -d ~/meu-invos
+cd ~/meu-invos/invos-kit          # entre na pasta do kit
+cd .. && mv invos-kit meu-negocio-invos && cd meu-negocio-invos
 ```
 
-(Se a pasta extrair só como `invos-kit`, entre nela.)  
-Abra essa pasta no seu agente (no Cursor: *Open Folder*).
-
-### Primeira sessão (entrevista)
-
-1. Abra o chat do agente **dentro dessa pasta**.  
-2. Se ele não começar sozinho, diga:  
-   **“Roda o onboard do INVOS”** ou **“Me entrevista pra configurar a memória”**.  
-3. Responda **uma pergunta por vez** (nome, o que você faz, projeto atual…).  
-4. No fim ele grava os arquivos em `memoria/` e confirma o que foi salvo.
-
-Não precisa editar arquivo na mão se o agente gravar certo.
-
-### Segunda sessão = o teste do wow
-
-1. Feche o chat / abra de novo **na mesma pasta**.  
-2. Pergunte exatamente:  
-   **“Quem eu sou e no que estou trabalhando?”**  
-3. **Passou** se ele citar nome, o que você faz e o projeto/foco **sem** recomeçar a entrevista.  
-4. Se falhar: `bash scripts/validar.sh --pos-onboard` e rode o onboard de novo.
-
-Quando isso passar, o kit **valeu**. O resto multiplica o valor.
+(Ou renomeie no Finder e abra a pasta no agente.)  
+Zero Node/Docker pro core. Só pasta + agente.
 
 ---
 
@@ -236,7 +217,8 @@ Você não cola de novo “eu sou designer, minha oferta é…”.
 |-----------------|-------------------|
 | `memoria/` | **Seu cérebro digital** — quem você é, empresa, projetos, decisões, o que está rolando agora |
 | `clientes/` | Um cliente por pasta (template pronto) — pra proposta e contexto sem misturar |
-| `AGENTS.md` | Regras que **qualquer** agente lê (OpenCode, Codex, Claude, Grok…) — fonte da verdade |
+| `COMECE-AQUI.md` | Instalação e uso inicial (**agente executa**; humano pode seguir) |
+| `AGENTS.md` | Regras de operação contínua — fonte da verdade multi-harness |
 | `CLAUDE.md` | Só pro Claude Code: uma linha `@AGENTS.md` (não duplica regras) |
 | `.agents/skills/` | “Modos” do agente: começar sessão, terminar, gravar decisão, entrevista inicial… |
 | `scripts/validar.sh` | Teste automático se o kit está ok |

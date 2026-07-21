@@ -6,14 +6,27 @@ Assim o agente não mistura o João com a Maria, e a skill **proposta** usa o co
 
 ## Criar cliente novo
 
-1. Copie a pasta `_template` e renomeie (slug simples, sem espaço):
+### Instrução pro agente (preferido)
+
+1. Defina slug: minúsculo, hífen, sem acento (`clinica-vida`, `ana-studio`).  
+2. **Duplique** o template — **nunca** preencha `_template` com dados reais:
+
+```bash
+cp -R clientes/_template "clientes/<slug>"
+```
+
+3. Escreva os dados em `clientes/<slug>/perfil.md` (e contexto se o user der).  
+4. Confirme o path.  
+5. Setup geral do kit: ver `COMECE-AQUI.md` (passo 4).
+
+### Na mão (humano)
 
 ```bash
 cp -R clientes/_template clientes/nome-do-cliente
+# edite clientes/nome-do-cliente/perfil.md
 ```
 
-2. Preencha `perfil.md` (e o resto quando souber).
-3. No agente, diga: **“Cliente atual: nome-do-cliente”** ou **“Abre o cliente nome-do-cliente”**.
+Depois no chat: **“Cliente atual: nome-do-cliente”**.
 
 ## Estrutura de cada cliente
 
