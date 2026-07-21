@@ -124,9 +124,11 @@ Agora, sempre que você abrir uma sessão:
 - Vai capturar insights e regras automaticamente
 - Vai arquivar tudo no final
 
-**Primeira ação (obrigatória):** proponha 1 passo concreto amarrado ao "Próximo" de `projetos.md` / `ativo.md` (ex.: rascunhar DM pro beta, abrir a tarefa do MVP). Não termine só com "o que você quer fazer?".
+**Primeira ação (obrigatória):** proponha 1 passo concreto amarrado ao "Próximo" de `projetos.md` / `ativo.md`.  
+Se for prestador de serviço: ofereça criar o **primeiro cliente** em `clientes/` ou rodar uma **proposta** de teste. Não termine só com "o que você quer fazer?".
 
-Bora. Seu próximo passo registrado é: [citar o Próximo]. Quer que eu execute isso agora?
+Bora. Seu próximo passo registrado é: [citar o Próximo].  
+Dica: "O que importa hoje?", "Cria o cliente X", "Gera proposta pro X".
 ```
 
 ## Output

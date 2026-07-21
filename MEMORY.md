@@ -12,9 +12,12 @@
 | `memoria/ativo.md` | Sessão atual — o que está rolando agora |
 | `memoria/regras/` | Lições aprendidas (um arquivo por regra) |
 | `memoria/historico/` | Sessões anteriores arquivadas |
+| `clientes/` | Um cliente por pasta (prestador) — ver `clientes/README.md` |
+| `clientes/<slug>/propostas/` | Propostas geradas pela skill `proposta` |
 
 ## Boot sequence
 
-Ver `AGENTS.md` → Required Context Order.
+Ver `AGENTS.md` → Required Context Order + rituais do prestador.
 
-`memoria/perfil.md` + `memoria/empresa.md` + `memoria/projetos.md` + `memoria/decisoes.md` + `memoria/insights.md` + `memoria/regras/` + `memoria/ativo.md` são leitura obrigatória no início de toda sessão.
+No início de sessão: skill `session-start` (memória).  
+No dia a dia: “o que importa hoje?”, pasta do cliente, skill `proposta`.

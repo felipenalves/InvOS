@@ -72,7 +72,7 @@ done
 # 4. Skills
 echo ""
 echo "4/5 — Skills:"
-for f in session-start session-end session-checkpoint onboard; do
+for f in session-start session-end session-checkpoint onboard proposta; do
   if [ -f ".agents/skills/$f/SKILL.md" ]; then
     echo "  ✅ $f"
   else
@@ -80,6 +80,15 @@ for f in session-start session-end session-checkpoint onboard; do
     ERROS=$((ERROS+1))
   fi
 done
+
+echo ""
+echo "4b — Clientes (prestador):"
+if [ -f "clientes/README.md" ] && [ -f "clientes/_template/perfil.md" ]; then
+  echo "  ✅ clientes/_template + README"
+else
+  echo "  ❌ clientes/ incompleto"
+  ERROS=$((ERROS+1))
+fi
 
 # 5. Placeholders
 echo ""

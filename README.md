@@ -77,10 +77,10 @@ Isso **viaja com você**: notebook, outro PC, outro agente — se a pasta (ou o 
 |--|--|
 | **Página de vendas** | https://inovadigitalid.com/invos |
 | **Preço** | R$97 (pagamento único na Hotmart) |
-| **O que você recebe** | Acesso a este repositório (e/ou ZIP) com memória + skills + bônus |
+| **O que você recebe** | **ZIP** na Hotmart: memória + clientes + skills (inclui proposta) + bônus |
 | **Garantia** | 7 dias (conforme a página) |
 
-Já comprou? Use o e-mail da Hotmart / área do aluno e o link de acesso ao repo.  
+Já comprou? Baixe o ZIP na área do aluno / e-mail Hotmart.  
 Depois siga o **Começar do zero** abaixo.
 
 ---
@@ -93,32 +93,22 @@ Depois siga o **Começar do zero** abaixo.
    - [Cursor](https://cursor.com)  
    - Claude Code (no terminal)  
    - Codex, OpenCode, Grok, etc.  
-2. Este kit (ZIP da Hotmart **ou** clone deste GitHub, depois da compra).  
+2. O **ZIP** da Hotmart (`invos-kit.zip`).  
 3. Uns **10 minutos** na primeira vez.
 
 Não precisa instalar Node, Docker nem “deploy”. Zero dependências mágicas.
 
-### Opção A — veio o ZIP
+### Extrair o ZIP
 
 No terminal (ou extraindo pelo Finder):
 
 ```bash
 unzip invos-kit.zip -d meu-invos
-cd meu-invos
+cd meu-invos/invos-kit
 ```
 
-Depois abra a pasta `meu-invos` no seu agente (no Cursor: *Open Folder*).
-
-### Opção B — veio o GitHub (recomendado se quiser acessar de qualquer lugar)
-
-```bash
-git clone https://github.com/felipenalves/invos.git meu-invos
-cd meu-invos
-```
-
-(Use a URL que a Hotmart / o convite te passou, se for diferente.)
-
-Abra a pasta `meu-invos` no agente.
+(Se a pasta extrair só como `invos-kit`, entre nela.)  
+Abra essa pasta no seu agente (no Cursor: *Open Folder*).
 
 ### Primeira sessão (entrevista)
 
@@ -136,6 +126,45 @@ Não precisa editar arquivo na mão se o agente gravar certo.
 2. Pergunte:  
    **“Quem eu sou e no que estou trabalhando?”**  
 3. **Passou** se ele responder com seu nome, negócio e projeto **sem** recomeçar a entrevista.
+
+---
+
+## Dia a dia do prestador (uso prático)
+
+Depois do onboard, o kit serve o **serviço** — não só a identidade.
+
+### 1. O que importa hoje?
+
+```
+O que importa hoje? Me dá 1 prioridade e o próximo passo.
+```
+
+O agente deve ler `memoria/ativo.md` e `projetos.md`.
+
+### 2. Clientes (não misturar)
+
+```
+Cria o cliente ana-studio a partir do template: designer, lead, quer site em 30 dias.
+```
+
+ou
+
+```
+Cliente atual: ana-studio. O que já combinamos?
+```
+
+Detalhes: `clientes/README.md`.
+
+### 3. Proposta (dinheiro)
+
+```
+Gera proposta pro cliente ana-studio: landing + 3 revisões, prazo 2 semanas, R$3.500.
+```
+
+A skill **proposta** usa sua `memoria/empresa` + a pasta do cliente e grava em  
+`clientes/<nome>/propostas/`.
+
+---
 
 Se falhar:
 
@@ -164,6 +193,7 @@ Isso é o “wow” do produto. O resto é bônus.
 | Pasta / arquivo | Em português claro |
 |-----------------|-------------------|
 | `memoria/` | **Seu cérebro digital** — quem você é, empresa, projetos, decisões, o que está rolando agora |
+| `clientes/` | Um cliente por pasta (template pronto) — pra proposta e contexto sem misturar |
 | `AGENTS.md` | Regras que **qualquer** agente lê (OpenCode, Codex, Claude, Grok…) — fonte da verdade |
 | `CLAUDE.md` | Só pro Claude Code: uma linha `@AGENTS.md` (não duplica regras) |
 | `.agents/skills/` | “Modos” do agente: começar sessão, terminar, gravar decisão, entrevista inicial… |
@@ -174,8 +204,9 @@ Isso é o “wow” do produto. O resto é bônus.
 ### Core (é o produto)
 
 - Memória em `memoria/`  
-- Loop de sessão: começar → trabalhar → gravar o que importou → fechar  
-- Onboard na primeira vez  
+- Clientes em `clientes/` (prestador)  
+- Loop de sessão + onboard  
+- Skill **proposta** (orçamento no teu tom)  
 
 ### Bônus (já vem no pacote; use depois)
 
@@ -202,8 +233,8 @@ Por isso o INVOS é um repositório, não um login em site.
 - Não é “instalar 50 ferramentas”  
 - Não é um monstro cheio de agente pra configurar no dia 1  
 
-v1 = **memória e contexto**.  
-No futuro (v2) entram mais agentes/fluxos — sem abandonar a simplicidade.
+v1 = **memória + clientes + proposta**.  
+v2 = mais workflows/agentes — sem abandonar a simplicidade.
 
 ---
 

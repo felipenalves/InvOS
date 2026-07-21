@@ -18,9 +18,25 @@ This file defines how agents should operate in this repository. Universal for an
 3. Se a memória já está configurada: anunciar estado (founder, oferta, cliente ideal, projeto, foco) e **provar segunda sessão** em 1 parágrafo — **sem** re-entrevistar
 4. `memoria/` está carregado, seguir para o que o usuário pedir
 
-**Core vs bônus:** o core é o loop de memória (`memoria/` + session-start/end/checkpoint/onboard). Squads (advisory-board, brand, hormozi) são **bônus opcionais**, não requisito pro wow.
+**Core vs bônus:**
+- **Core:** `memoria/` + session-start/end/checkpoint/onboard + (prestador) `clientes/` + skill `proposta`
+- **Bônus:** squads (advisory-board, brand, hormozi) e skills extras — opcional
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
+
+## Dia a dia do prestador (rituais)
+
+Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memoria/projetos.md` (não invente).
+
+| O user diz (ou similar) | Você faz |
+|-------------------------|----------|
+| “O que importa hoje?” / “por onde começo?” | Lê `memoria/ativo.md` + `projetos.md` (+ cliente se houver). Responde com **1 prioridade** e próximo passo concreto. |
+| “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/`. |
+| “Cria o cliente …” | Copia estrutura do `_template`, preenche o que o user der, confirma caminho. |
+| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`** (`.agents/skills/proposta/SKILL.md`). Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`. |
+| “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
+
+**Clientes:** ver `clientes/README.md`. Uma pasta por cliente. Não misture dados de clientes diferentes.
 
 ## Proactive Behavior
 
@@ -104,6 +120,7 @@ SECURITY.md
 | session-end | Fim da sessão |
 | session-checkpoint | Durante a sessão (automático) |
 | onboard | Primeiro uso (automático) — entrevista inicial |
+| **proposta** | Orçamento / proposta pro cliente (lê memória + `clientes/`) |
 | humanizer | Remover padrões de IA do texto em PT-BR |
 | stop-slop | Remover padrões de IA do texto em EN |
 | audit | Auditoria Four Cs — nota 0-100 pro seu sistema |
