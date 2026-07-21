@@ -32,7 +32,7 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 
 | O user diz (ou similar) | Você faz |
 |-------------------------|----------|
-| “O que importa hoje?” / “por onde começo?” | Lê `memoria/ativo.md` + `projetos.md` (+ cliente se houver). Responde com **1 prioridade** e próximo passo concreto. |
+| “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + próximo passo (`ativo` + PRIORIDADE em `projetos` + cliente se houver). Não lista genérica. Ofereça executar o passo. |
 | “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/`. |
 | “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche o que o user der. Detalhe: `COMECE-AQUI.md` passo 4. |
 | “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`** (`.agents/skills/proposta/SKILL.md`). Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`. |

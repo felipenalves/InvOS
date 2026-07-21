@@ -127,11 +127,20 @@ Detalhes: `clientes/README.md`.
 
 ## Passo 5 — Uso do dia a dia (rituais)
 
+**Ritual matinal (wow #2):** toda sessão com memória ok, o agente já anuncia prioridade (skill session-start).  
+O user também pode mandar só:
+
+```
+O que importa hoje?
+```
+
+Resposta esperada: **1 prioridade** + **próximo passo** (de `ativo` / PRIORIDADE em `projetos` / cliente se houver). Não lista genérica de produtividade.
+
 **Agente:** reconheça estas intenções (também em `AGENTS.md`):
 
 | User diz | Ação |
 |----------|------|
-| “O que importa hoje?” | Lê `memoria/ativo.md` + `projetos.md` → 1 prioridade + próximo passo |
+| “O que importa hoje?” / início de sessão | 1 prioridade + próximo passo (memória real) |
 | “Cliente atual: X” | Lê `clientes/X/` |
 | “Cria o cliente …” | Passo 4 (duplicar template) |
 | “Proposta / orçamento pro X” | Skill `.agents/skills/proposta/SKILL.md` → grava em `clientes/X/propostas/` |

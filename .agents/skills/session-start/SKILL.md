@@ -92,13 +92,23 @@ Se o onboard **já foi concluído** (sem placeholders / sem first-run):
 
 #### Conteúdo mínimo do anúncio
 
-- **Founder:** [de empresa / perfil]
-- **Oferta principal:** [de empresa — o que vende ou está construindo]
-- **Cliente ideal:** [de empresa]
-- **Projeto principal:** [de projetos]
-- **Foco:** [de ativo]
-- Regras ativas: [número]
-- Última sessão: [data do histórico, se existir]
+1. **Prova de memória** (1 parágrafo): nome, oferta, cliente ideal, projeto, foco.
+2. **Prioridade de hoje (obrigatório — o “wow matinal”):**
+   - **#1:** [projeto com PRIORIDADE ATUAL em `projetos.md`, senão o **Foco** de `ativo.md`]
+   - **Próximo passo:** [de `ativo.md` → Próximo, ou do bloco do projeto]
+   - Se houver cliente em andamento em `clientes/`, cite o slug em 1 linha.
+   - Feche com: *“Quer que eu execute esse próximo passo agora?”*
+3. Regras ativas: [número] · Última sessão: [data se existir]
+
+**Formato curto preferido:**
+
+```
+Prioridade de hoje: [1 coisa clara].
+Próximo passo: [ação].
+[1 linha: quem você é / o que vende — só se ainda não falou no parágrafo.]
+```
+
+Não diga só “contexto carregado”. Sempre diga **por onde começar**.
 
 ## Denylist
 

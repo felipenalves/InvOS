@@ -1,10 +1,12 @@
 # INVOS
 
-**Sistema de memória do seu negócio para qualquer agente de IA.**  
-Seu agente para de te tratar como estranho.
+**A IA que conhece teu negócio — e de manhã diz por onde começar.**
+
+Sistema de memória multi-agente: clientes, prazos, prioridades.  
+Não te trata como estranho. Não te devolve produtividade genérica.
 
 Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · pagamento único  
-**Como chega:** kit completo entregue em **ZIP** (Hotmart) — o valor é o sistema, não o arquivo.
+**Como chega:** kit completo em **ZIP** (Hotmart) — o valor é o **sistema**, não o arquivo.
 
 **Setup (agente ou humano):** **[COMECE-AQUI.md](./COMECE-AQUI.md)** — ativar o sistema, renomear o projeto, onboard, clientes, rituais.  
 O agente deve **seguir** esse arquivo no primeiro uso (não só linkar).
@@ -15,50 +17,50 @@ O agente deve **seguir** esse arquivo no primeiro uso (não só linkar).
 
 Não é “mais um download”. É o momento em que a IA **para de te entrevistar** e começa a **trabalhar com o teu negócio**.
 
-### Wow 1 — Segunda sessão
+### Wow 1 — Toda manhã: por onde começar
 
 **Sem INVOS:**
 
-> Você: “Monta um follow-up pro cliente de ontem.”  
-> IA: “Claro! Qual é o seu negócio? Quem é o cliente? Qual o tom?”
+> Você: “O que importa hoje?”  
+> IA: “Depende das suas prioridades. Quais são seus projetos? Tem prazo?”
 
-**Com INVOS (mesma pasta, chat novo):**
+**Com INVOS:**
 
-> Você: “Quem eu sou e no que estou trabalhando?”  
-> IA: “Você é [seu nome], [sua oferta], cliente ideal [X]. Foco de hoje: [projeto]. Próximo passo: […].”
+> Você: “O que importa hoje?”  
+> IA: “Prioridade: proposta da Clínica Vida (sexta). Depois follow-up do Beta. Quer que eu escreva a proposta?”
 
-**Passou o teste?** Ele respondeu **sem** pedir seu nome de novo.  
-Isso é o produto. O resto é consequência.
+Ele leu `memoria/` e `clientes/`. Resposta do **teu** negócio — não coach genérico.
 
-### Wow 2 — Qualquer agente, mesma memória
+### Wow 2 — Segunda sessão: não é estranho
 
-Claude hoje. Cursor amanhã. Codex, Gemini, Grok, OpenCode…  
-**Mesma pasta** = mesmo cérebro. Você não “migra de ferramenta”. Você **leva o contexto** com você.
+**Sem INVOS:** reexplica nome, oferta, cliente.  
+**Com INVOS (chat novo, mesma pasta):**
 
-### Wow 3 — Do “me conhece” pro “fecha o serviço”
+> “Quem eu sou e no que estou trabalhando?”  
+> → ele responde com os **teus** dados, sem re-entrevista.
 
-Não para na identidade. No dia a dia do **prestador**:
+### Wow 3 — Qualquer agente + fecha o serviço
+
+Claude, Cursor, Codex, Gemini, Grok… **mesma pasta** = mesmo cérebro.
 
 | Você digita | O que acontece |
 |-------------|----------------|
-| `O que importa hoje?` | 1 prioridade + próximo passo (lê `memoria/`) |
-| `Cliente atual: ana-studio` | Contexto **dela**, sem misturar com outro cliente |
-| `Gera proposta pro ana-studio: …` | Texto no **teu** tom, gravado em `clientes/…/propostas/` |
+| `O que importa hoje?` | 1 prioridade + próximo passo |
+| `Cliente atual: ana-studio` | Contexto **dela**, sem misturar |
+| `Gera proposta pro ana-studio: …` | No **teu** tom, arquivo em `clientes/…/propostas/` |
 
-Primeiro o agente te conhece. Depois ele **trabalha o cliente certo** e **escreve o orçamento** sem você reexplicar a empresa.
+Conhece o negócio → prioriza a manhã → trabalha o cliente certo.
 
 ---
 
 ## Em uma frase
 
-O INVOS é o **sistema operacional de contexto** do teu negócio: memória + clientes + proposta, feito para o agente ler sozinho.  
-Você ativa o sistema **uma vez** (entrevista). Nas próximas sessões — e nas propostas — a IA **já sabe**.
+O INVOS é o **sistema de contexto** do teu negócio: a IA conhece clientes, prazos e prioridades — e de manhã diz **por onde começar**.  
+Ativa uma vez (entrevista). Depois a memória **compõe**. Proposta e cliente no teu tom, sem reexplicar.
 
-A entrega é um **kit em ZIP** só para ser simples: baixa, abre no agente, pronto.  
-O que você compra não é “um zip de markdown” — é **parar de recomeçar do zero** em todo chat.
+Entrega em **kit ZIP** (simples). O valor é o **sistema**, não o arquivo.
 
-Não é curso. Não é Notion. Não é app na nuvem.  
-É contexto que **compõe**: cada decisão e cada cliente ficam no sistema, não no scroll do chat.
+Não é curso. Não é Notion. Não é app na nuvem.
 
 ---
 
