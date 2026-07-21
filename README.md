@@ -1,139 +1,251 @@
 # INVOS
 
-> Seu agente de IA para de te tratar como estranho toda vez que você abre o terminal.
+**Seu agente de IA para de te tratar como estranho.**
 
-## O problema
+Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · acesso imediato
 
-Você abre o terminal, chama o Claude, o Codex, o Grok — e o agente não sabe **nada** sobre você.
+---
 
-- Não sabe qual seu nome
-- Não sabe o que você está fazendo hoje
-- Não sabe o que você decidiu ontem
-- Não sabe qual cliente você atende
-- Não sabe que regra você aprendeu na última sessão
+## Em uma frase
 
-Toda sessão é uma primeira sessão. Você repete contexto, explica tudo de novo, perde tempo.
+O INVOS é uma **pasta no seu computador** (e no GitHub) onde fica a memória do seu negócio.  
+Você abre essa pasta em **qualquer** agente de IA (Cursor, Claude no terminal, Codex, Grok…).  
+Na primeira vez ele te faz umas perguntas. Nas próximas, **já sabe quem você é** e no que você está trabalhando.
 
-## O que isso resolve
+Não é curso. Não é Notion. Não é mais um app pra instalar.  
+É o jeito simples de a IA **lembrar** de você entre uma sessão e outra.
 
-Com o INVOS, na primeira linha que o agente lê, ele já sabe:
+---
+
+## Pra quem é (incluindo se você é leigo)
+
+Se você:
+
+- está **começando** a usar IA no terminal / no Cursor / no Claude Code  
+- cansa de **explicar de novo** quem você é e o que faz  
+- presta serviço (design, marketing, consultoria…) **ou** está construindo algo  
+- quer algo **simples**, sem configuração de engenheiro  
+
+…o INVOS foi feito pra você.
+
+Você **não** precisa saber programar.  
+Você precisa: baixar/abrir uma pasta e **responder perguntas em português**.
+
+---
+
+## O problema (do jeito que acontece)
+
+1. Você abre o terminal ou o Cursor.  
+2. Chama a IA.  
+3. Ela pergunta: *“Em que posso ajudar?”*  
+4. Você reexplica o negócio, o cliente, o que decidiu ontem.  
+5. Amanhã: **tudo de novo.**
+
+Isso não é “usar mal a IA”. É a IA **sem memória** do seu contexto.
+
+---
+
+## O que muda com o INVOS
 
 | Antes | Depois |
-|-------|--------|
-| "Quem é você?" | Já sabe seu nome, seu negócio, seu cliente |
-| "O que você tá fazendo?" | Já leu o que está rolando hoje |
-| "O que foi decidido ontem?" | Já viu as decisões da semana |
-| "Já expliquei isso..." | Não repete — as regras estão salvas |
+|--------|--------|
+| Toda sessão começa do zero | A sessão começa já te conhecendo |
+| Você repete o mesmo briefing | Está gravado em arquivos na pasta `memoria/` |
+| Troca de ferramenta = recomeçar | **Mesma pasta** no Claude, Cursor, Grok… |
+| “O que eu estava fazendo?” | O arquivo **ativo** diz o foco de hoje |
 
-## Como funciona (em português simples)
+**Promessa real (v1):** gestão de contexto — o que você faz **hoje**, o que vem **depois**, e o que a **próxima sessão** precisa saber. Em qualquer harness.
+
+---
+
+## Como funciona (3 passos)
 
 ```
-1. VOCÊ CLONA → 2. RESPONDE A ENTREVISTA → 3. AGENTE JÁ SABE TUDO
+1. Você abre a pasta do INVOS no seu agente
+2. Na primeira vez: entrevista curta (uma pergunta por vez)
+3. Nas próximas vezes: a IA já leu sua memória e segue o trabalho
 ```
 
-Na primeira vez que você usa, o próprio agente te entrevista e grava a memória em etapas (empresa, perfil, projetos, ativo).
+As respostas viram arquivos de texto na pasta `memoria/` (empresa, perfil, projetos, o que está em andamento).  
+Isso **viaja com você**: notebook, outro PC, outro agente — se a pasta (ou o GitHub) for o mesmo.
 
-Depois disso, toda sessão começa com ele sabendo quem você é e o que está fazendo — **sem re-entrevistar**.
+---
 
-## Prova em 3 minutos
+## Site e compra
 
-É o ritual de “wow” do kit. Se isso passar, o core está funcionando.
+| | |
+|--|--|
+| **Página de vendas** | https://inovadigitalid.com/invos |
+| **Preço** | R$97 (pagamento único na Hotmart) |
+| **O que você recebe** | Acesso a este repositório (e/ou ZIP) com memória + skills + bônus |
+| **Garantia** | 7 dias (conforme a página) |
 
-1. Abra a pasta do INVOS no seu agente (Cursor, Claude Code, Codex, Grok, OpenCode…)
-2. Deixe ele rodar o **onboard** e complete a entrevista (uma pergunta por vez)
-3. Feche a sessão / abra uma **nova** sessão na mesma pasta
-4. Pergunte: **"Quem eu sou e no que estou trabalhando?"**
-5. **Pass =** o agente responde a partir de `memoria/` (nome, oferta/construção, cliente, projeto, foco) **sem** pedir identidade de novo
+Já comprou? Use o e-mail da Hotmart / área do aluno e o link de acesso ao repo.  
+Depois siga o **Começar do zero** abaixo.
 
-Se ele recomeçar a entrevista ou não souber seu nome → algo falhou na gravação; rode `bash scripts/validar.sh --pos-onboard`.
+---
 
-## Quickstart
+## Começar do zero (passo a passo de leigo)
 
-1. Baixe o kit (ZIP da Hotmart) ou clone o repo privado após o acesso
-2. Abra a pasta no Cursor, Claude Code, Codex, Grok ou OpenCode
-3. Pronto — o agente detecta a primeira vez e faz a entrevista sozinho
+### O que você precisa ter
+
+1. **Um agente de IA** que abre pastas de projeto, por exemplo:
+   - [Cursor](https://cursor.com)  
+   - Claude Code (no terminal)  
+   - Codex, OpenCode, Grok, etc.  
+2. Este kit (ZIP da Hotmart **ou** clone deste GitHub, depois da compra).  
+3. Uns **10 minutos** na primeira vez.
+
+Não precisa instalar Node, Docker nem “deploy”. Zero dependências mágicas.
+
+### Opção A — veio o ZIP
+
+No terminal (ou extraindo pelo Finder):
 
 ```bash
-# Se veio por ZIP:
-unzip invos-kit.zip -d meu-invos && cd meu-invos
-
-# Se veio por acesso ao repo:
-git clone <url-privada> meu-invos && cd meu-invos
+unzip invos-kit.zip -d meu-invos
+cd meu-invos
 ```
 
-Você responde a entrevista. O agente grava em `memoria/` **durante** o onboard (não só no final).
+Depois abra a pasta `meu-invos` no seu agente (no Cursor: *Open Folder*).
 
-### Validar o kit
+### Opção B — veio o GitHub (recomendado se quiser acessar de qualquer lugar)
 
 ```bash
-# Estrutura do template (ship) — placeholders ainda OK
-bash scripts/validar.sh
+git clone https://github.com/felipenalves/invos.git meu-invos
+cd meu-invos
+```
 
-# Depois do onboard — FAIL se sobrar placeholder
+(Use a URL que a Hotmart / o convite te passou, se for diferente.)
+
+Abra a pasta `meu-invos` no agente.
+
+### Primeira sessão (entrevista)
+
+1. Abra o chat do agente **dentro dessa pasta**.  
+2. Se ele não começar sozinho, diga:  
+   **“Roda o onboard do INVOS”** ou **“Me entrevista pra configurar a memória”**.  
+3. Responda **uma pergunta por vez** (nome, o que você faz, projeto atual…).  
+4. No fim ele grava os arquivos em `memoria/` e confirma o que foi salvo.
+
+Não precisa editar arquivo na mão se o agente gravar certo.
+
+### Segunda sessão (a prova de que funcionou)
+
+1. Feche o chat / abra de novo **na mesma pasta**.  
+2. Pergunte:  
+   **“Quem eu sou e no que estou trabalhando?”**  
+3. **Passou** se ele responder com seu nome, negócio e projeto **sem** recomeçar a entrevista.
+
+Se falhar:
+
+```bash
 bash scripts/validar.sh --pos-onboard
 ```
 
-## Core vs bônus
+Se o comando acusar erro, a memória ainda está incompleta — peça de novo o onboard.
 
-| Camada | O que é | Precisa pro wow? |
-|--------|---------|------------------|
-| **Core** | `memoria/` + skills `session-start` / `session-end` / `session-checkpoint` / `onboard` + `AGENTS.md` | **Sim** — é o produto |
-| **Bônus** | Squads (`advisory-board`, `brand`, `hormozi-squad`) e skills extras (humanizer, audit, notion…) | **Não** — opcional, depois que a memória funciona |
+---
 
-Não precisa de squad pra provar o kit. A prova em 3 minutos usa só o core.
+## Prova em 3 minutos (checklist)
 
-## Pra quem é isso
+1. Pasta do INVOS aberta no agente  
+2. Entrevista feita  
+3. Nova sessão  
+4. Pergunta: *Quem eu sou e no que estou trabalhando?*  
+5. Resposta vem da memória, sem re-entrevista  
 
-- **Designer** que quer o agente sabendo dos clientes e prazos
-- **Marketer** que gerencia campanhas e precisa de histórico
-- **Mentor/Consultor** que atende vários clientes e não quer repetir contexto
-- **Freelancer** que quer um "co-fundador digital" do próprio negócio
-- **Builder** que ainda está construindo e ainda não vende
-- Qualquer pessoa que presta serviço no digital e usa IA pra trabalhar
+Isso é o “wow” do produto. O resto é bônus.
 
-## Pré-requisitos
+---
 
-- Um agente de IA (Claude Code, Cursor, Codex, OpenCode, Grok — qualquer um)
-- Saber abrir a pasta do projeto no agente
-- Git opcional (só se for clonar em vez de ZIP)
+## O que tem dentro (sem jargão demais)
 
-Zero dependências. Zero configuração manual.
+| Pasta / arquivo | Em português claro |
+|-----------------|-------------------|
+| `memoria/` | **Seu cérebro digital** — quem você é, empresa, projetos, decisões, o que está rolando agora |
+| `AGENTS.md` | Regras que **qualquer** agente lê ao abrir o projeto |
+| `.agents/skills/` | “Modos” do agente: começar sessão, terminar, gravar decisão, entrevista inicial… |
+| `scripts/validar.sh` | Teste automático se o kit está ok |
+| `SECURITY.md` | O que **nunca** colocar no Git (senhas, chaves de API) |
+| `.agents/squads/` | **Bônus** — times de especialistas (estratégia, marca, ofertas). Não precisa no dia 1 |
 
-## Arquivos do kit
+### Core (é o produto)
 
-| Arquivo | Pra que serve |
-|---------|---------------|
-| `AGENTS.md` | Instruções que todo agente de IA lê na inicialização |
-| `SECURITY.md` | Regras pra não vazar chave, token ou dado de cliente |
-| `.env.example` | Modelo das variáveis de ambiente (Notion, OpenAI, Supabase...) |
-| `scripts/validar.sh` | Testa estrutura; `--pos-onboard` checa placeholders |
-| `memoria/` | Seu cérebro digital — identidade, projetos, decisões, histórico |
-| `.agents/skills/` | Habilidades do agente (iniciar, arquivar, capturar, auditar, humanizar) |
+- Memória em `memoria/`  
+- Loop de sessão: começar → trabalhar → gravar o que importou → fechar  
+- Onboard na primeira vez  
 
-## Bônus inclusos (opcional)
+### Bônus (já vem no pacote; use depois)
 
-Além do **core** (memória + loop de sessão), o kit já vem com skills e squads extras. Use quando quiser — **não** são requisito pro ritual de 3 minutos.
+Skills extras (humanizer, audit, notion…) e 3 squads (advisory-board, brand, hormozi).  
+**Não** são obrigatórios pro agente te conhecer.
 
-### Skills extras
+---
 
-| Skill | O que faz | Problema que resolve |
-|-------|-----------|---------------------|
-| **humanizer** | Remove 25+ padrões de texto de IA em português | Seu conteúdo para de soar como robô |
-| **stop-slop** | Remove padrões de texto de IA em inglês | Versão complementar em EN |
-| **audit** | Escaneia seu sistema e dá nota de 0 a 100 | Você descobre o que está faltando no seu setup |
-| **notion** | CLI/API do Notion integrada | Ler, escrever e buscar no Notion pelo agente |
-| **pd-ikigai** | Encontra sua ideia de negócio lucrativa | Framework Patrick Dang pra validar nicho e preço |
+## Trabalhar de qualquer lugar
 
-### Squads (bônus) — time de elite sob demanda
+1. Suas informações ficam **nos arquivos** deste repositório.  
+2. Se você usa GitHub: `git push` no fim do dia no seu notebook → `git pull` no outro PC.  
+3. Abre a **mesma pasta** em outro agente → ele lê a mesma memória.
 
-| Squad | Membros | O que faz |
-|-------|---------|-----------|
-| **advisory-board** | Naval, Dalio, Thiel, Munger, Sinek, Sivers + 6 | Conselho consultivo: diagnóstico, decisão, estratégia |
-| **brand** | Dunford, Heyward, Neumeier, Haviv + 4 | Posicionamento, naming, identidade visual, coerência |
-| **hormozi-squad** | 16 agentes Hormozi | Oferta, copy, hooks, leads, pricing, launch, escala |
+Por isso o INVOS é um repositório, não um login em site.
 
-Chame pelo nome quando precisar. O core não depende deles.
+---
+
+## O que o INVOS **não** é
+
+- Não é curso com aulas  
+- Não é substituto de mentoria  
+- Não é app na nuvem com conta  
+- Não é “instalar 50 ferramentas”  
+- Não é um monstro cheio de agente pra configurar no dia 1  
+
+v1 = **memória e contexto**.  
+No futuro (v2) entram mais agentes/fluxos — sem abandonar a simplicidade.
+
+---
+
+## Comandos úteis (quando quiser)
+
+```bash
+# Kit com estrutura ok? (template / ship)
+bash scripts/validar.sh
+
+# Depois do onboard: memória preenchida de verdade?
+bash scripts/validar.sh --pos-onboard
+```
+
+---
+
+## Segurança (leia 30 segundos)
+
+- **Não** coloque senha, token ou chave de API nos arquivos da pasta `memoria/` nem no Git.  
+- Use `.env` local se precisar (já está no ignore).  
+- Detalhes: [SECURITY.md](./SECURITY.md)
+
+---
+
+## Dúvidas rápidas
+
+**Preciso saber programar?**  
+Não. Precisa abrir a pasta e conversar com o agente.
+
+**Funciona só no Claude?**  
+Não. Qualquer agente que leia a pasta do projeto (Cursor, Claude Code, Codex, Grok, OpenCode…).
+
+**E se eu errar na entrevista?**  
+Peça pro agente atualizar o arquivo certo em `memoria/` (ex.: “muda minha oferta principal para…”).
+
+**Onde compro / vejo a oferta completa?**  
+https://inovadigitalid.com/invos
+
+---
 
 ## Licença
 
-MIT — use, modifique, venda, melhore.
+MIT — use e adapte no seu fluxo.
+
+---
+
+*Produto da INV · [inovadigitalid.com/invos](https://inovadigitalid.com/invos)*
