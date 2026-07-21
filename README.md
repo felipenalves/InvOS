@@ -164,7 +164,8 @@ Isso é o “wow” do produto. O resto é bônus.
 | Pasta / arquivo | Em português claro |
 |-----------------|-------------------|
 | `memoria/` | **Seu cérebro digital** — quem você é, empresa, projetos, decisões, o que está rolando agora |
-| `AGENTS.md` | Regras que **qualquer** agente lê ao abrir o projeto |
+| `AGENTS.md` | Regras que **qualquer** agente lê (OpenCode, Codex, Claude, Grok…) — fonte da verdade |
+| `CLAUDE.md` | Só pro Claude Code: uma linha `@AGENTS.md` (não duplica regras) |
 | `.agents/skills/` | “Modos” do agente: começar sessão, terminar, gravar decisão, entrevista inicial… |
 | `scripts/validar.sh` | Teste automático se o kit está ok |
 | `SECURITY.md` | O que **nunca** colocar no Git (senhas, chaves de API) |

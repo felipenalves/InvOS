@@ -4,6 +4,8 @@
 
 This file defines how agents should operate in this repository. Universal for any harness (Claude Code, Codex, OpenCode, Grok, Cursor, etc.).
 
+**SOT multi-harness.** `CLAUDE.md` (se existir) só aponta pra cá (`@AGENTS.md`) — Claude Code carrega CLAUDE no boot; OpenCode/Codex/Grok leem **este** arquivo.
+
 ## Required Context Order
 
 **Leitura obrigatória no início de TODA sessão:**
