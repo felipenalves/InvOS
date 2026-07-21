@@ -4,7 +4,7 @@
 
 ## Contexto da sessão
 
-- **Data:** $(date +%Y-%m-%d)
+- **Data:** YYYY-MM-DD
 - **Sessão anterior:** (nenhuma — primeira sessão)
 - **Foco:** [preencha quando começar a trabalhar]
 

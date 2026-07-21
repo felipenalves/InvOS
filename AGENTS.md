@@ -9,8 +9,14 @@ This file defines how agents should operate in this repository. Universal for an
 **Leitura obrigatória no início de TODA sessão:**
 
 1. Carregar skill `session-start` — lê `memoria/perfil.md`, `memoria/empresa.md`, `memoria/projetos.md`, `memoria/decisoes.md`, `memoria/insights.md`, `memoria/regras/*`, `memoria/ativo.md`, último histórico
-2. Se `empresa.md` ou `projetos.md` ainda contém placeholders (primeiro uso), disparar skill `onboard` antes de continuar
-3. `memoria/` está carregado, seguir para o que o usuário pedir
+2. **Onboard obrigatório se a memória ainda for template.** Disparar skill `onboard` **antes** de anunciar estado ou continuar o trabalho se **qualquer** um for verdadeiro:
+   - `memoria/empresa.md` contém `[o que` **ou** `[seu nome]` **ou** `PREENCHA`
+   - `memoria/projetos.md` contém `PREENCHA`
+   - `memoria/ativo.md` contém `primeira sessão`
+3. Se a memória já está configurada: anunciar estado (founder, oferta, cliente ideal, projeto, foco) e **provar segunda sessão** em 1 parágrafo — **sem** re-entrevistar
+4. `memoria/` está carregado, seguir para o que o usuário pedir
+
+**Core vs bônus:** o core é o loop de memória (`memoria/` + session-start/end/checkpoint/onboard). Squads (advisory-board, brand, hormozi) são **bônus opcionais**, não requisito pro wow.
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 

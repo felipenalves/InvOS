@@ -28,13 +28,24 @@ Com o INVOS, na primeira linha que o agente lê, ele já sabe:
 ## Como funciona (em português simples)
 
 ```
-1. VOCÊ CLONA → 2. RESPONDE 6 PERGUNTAS → 3. AGENTE JÁ SABE TUDO
+1. VOCÊ CLONA → 2. RESPONDE A ENTREVISTA → 3. AGENTE JÁ SABE TUDO
 ```
 
-Na primeira vez que você usa, o próprio agente te entrevista:
-"Qual seu nome?", "Qual seu negócio?", "Qual seu cliente atual?"
+Na primeira vez que você usa, o próprio agente te entrevista e grava a memória em etapas (empresa, perfil, projetos, ativo).
 
-Depois disso, toda sessão começa com ele sabendo quem você é e o que está fazendo.
+Depois disso, toda sessão começa com ele sabendo quem você é e o que está fazendo — **sem re-entrevistar**.
+
+## Prova em 3 minutos
+
+É o ritual de “wow” do kit. Se isso passar, o core está funcionando.
+
+1. Abra a pasta do INVOS no seu agente (Cursor, Claude Code, Codex, Grok, OpenCode…)
+2. Deixe ele rodar o **onboard** e complete a entrevista (uma pergunta por vez)
+3. Feche a sessão / abra uma **nova** sessão na mesma pasta
+4. Pergunte: **"Quem eu sou e no que estou trabalhando?"**
+5. **Pass =** o agente responde a partir de `memoria/` (nome, oferta/construção, cliente, projeto, foco) **sem** pedir identidade de novo
+
+Se ele recomeçar a entrevista ou não souber seu nome → algo falhou na gravação; rode `bash scripts/validar.sh --pos-onboard`.
 
 ## Quickstart
 
@@ -50,7 +61,26 @@ unzip invos-kit.zip -d meu-invos && cd meu-invos
 git clone <url-privada> meu-invos && cd meu-invos
 ```
 
-Você só responde as 6 perguntas. O resto o agente grava em `memoria/`.
+Você responde a entrevista. O agente grava em `memoria/` **durante** o onboard (não só no final).
+
+### Validar o kit
+
+```bash
+# Estrutura do template (ship) — placeholders ainda OK
+bash scripts/validar.sh
+
+# Depois do onboard — FAIL se sobrar placeholder
+bash scripts/validar.sh --pos-onboard
+```
+
+## Core vs bônus
+
+| Camada | O que é | Precisa pro wow? |
+|--------|---------|------------------|
+| **Core** | `memoria/` + skills `session-start` / `session-end` / `session-checkpoint` / `onboard` + `AGENTS.md` | **Sim** — é o produto |
+| **Bônus** | Squads (`advisory-board`, `brand`, `hormozi-squad`) e skills extras (humanizer, audit, notion…) | **Não** — opcional, depois que a memória funciona |
+
+Não precisa de squad pra provar o kit. A prova em 3 minutos usa só o core.
 
 ## Pra quem é isso
 
@@ -58,6 +88,7 @@ Você só responde as 6 perguntas. O resto o agente grava em `memoria/`.
 - **Marketer** que gerencia campanhas e precisa de histórico
 - **Mentor/Consultor** que atende vários clientes e não quer repetir contexto
 - **Freelancer** que quer um "co-fundador digital" do próprio negócio
+- **Builder** que ainda está construindo e ainda não vende
 - Qualquer pessoa que presta serviço no digital e usa IA pra trabalhar
 
 ## Pré-requisitos
@@ -75,15 +106,15 @@ Zero dependências. Zero configuração manual.
 | `AGENTS.md` | Instruções que todo agente de IA lê na inicialização |
 | `SECURITY.md` | Regras pra não vazar chave, token ou dado de cliente |
 | `.env.example` | Modelo das variáveis de ambiente (Notion, OpenAI, Supabase...) |
-| `scripts/validar.sh` | Testa se o kit está configurado certo |
+| `scripts/validar.sh` | Testa estrutura; `--pos-onboard` checa placeholders |
 | `memoria/` | Seu cérebro digital — identidade, projetos, decisões, histórico |
-| `.agents/skills/` | Habilidades do agente (iniciar, arquivar, capturar, auditar, humanizar)
+| `.agents/skills/` | Habilidades do agente (iniciar, arquivar, capturar, auditar, humanizar) |
 
-## Bônus inclusos
+## Bônus inclusos (opcional)
 
-Além da estrutura de memória, o kit já vem com **5 skills + 3 squads especializados**:
+Além do **core** (memória + loop de sessão), o kit já vem com skills e squads extras. Use quando quiser — **não** são requisito pro ritual de 3 minutos.
 
-### Skills prontas
+### Skills extras
 
 | Skill | O que faz | Problema que resolve |
 |-------|-----------|---------------------|
@@ -93,7 +124,7 @@ Além da estrutura de memória, o kit já vem com **5 skills + 3 squads especial
 | **notion** | CLI/API do Notion integrada | Ler, escrever e buscar no Notion pelo agente |
 | **pd-ikigai** | Encontra sua ideia de negócio lucrativa | Framework Patrick Dang pra validar nicho e preço |
 
-### Squads especializados — seu time de elite
+### Squads (bônus) — time de elite sob demanda
 
 | Squad | Membros | O que faz |
 |-------|---------|-----------|
@@ -101,7 +132,7 @@ Além da estrutura de memória, o kit já vem com **5 skills + 3 squads especial
 | **brand** | Dunford, Heyward, Neumeier, Haviv + 4 | Posicionamento, naming, identidade visual, coerência |
 | **hormozi-squad** | 16 agentes Hormozi | Oferta, copy, hooks, leads, pricing, launch, escala |
 
-106 arquivos, zero dependências. Só chamar pelo nome.
+Chame pelo nome quando precisar. O core não depende deles.
 
 ## Licença
 

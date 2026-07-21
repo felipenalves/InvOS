@@ -1,6 +1,6 @@
 ---
 name: session-start
-description: Load memory context at the beginning of every session. Reads empresa.md, projetos.md, decisoes.md, insights.md, regras/, ativo.md. Archives previous session if new day. Must run before any other action.
+description: Load memory context at the beginning of every session. Reads empresa.md, projetos.md, decisoes.md, insights.md, regras/, ativo.md. Archives previous session if new day. Must run before any other action. Runs onboard if placeholders remain.
 ---
 
 # Session Start
@@ -17,7 +17,7 @@ Se `memoria/ativo.md` existe, extrair a data do campo `**Data:**`:
 grep -o '\*\*Data:\*\* [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}' memoria/ativo.md | cut -d' ' -f2
 ```
 
-Se a data extraída for anterior a $(date +%Y-%m-%d):
+Se a data extraída for anterior a hoje (YYYY-MM-DD real):
 - Execute `session-end` com `reason=auto-new-day`
 - Depois continue
 
@@ -45,13 +45,17 @@ Todas as regras arquivadas. Leia cada arquivo — não pule.
 
 Contexto da sessão atual: foco, em andamento, próximos, regras ativas.
 
-### 8. Ler último histórico
+### 8. Ler `memoria/perfil.md`
+
+Essência, operação e papel do founder.
+
+### 9. Ler último histórico
 
 ```bash
 ls -t memoria/historico/*.md 2>/dev/null | head -1 | xargs cat 2>/dev/null
 ```
 
-### 9. Detectar gaps no histórico
+### 10. Detectar gaps no histórico
 
 ```bash
 ls memoria/historico/*.md 2>/dev/null | sed 's/.*\/\([0-9-]*\)\.md/\1/' | sort
@@ -59,21 +63,48 @@ ls memoria/historico/*.md 2>/dev/null | sed 's/.*\/\([0-9-]*\)\.md/\1/' | sort
 
 Se houver gaps, avise: "⚠️ Gap detectado no histórico: [dias faltantes]"
 
-### 10. Validar integridade
+### 11. Validar integridade
 
 ```bash
 ls memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md > /dev/null 2>&1 && echo "OK" || echo "FALHA"
 ```
 
-### 11. Anunciar estado
+### 12. Onboard obrigatório se memória ainda for template
 
-Após carregar, anuncie resumidamente:
-- Empresa: [nome, estágio]
-- Projetos ativos: [lista]
-- Foco atual: [do ativo.md]
+**Após** a checagem de integridade, se **qualquer** condição abaixo for verdadeira, **pare o anúncio de estado** e execute a skill `onboard` **antes** de continuar:
+
+| Arquivo | Marcador de template |
+|---------|----------------------|
+| `memoria/empresa.md` | `[o que` **ou** `[seu nome]` **ou** `PREENCHA` |
+| `memoria/projetos.md` | `PREENCHA` |
+| `memoria/ativo.md` | `primeira sessão` (marcador de first-run) |
+
+Não anuncie "estado configurado" com placeholders. Onboard primeiro.
+
+### 13. Anunciar estado (só se memória configurada)
+
+#### Prova de segunda sessão
+
+Se o onboard **já foi concluído** (sem placeholders / sem first-run):
+
+1. **Abra provando que você sabe quem é a pessoa** — 1 parágrafo curto montado só da memória (nome, o que faz/vende/constrói, cliente ideal, projeto principal, foco de hoje).
+2. **Não re-entreviste.** Não peça nome, negócio ou identidade de novo.
+
+#### Conteúdo mínimo do anúncio
+
+- **Founder:** [de empresa / perfil]
+- **Oferta principal:** [de empresa — o que vende ou está construindo]
+- **Cliente ideal:** [de empresa]
+- **Projeto principal:** [de projetos]
+- **Foco:** [de ativo]
 - Regras ativas: [número]
-- Última sessão: [data, se existir]
+- Última sessão: [data do histórico, se existir]
 
 ## Denylist
 
-Não edite nenhum arquivo durante o inicio de sessão. Apenas leia. Exceção: se precisou arquivar sessão anterior (step 1), que delega para session-end.
+Não edite nenhum arquivo durante o início de sessão. Apenas leia.
+
+**Exceções:**
+
+1. Step 1 arquivou sessão anterior → delega para `session-end`
+2. Step 12 disparou onboard → onboard escreve em `memoria/` conforme a skill
