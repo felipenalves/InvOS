@@ -1,17 +1,19 @@
 # INVOS
 
-**Seu agente de IA para de te tratar como estranho.**
+**Sistema de memória do seu negócio para qualquer agente de IA.**  
+Seu agente para de te tratar como estranho.
 
-Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · ZIP na Hotmart
+Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · pagamento único  
+**Como chega:** kit completo entregue em **ZIP** (Hotmart) — o valor é o sistema, não o arquivo.
 
-**Setup (agente ou humano):** abra **[COMECE-AQUI.md](./COMECE-AQUI.md)** — renomear pasta, onboard, duplicar template de cliente, rituais.  
+**Setup (agente ou humano):** **[COMECE-AQUI.md](./COMECE-AQUI.md)** — ativar o sistema, renomear o projeto, onboard, clientes, rituais.  
 O agente deve **seguir** esse arquivo no primeiro uso (não só linkar).
 
 ---
 
 ## O fator wow (o que você sente em minutos)
 
-Não é “mais um template”. É o momento em que a IA **para de te entrevistar** e começa a **trabalhar com o teu negócio**.
+Não é “mais um download”. É o momento em que a IA **para de te entrevistar** e começa a **trabalhar com o teu negócio**.
 
 ### Wow 1 — Segunda sessão
 
@@ -49,11 +51,14 @@ Primeiro o agente te conhece. Depois ele **trabalha o cliente certo** e **escrev
 
 ## Em uma frase
 
-O INVOS é uma **pasta** (ZIP) onde fica a memória do seu negócio + pastas de cliente + skill de proposta.  
-Você abre em **qualquer** agente. Entrevista **uma vez**. Nas próximas sessões — e nas propostas — a IA **já sabe**.
+O INVOS é o **sistema operacional de contexto** do teu negócio: memória + clientes + proposta, feito para o agente ler sozinho.  
+Você ativa o sistema **uma vez** (entrevista). Nas próximas sessões — e nas propostas — a IA **já sabe**.
+
+A entrega é um **kit em ZIP** só para ser simples: baixa, abre no agente, pronto.  
+O que você compra não é “um zip de markdown” — é **parar de recomeçar do zero** em todo chat.
 
 Não é curso. Não é Notion. Não é app na nuvem.  
-É contexto que **compõe**: cada decisão e cada cliente ficam no disco, não no chat que some.
+É contexto que **compõe**: cada decisão e cada cliente ficam no sistema, não no scroll do chat.
 
 ---
 
@@ -69,7 +74,7 @@ Se você:
 …o INVOS foi feito pra você.
 
 Você **não** precisa programar.  
-Baixa o ZIP → abre a pasta → responde em português.
+Recebe o kit → abre o sistema no agente → responde o onboard em português.
 
 ---
 
@@ -118,7 +123,7 @@ Depois disso (mesmo dia ou amanhã):
    → WOW 2: orçamento no teu tom, arquivo salvo
 ```
 
-Arquivos simples em markdown. Sem install mágico. Sem configurar API na mão pro core funcionar.
+O sistema vive em arquivos simples (markdown). Sem install mágico. Sem configurar API na mão pro core funcionar.
 
 ---
 
@@ -128,36 +133,36 @@ Arquivos simples em markdown. Sem install mágico. Sem configurar API na mão pr
 |--|--|
 | **Página de vendas** | https://inovadigitalid.com/invos |
 | **Preço** | R$97 (pagamento único na Hotmart) |
-| **O que você recebe** | **ZIP** na Hotmart: memória + clientes + skills (inclui proposta) + bônus |
+| **O que você compra** | O **sistema INVOS**: memória multi-agente + clientes + skill de proposta + loop de sessão + bônus |
+| **Como entrega** | **Kit em ZIP** na Hotmart (rápido, sem setup de conta extra) |
 | **Garantia** | 7 dias (conforme a página) |
 
-Já comprou? Baixe o ZIP na área do aluno / e-mail Hotmart.  
-Depois siga o **Começar do zero** abaixo.
+Já comprou? Baixe o kit na área do aluno / e-mail Hotmart e abra o **[COMECE-AQUI.md](./COMECE-AQUI.md)**.
 
 ---
 
-## Começar do zero
+## Começar do zero (ativar o sistema)
 
 **Instrução completa (ideal pro agente executar):** → **[COMECE-AQUI.md](./COMECE-AQUI.md)**
 
 Resumo pro humano:
 
-1. Baixe o **ZIP** Hotmart e extraia.  
-2. **Renomeie** a pasta `invos-kit` (ex.: `meu-negocio-invos`).  
-3. Abra essa pasta no Cursor / Claude / Codex / Grok…  
-4. Diga: *“Segue o COMECE-AQUI”* ou *“Roda o onboard do INVOS”*.  
+1. Baixe o **kit** (arquivo ZIP na Hotmart) e extraia.  
+2. **Renomeie** a pasta do projeto (ex.: `meu-negocio-invos`) — é o “nome” do teu sistema.  
+3. Abra essa pasta no Cursor / Claude / Codex / Gemini / Grok…  
+4. Diga: *“Segue o COMECE-AQUI”* ou *“Ativa o INVOS / roda o onboard”*.  
 5. Responda a entrevista **uma pergunta por vez**.  
 6. **Teste do wow:** chat novo → *“Quem eu sou e no que estou trabalhando?”*  
-7. Prestador: *“Cria o cliente …”* (o agente **duplica** `clientes/_template`, não mexe no template original).
+7. Prestador: *“Cria o cliente …”* (o agente **duplica** `clientes/_template`).
 
 ```bash
 unzip invos-kit.zip -d ~/meu-invos
-cd ~/meu-invos/invos-kit          # entre na pasta do kit
+cd ~/meu-invos/invos-kit
 cd .. && mv invos-kit meu-negocio-invos && cd meu-negocio-invos
 ```
 
-(Ou renomeie no Finder e abra a pasta no agente.)  
-Zero Node/Docker pro core. Só pasta + agente.
+(Ou renomeie no Finder e abra no agente.)  
+Zero Node/Docker pro core. Sistema = pasta do projeto + agente.
 
 ---
 
@@ -241,33 +246,35 @@ Skills extras (humanizer, audit, notion…) e 3 squads (advisory-board, brand, h
 
 ## Por que isso “gruda” (e template bonito some)
 
-- O contexto **compõe**: cada sessão e cada cliente ficam em arquivo, não no chat.  
+- O contexto **compõe**: cada sessão e cada cliente ficam no sistema, não no chat.  
 - Você sente o wow na **2ª abertura** — não depois de um curso de 4h.  
 - É feito pra **execução** (prioridade, cliente, proposta), não pra “second brain” infinito.  
-- Multi-agente de verdade: a pasta é o sistema; o modelo é só o cérebro da vez.
+- Multi-agente de verdade: o **INVOS é o sistema**; o modelo (Claude, Codex, Gemini…) é só o cérebro da vez.  
+- O ZIP é só o frete — o que permanece aberto no Cursor/Claude é o **sistema do teu negócio**.
 
 ---
 
 ## Trabalhar de qualquer lugar
 
-1. Tudo fica **nos arquivos** da pasta do kit.  
-2. Copia a pasta pro outro PC (ou usa git se quiser).  
+1. O sistema inteiro está na **pasta do projeto** (arquivos que o agente lê).  
+2. Copia pro outro PC (ou usa git se quiser).  
 3. Abre no outro agente → **mesma memória**, mesmo cliente, mesmas propostas.
 
-Não é login em site. É o teu negócio em arquivos que a IA sabe ler.
+Não é login em SaaS. É o teu negócio estruturado pra IA usar de verdade.
 
 ---
 
 ## O que o INVOS **não** é
 
+- Não é “só um ZIP de arquivos” (o ZIP é a **entrega**; o produto é o **sistema**)  
 - Não é curso com aulas  
 - Não é substituto de mentoria  
 - Não é app na nuvem com conta  
 - Não é “instalar 50 ferramentas”  
-- Não é um monstro cheio de agente pra configurar no dia 1  
-- Não é mais um template que você abandona em uma semana  
+- Não é monstro de config no dia 1  
+- Não é template que você abandona em uma semana  
 
-v1 = **memória (wow) + clientes + proposta (uso real)**.  
+v1 = **sistema de memória (wow) + clientes + proposta (uso real)**.  
 v2 = mais workflows — sem abandonar a simplicidade.
 
 ---

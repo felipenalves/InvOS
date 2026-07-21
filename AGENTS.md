@@ -2,9 +2,10 @@
 
 ## Purpose
 
-This file defines how agents should operate in this repository. Universal for any harness (Claude Code, Codex, OpenCode, Grok, Cursor, etc.).
+This file defines how agents should operate in the **INVOS system** (business memory for any AI agent). Universal for any harness (Claude Code, Codex, OpenCode, Grok, Cursor, Gemini, etc.).
 
-**SOT multi-harness.** `CLAUDE.md` (se existir) só aponta pra cá (`@AGENTS.md`) — Claude Code carrega CLAUDE no boot; OpenCode/Codex/Grok leem **este** arquivo.
+**SOT multi-harness.** `CLAUDE.md` (se existir) só aponta pra cá (`@AGENTS.md`).  
+O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + este arquivo.
 
 ## Required Context Order
 

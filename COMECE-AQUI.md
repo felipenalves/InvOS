@@ -1,8 +1,12 @@
-# COMECE AQUI — instalação e uso inicial
+# COMECE AQUI — ativar o sistema INVOS
 
-**Para o agente:** se o usuário abriu o kit pela primeira vez, ou pediu “como começo”, “instalar”, “setup”, **leia e execute este arquivo** (passo a passo). Não peça que o humano leia tutorial longo — guie você.
+Você não está “instalando um zip”. Está **ligando o sistema de memória do negócio** do usuário.
 
-**Para o humano:** se preferir fazer na mão, os mesmos passos valem.
+**Para o agente:** se o usuário abriu o INVOS pela primeira vez, ou pediu “como começo”, “instalar”, “setup”, “ativar”, **leia e execute este arquivo**. Não peça tutorial longo — guie e execute.
+
+**Para o humano:** os mesmos passos valem se preferir na mão.
+
+**Lembrete de posicionamento:** o produto é o **sistema** (memória + clientes + proposta + regras do agente). O **ZIP** é só como o sistema chegou no computador.
 
 ---
 
@@ -10,34 +14,35 @@
 
 Em poucos minutos:
 
-1. Pasta do projeto com **nome dela** (não “invos-kit” genérico pra sempre)  
-2. Memória preenchida (onboard)  
+1. Projeto com **nome do negócio** (não “invos-kit” genérico pra sempre)  
+2. Sistema de memória **preenchido** (onboard)  
 3. (Prestador) primeiro cliente a partir do template  
 4. Prova do wow: 2ª sessão já te conhece  
 
 ---
 
-## Passo 0 — Onde você está
+## Passo 0 — Onde o sistema está
 
-O ZIP extrai algo como:
+O kit (ZIP) extrai algo como:
 
 ```text
-invos-kit/
-  COMECE-AQUI.md   ← este arquivo
-  AGENTS.md
-  memoria/
-  clientes/
-  .agents/
+invos-kit/              ← nome temporário do pacote
+  COMECE-AQUI.md        ← este arquivo
+  AGENTS.md             ← como o agente opera o sistema
+  memoria/              ← cérebro do negócio
+  clientes/             ← prestador: um cliente por pasta
+  .agents/              ← skills (onboard, proposta, sessão…)
   ...
 ```
 
-**Agente:** confirme que `AGENTS.md` e `memoria/` existem nesta pasta. Se o user abriu a pasta errada (ex.: só `Downloads`), oriente a abrir a pasta que contém `AGENTS.md`.
+**Agente:** confirme que `AGENTS.md` e `memoria/` existem nesta pasta. Se o user abriu a pasta errada (ex.: só `Downloads`), oriente a abrir a pasta que contém `AGENTS.md` — **aí** está o sistema.
 
 ---
 
-## Passo 1 — Nomear a pasta do projeto (humano ou agente orquestra)
+## Passo 1 — Nomear o projeto (humano ou agente orquestra)
 
-A pasta padrão `invos-kit` é só o nome do pacote. **Renomeie** para o negócio ou o uso do user.
+`invos-kit` é só o nome do **pacote de entrega**.  
+**Renomeie** para o negócio: essa pasta **é** o sistema INVOS da pessoa.
 
 **Exemplos de nome bom:**
 
@@ -165,8 +170,9 @@ Quando o user disser fim / acabou / sessão encerrada: skill `session-end`
 ## Ordem mental
 
 ```
-ZIP → nomear pasta → abrir no agente → onboard → prova 2ª sessão
-     → (prestador) duplicar _template → proposta quando precisar
+Receber o kit (ZIP) → nomear o projeto → abrir no agente
+  → ativar memória (onboard) → prova 2ª sessão (wow)
+  → (prestador) duplicar _template → proposta quando precisar
 ```
 
-Fim do setup inicial. Depois: operar o negócio, não “configurar o kit”.
+Fim do setup. Depois: **operar o negócio com o sistema ligado**, não “configurar arquivo”.
