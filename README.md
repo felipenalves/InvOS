@@ -2,18 +2,55 @@
 
 **Seu agente de IA para de te tratar como estranho.**
 
-Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · acesso imediato
+Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · ZIP na Hotmart
+
+---
+
+## O fator wow (o que você sente em minutos)
+
+Não é “mais um template”. É o momento em que a IA **para de te entrevistar** e começa a **trabalhar com o teu negócio**.
+
+### Wow 1 — Segunda sessão
+
+**Sem INVOS:**
+
+> Você: “Monta um follow-up pro cliente de ontem.”  
+> IA: “Claro! Qual é o seu negócio? Quem é o cliente? Qual o tom?”
+
+**Com INVOS (mesma pasta, chat novo):**
+
+> Você: “Quem eu sou e no que estou trabalhando?”  
+> IA: “Você é [seu nome], [sua oferta], cliente ideal [X]. Foco de hoje: [projeto]. Próximo passo: […].”
+
+**Passou o teste?** Ele respondeu **sem** pedir seu nome de novo.  
+Isso é o produto. O resto é consequência.
+
+### Wow 2 — Qualquer agente, mesma memória
+
+Claude hoje. Cursor amanhã. Codex, Gemini, Grok, OpenCode…  
+**Mesma pasta** = mesmo cérebro. Você não “migra de ferramenta”. Você **leva o contexto** com você.
+
+### Wow 3 — Do “me conhece” pro “fecha o serviço”
+
+Não para na identidade. No dia a dia do **prestador**:
+
+| Você digita | O que acontece |
+|-------------|----------------|
+| `O que importa hoje?` | 1 prioridade + próximo passo (lê `memoria/`) |
+| `Cliente atual: ana-studio` | Contexto **dela**, sem misturar com outro cliente |
+| `Gera proposta pro ana-studio: …` | Texto no **teu** tom, gravado em `clientes/…/propostas/` |
+
+Primeiro o agente te conhece. Depois ele **trabalha o cliente certo** e **escreve o orçamento** sem você reexplicar a empresa.
 
 ---
 
 ## Em uma frase
 
-O INVOS é uma **pasta no seu computador** (e no GitHub) onde fica a memória do seu negócio.  
-Você abre essa pasta em **qualquer** agente de IA (Cursor, Claude no terminal, Codex, Grok…).  
-Na primeira vez ele te faz umas perguntas. Nas próximas, **já sabe quem você é** e no que você está trabalhando.
+O INVOS é uma **pasta** (ZIP) onde fica a memória do seu negócio + pastas de cliente + skill de proposta.  
+Você abre em **qualquer** agente. Entrevista **uma vez**. Nas próximas sessões — e nas propostas — a IA **já sabe**.
 
-Não é curso. Não é Notion. Não é mais um app pra instalar.  
-É o jeito simples de a IA **lembrar** de você entre uma sessão e outra.
+Não é curso. Não é Notion. Não é app na nuvem.  
+É contexto que **compõe**: cada decisão e cada cliente ficam no disco, não no chat que some.
 
 ---
 
@@ -21,15 +58,15 @@ Não é curso. Não é Notion. Não é mais um app pra instalar.
 
 Se você:
 
-- está **começando** a usar IA no terminal / no Cursor / no Claude Code  
-- cansa de **explicar de novo** quem você é e o que faz  
-- presta serviço (design, marketing, consultoria…) **ou** está construindo algo  
-- quer algo **simples**, sem configuração de engenheiro  
+- cansa de **reexplicar** o negócio em toda sessão  
+- presta serviço (design, marketing, consultoria, freela…) e joga **vários clientes** na mesma IA  
+- quer **proposta / prioridade do dia** sem montar stack de engenheiro  
+- está **começando** no Cursor / Claude / terminal  
 
 …o INVOS foi feito pra você.
 
-Você **não** precisa saber programar.  
-Você precisa: baixar/abrir uma pasta e **responder perguntas em português**.
+Você **não** precisa programar.  
+Baixa o ZIP → abre a pasta → responde em português.
 
 ---
 
@@ -39,35 +76,46 @@ Você precisa: baixar/abrir uma pasta e **responder perguntas em português**.
 2. Chama a IA.  
 3. Ela pergunta: *“Em que posso ajudar?”*  
 4. Você reexplica o negócio, o cliente, o que decidiu ontem.  
-5. Amanhã: **tudo de novo.**
+5. Amanhã: **tudo de novo.**  
+6. Manda “faz uma proposta” → sai texto genérico, como se você fosse qualquer um.
 
-Isso não é “usar mal a IA”. É a IA **sem memória** do seu contexto.
+Isso não é “usar mal a IA”. É a IA **sem memória** e **sem o cliente no contexto**.
 
 ---
 
 ## O que muda com o INVOS
 
-| Antes | Depois |
-|--------|--------|
-| Toda sessão começa do zero | A sessão começa já te conhecendo |
-| Você repete o mesmo briefing | Está gravado em arquivos na pasta `memoria/` |
-| Troca de ferramenta = recomeçar | **Mesma pasta** no Claude, Cursor, Grok… |
-| “O que eu estava fazendo?” | O arquivo **ativo** diz o foco de hoje |
+| Antes | Depois (wow) |
+|--------|----------------|
+| Toda sessão começa do zero | Ele já sabe quem você é e o foco de hoje |
+| Briefing colado de novo | Está em `memoria/` — o agente lê sozinho |
+| Troca de ferramenta = recomeçar | **Mesma pasta** em Claude, Cursor, Codex, Gemini, Grok… |
+| “Faz uma proposta” genérica | Proposta no teu tom, pro **cliente certo**, salva no disco |
+| Clientes misturados no chat | Uma pasta por cliente em `clientes/` |
+| Contexto morre no scroll | Decision / checkpoint / histórico entre sessões |
 
-**Promessa real (v1):** gestão de contexto — o que você faz **hoje**, o que vem **depois**, e o que a **próxima sessão** precisa saber. Em qualquer harness.
+**Promessa real:** contexto do negócio + uso no dia a dia do prestador — em qualquer harness.
 
 ---
 
-## Como funciona (3 passos)
+## Como funciona (3 passos até o wow)
 
 ```
-1. Você abre a pasta do INVOS no seu agente
-2. Na primeira vez: entrevista curta (uma pergunta por vez)
-3. Nas próximas vezes: a IA já leu sua memória e segue o trabalho
+1. Abre a pasta do INVOS no agente
+2. Primeira vez: entrevista curta → grava memoria/
+3. Fecha, abre de novo → "Quem eu sou e no que estou trabalhando?"
+   → WOW: ele responde sem recomeçar
 ```
 
-As respostas viram arquivos de texto na pasta `memoria/` (empresa, perfil, projetos, o que está em andamento).  
-Isso **viaja com você**: notebook, outro PC, outro agente — se a pasta (ou o GitHub) for o mesmo.
+Depois disso (mesmo dia ou amanhã):
+
+```
+4. Cria um cliente (template pronto)
+5. "Gera proposta pro cliente X com este brief…"
+   → WOW 2: orçamento no teu tom, arquivo salvo
+```
+
+Arquivos simples em markdown. Sem install mágico. Sem configurar API na mão pro core funcionar.
 
 ---
 
@@ -120,18 +168,36 @@ Abra essa pasta no seu agente (no Cursor: *Open Folder*).
 
 Não precisa editar arquivo na mão se o agente gravar certo.
 
-### Segunda sessão (a prova de que funcionou)
+### Segunda sessão = o teste do wow
 
 1. Feche o chat / abra de novo **na mesma pasta**.  
-2. Pergunte:  
+2. Pergunte exatamente:  
    **“Quem eu sou e no que estou trabalhando?”**  
-3. **Passou** se ele responder com seu nome, negócio e projeto **sem** recomeçar a entrevista.
+3. **Passou** se ele citar nome, o que você faz e o projeto/foco **sem** recomeçar a entrevista.  
+4. Se falhar: `bash scripts/validar.sh --pos-onboard` e rode o onboard de novo.
+
+Quando isso passar, o kit **valeu**. O resto multiplica o valor.
 
 ---
 
-## Dia a dia do prestador (uso prático)
+## Prova em 3 minutos (checklist do wow)
 
-Depois do onboard, o kit serve o **serviço** — não só a identidade.
+| # | Ação | Sinal de sucesso |
+|---|------|------------------|
+| 1 | Pasta do INVOS aberta no agente | — |
+| 2 | Entrevista / onboard feito | Arquivos em `memoria/` sem “PREENCHA” |
+| 3 | **Nova** sessão (chat novo) | — |
+| 4 | “Quem eu sou e no que estou trabalhando?” | Responde com **seus** dados |
+| 5 | (Opcional) “O que importa hoje?” | 1 prioridade, sem enrolação |
+| 6 | (Opcional) cria cliente + “gera proposta…” | Arquivo em `clientes/…/propostas/` |
+
+Se o passo 4 falhar, o resto não importa — arrume a memória primeiro.
+
+---
+
+## Dia a dia do prestador (depois do wow)
+
+A memória sozinha já é o clique. Daqui pra frente o kit **paga o almoço**:
 
 ### 1. O que importa hoje?
 
@@ -139,15 +205,13 @@ Depois do onboard, o kit serve o **serviço** — não só a identidade.
 O que importa hoje? Me dá 1 prioridade e o próximo passo.
 ```
 
-O agente deve ler `memoria/ativo.md` e `projetos.md`.
+Lê `memoria/ativo.md` e `projetos.md` — some a ansiedade de “por onde começo?”.
 
-### 2. Clientes (não misturar)
+### 2. Clientes (não misturar João e Maria)
 
 ```
 Cria o cliente ana-studio a partir do template: designer, lead, quer site em 30 dias.
 ```
-
-ou
 
 ```
 Cliente atual: ana-studio. O que já combinamos?
@@ -155,36 +219,14 @@ Cliente atual: ana-studio. O que já combinamos?
 
 Detalhes: `clientes/README.md`.
 
-### 3. Proposta (dinheiro)
+### 3. Proposta (dinheiro, no teu tom)
 
 ```
 Gera proposta pro cliente ana-studio: landing + 3 revisões, prazo 2 semanas, R$3.500.
 ```
 
-A skill **proposta** usa sua `memoria/empresa` + a pasta do cliente e grava em  
-`clientes/<nome>/propostas/`.
-
----
-
-Se falhar:
-
-```bash
-bash scripts/validar.sh --pos-onboard
-```
-
-Se o comando acusar erro, a memória ainda está incompleta — peça de novo o onboard.
-
----
-
-## Prova em 3 minutos (checklist)
-
-1. Pasta do INVOS aberta no agente  
-2. Entrevista feita  
-3. Nova sessão  
-4. Pergunta: *Quem eu sou e no que estou trabalhando?*  
-5. Resposta vem da memória, sem re-entrevista  
-
-Isso é o “wow” do produto. O resto é bônus.
+A skill **proposta** usa `memoria/empresa` + a pasta do cliente e **grava** o texto.  
+Você não cola de novo “eu sou designer, minha oferta é…”.
 
 ---
 
@@ -215,13 +257,22 @@ Skills extras (humanizer, audit, notion…) e 3 squads (advisory-board, brand, h
 
 ---
 
+## Por que isso “gruda” (e template bonito some)
+
+- O contexto **compõe**: cada sessão e cada cliente ficam em arquivo, não no chat.  
+- Você sente o wow na **2ª abertura** — não depois de um curso de 4h.  
+- É feito pra **execução** (prioridade, cliente, proposta), não pra “second brain” infinito.  
+- Multi-agente de verdade: a pasta é o sistema; o modelo é só o cérebro da vez.
+
+---
+
 ## Trabalhar de qualquer lugar
 
-1. Suas informações ficam **nos arquivos** deste repositório.  
-2. Se você usa GitHub: `git push` no fim do dia no seu notebook → `git pull` no outro PC.  
-3. Abre a **mesma pasta** em outro agente → ele lê a mesma memória.
+1. Tudo fica **nos arquivos** da pasta do kit.  
+2. Copia a pasta pro outro PC (ou usa git se quiser).  
+3. Abre no outro agente → **mesma memória**, mesmo cliente, mesmas propostas.
 
-Por isso o INVOS é um repositório, não um login em site.
+Não é login em site. É o teu negócio em arquivos que a IA sabe ler.
 
 ---
 
@@ -232,9 +283,10 @@ Por isso o INVOS é um repositório, não um login em site.
 - Não é app na nuvem com conta  
 - Não é “instalar 50 ferramentas”  
 - Não é um monstro cheio de agente pra configurar no dia 1  
+- Não é mais um template que você abandona em uma semana  
 
-v1 = **memória + clientes + proposta**.  
-v2 = mais workflows/agentes — sem abandonar a simplicidade.
+v1 = **memória (wow) + clientes + proposta (uso real)**.  
+v2 = mais workflows — sem abandonar a simplicidade.
 
 ---
 
