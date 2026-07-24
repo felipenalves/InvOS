@@ -16,8 +16,10 @@
 | **`marca/assets/`** | logo.svg / logo.png |
 | `clientes/_index.md` | Pipeline + **valor** + **pagto** |
 | `clientes/<slug>/` | Ficha, suporte, propostas, arquivos |
-| `conteudo/_fila.md` | Marketing leve (peça da semana) |
-| `integracoes/composio/` | CLI Composio (apps externos) — opcional |
+| `conteudo/_fila.md` | Fila de conteúdo |
+| `conteudo/carrosseis/` | Runs da fábrica IG (PNG + caption) |
+| `.agents/squads/instagram-carrossel/` | Squad produção carrossel |
+| `integracoes/composio/` | CLI Composio — opcional |
 
 ## Boot
 

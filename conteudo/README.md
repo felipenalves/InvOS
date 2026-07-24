@@ -4,7 +4,9 @@ Pasta opcional pro prestador que posta. **Não** é CMS.
 
 | Path | Pra quê |
 |------|---------|
-| `conteudo/_fila.md` | Ideias e posts da semana (1 prioridade de conteúdo) |
-| `conteudo/publicados/` | Texto já usado (arquivo por peça, opcional) |
+| `conteudo/_fila.md` | Ideias e posts da semana |
+| `conteudo/publicados/` | Texto já usado (opcional) |
+| `conteudo/carrosseis/` | Saída da **fábrica** (squad instagram-carrossel): PNG + caption |
 
-Ritual: “O que posto essa semana?” → 1 peça ligada a **prova** (cliente, proposta, aprendizado) + voz de `marca/marca.md`.
+- Texto rápido: skill `social-content`  
+- Carrossel completo (mínimo de trabalho do dono): **“Roda fábrica de carrossel: [tema]”**

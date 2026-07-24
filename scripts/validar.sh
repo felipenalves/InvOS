@@ -84,7 +84,7 @@ fi
 # 4. Skills
 echo ""
 echo "4/5 — Skills:"
-for f in session-start session-end session-checkpoint onboard proposta design-marca social-content; do
+for f in session-start session-end session-checkpoint onboard proposta design-marca social-content instagram-carrossel; do
   if [ -f ".agents/skills/$f/SKILL.md" ]; then
     echo "  ✅ $f"
   else
@@ -96,6 +96,12 @@ if [ -f "integracoes/composio/README.md" ]; then
   echo "  ✅ integracoes/composio/"
 else
   echo "  ❌ integracoes/composio/ — FALTA"
+  ERROS=$((ERROS+1))
+fi
+if [ -f ".agents/squads/instagram-carrossel/RUN.md" ] && [ -f ".agents/squads/instagram-carrossel/squad.yaml" ]; then
+  echo "  ✅ squad instagram-carrossel"
+else
+  echo "  ❌ squad instagram-carrossel — FALTA"
   ERROS=$((ERROS+1))
 fi
 

@@ -22,9 +22,10 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 
 **Core vs bônus:**
 - **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
-- **Leve:** `conteudo/` + skill `social-content`
-- **Opcional:** `integracoes/composio/` (CLI pra apps externos — não bloqueia o core)
-- **Bônus:** squads (advisory-board, brand, hormozi); brand squad → resumo em `marca/marca.md`
+- **Produção de conteúdo IG:** squad **`instagram-carrossel`** (fábrica; dono só aprova) + skill wrapper `instagram-carrossel`
+- **Leve (só texto):** `social-content` + `conteudo/_fila.md`
+- **Opcional:** `integracoes/composio/`
+- **Estratégia (não é post):** squads advisory-board, brand, hormozi — brand → resumo em `marca/`
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 
@@ -40,8 +41,9 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 | “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML em `clientes/<slug>/propostas/*.html`; brand de **`marca/marca.md`**; `_index` com valor/pagto; msg de envio + Fila humana. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
 | “Extrai marca do site” / cores / logo | Skill **`design-marca`** → `marca/marca.md` + `marca/assets/`. |
-| “O que posto essa semana?” / post LinkedIn / legenda IG | Skill **`social-content`** → `conteudo/` + voz `marca/` + ⚠️ publicar |
-| “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** `composio search|link|execute` |
+| “O que posto essa semana?” / legenda / post texto | Skill **`social-content`** |
+| “Carrossel IG” / “fábrica de carrossel” / “produz conteúdo Instagram” | Squad + skill **`instagram-carrossel`** → `RUN.md` (time executa; dono aprova) |
+| “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** |
 | “Cliente pagou / a receber” | Atualiza `_index` colunas **valor** / **pagto**. |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
@@ -137,7 +139,8 @@ SECURITY.md
 | onboard | Primeiro uso (automático) — entrevista inicial |
 | **proposta** | HTML pronto pra enviar (lê `marca/` + `clientes/`) |
 | **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
-| **social-content** | Posts/legendas na voz da marca → `conteudo/` |
+| **social-content** | Posts/legendas texto rápido → `conteudo/` |
+| **instagram-carrossel** | Fábrica completa (squad multi-agente) → PNG + caption |
 | humanizer | Remover padrões de IA do texto em PT-BR |
 | stop-slop | Remover padrões de IA do texto em EN |
 | audit | Auditoria Four Cs — nota 0-100 pro seu sistema |
@@ -148,10 +151,11 @@ SECURITY.md
 
 | Squad | O que faz |
 |-------|-----------|
-| advisory-board | Conselho consultivo com 11 pensadores (Naval, Dalio, Thiel, Sinek...) |
-| brand | Squad de marca — posicionamento, naming, identidade visual |
-| hormozi-squad | Squad de crescimento e oferta (framework Hormozi) |
+| **instagram-carrossel** | **Produção** de carrossel IG (research→copy→visual→pack). Dono aprova. |
+| advisory-board | Conselho estratégico (não produz post) |
+| brand | Posicionamento/identidade → gravar em `marca/` |
+| hormozi-squad | Oferta/leads/growth (framework; não é fábrica de feed) |
 
-Ver `.agents/squads/` para detalhes de cada squad.
+Ver `.agents/squads/index.md`.
 
 Ver `.agents/skills/` para detalhes de cada uma.

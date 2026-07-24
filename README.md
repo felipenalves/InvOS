@@ -210,13 +210,12 @@ teu-negocio-invos/
 - Tasks com dono (agente vs humano)  
 - Loop de sessão + onboard  
 - Skill **proposta** (HTML com brand)  
-- Marketing leve: `conteudo/` + skill **social-content**  
-- Opcional: `integracoes/composio/` (CLI pra Gmail, Sheets, ads…)  
+- Marketing: skill **social-content** (texto) + squad **instagram-carrossel** (fábrica PNG)  
+- Opcional: `integracoes/composio/`  
 
-### Bônus (pode ignorar no dia 1)
+### Bônus estratégia (não é produção de feed)
 
-Skills extras (humanizer, audit, notion…) e squads (advisory-board, brand, hormozi).  
-Squad brand → resumo **sempre** em `marca/marca.md`.
+Squads advisory-board, brand, hormozi. Brand → `marca/marca.md`.
 
 ---
 
