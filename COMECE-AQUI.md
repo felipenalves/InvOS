@@ -17,7 +17,7 @@ Você não está “instalando um zip”. Está **ligando o sistema de memória 
 | `O que importa hoje?` | 1 prioridade + quem executa (você ou agente) |
 | `Proposta pro [cliente]: …` | HTML pronto + texto de envio + ⚠️ você manda |
 | `Post / legenda …` | Texto na sua voz (`marca/`) |
-| `Fábrica de carrossel: [tema]` | Time monta slides; você aprova e posta |
+| `Faz um carrossel: [tema]` | MVP: 1–2 slides HTML + caption; você posta (fábrica full só se pedir) |
 | `fim` | Arquiva a sessão |
 
 Resto (Hormozi, Composio, audit profundo) = **só se você pedir**. Não é o caminho do dia 1.
@@ -161,7 +161,8 @@ Resposta esperada: **1 prioridade** + **próximo passo** (de `ativo` / PRIORIDAD
 | “Proposta / orçamento pro X” | Skill proposta → HTML em `clientes/X/propostas/` (brand `marca/`) + msg + `_index` valor/pagto |
 | “Extrai marca do site” | Skill `design-marca` → `marca/marca.md` |
 | “O que posto essa semana?” / post texto | Skill `social-content` |
-| “Carrossel IG / fábrica de carrossel” | Squad `instagram-carrossel` (time produz; você aprova) |
+| “Carrossel / faz um carrossel” | Skill `instagram-carrossel` **MVP** (HTML+caption). “Fábrica completa” = pipeline long |
+| “Call amanhã 10h com [cliente]” | Atualiza `_index`: status `call`, próximo, dono=humano, desde |
 | “Conecta Gmail / envia por e-mail” | `integracoes/composio/` (opcional, CLI) |
 
 ---

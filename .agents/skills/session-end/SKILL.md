@@ -27,9 +27,20 @@ Se o repositório tem alterações não commitadas, avise e pergunte se quer com
 
 ### 3. Salvar histórico
 
+Arquivo **só** `memoria/historico/YYYY-MM-DD.md` (data real ISO).
+
+**Mesmo dia, 2º+ “fim”:** se o arquivo do dia **já existe**, **não sobrescreva**.  
+Append uma seção `## Sessão 2 (HH:MM)` (ou 3…) com Feito/Pendente da sessão atual.  
+Só crie o arquivo do zero se ainda não existir.
+
 ```bash
-cat > memoria/historico/$(date +%Y-%m-%d).md << 'EOF'
-# $(date +%Y-%m-%d)
+# pseudo: se existe → append; senão → cria com o bloco abaixo
+```
+
+Conteúdo de **nova** sessão do dia (ou 1ª do dia):
+
+```markdown
+# YYYY-MM-DD
 
 ## Foco
 [objetivo principal]
@@ -51,7 +62,6 @@ cat > memoria/historico/$(date +%Y-%m-%d).md << 'EOF'
 
 ## Projetos / clientes afetados
 - [quais]
-EOF
 ```
 
 ### 4. Atualizar `memoria/decisoes.md`

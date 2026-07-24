@@ -22,6 +22,7 @@ Registra momentos importantes DURANTE a sessão, sem precisar esperar o fim.
 - Link/documento relevante descoberto
 - **Comercial:** lead, DM, resposta, proposta, call, mudança de status de cliente
 - **Pagamento:** “pagou”, “recebi”, “fechou o deal” → seguir skill **proposta §6** (estado vivo completo)
+- **Call:** “call amanhã”, “reunião com cliente” → `_index` status=`call`, próximo, dono=humano + linha em `contexto.md`
 - **Task:** pendência só do humano → **Fila humana** + alerta `⚠️ Sua vez:`
 
 ## Sequence

@@ -22,7 +22,7 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 
 **Core vs bônus:**
 - **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
-- **Produção de conteúdo IG:** squad **`instagram-carrossel`** (fábrica; dono só aprova) + skill wrapper `instagram-carrossel`
+- **Produção IG:** skill **`instagram-carrossel`** default **MVP** (HTML+caption); pipeline full opcional
 - **Leve (só texto):** `social-content` + `conteudo/_fila.md`
 - **Opcional:** `integracoes/composio/`
 - **Estratégia (não é post):** squads advisory-board, brand, hormozi — brand → resumo em `marca/`
@@ -42,7 +42,8 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE #1** (ou `#2`…) 
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
 | “Extrai marca do site” / cores / logo | Skill **`design-marca`** → `marca/marca.md` + `marca/assets/`. |
 | “O que posto essa semana?” / legenda / post texto | Skill **`social-content`** |
-| “Carrossel IG” / “fábrica de carrossel” / “produz conteúdo Instagram” | Squad + skill **`instagram-carrossel`** → `RUN.md` (time executa; dono aprova) |
+| “Carrossel” / “faz um carrossel” | Skill **`instagram-carrossel`** **modo MVP** (1–2 HTML + caption). Full pipeline só se pedir “fábrica completa”. |
+| “Call amanhã …” / agendar call com cliente | `_index`: status **`call`**, próximo, dono=humano, desde=hoje + linha no `contexto.md` |
 | “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** |
 | “Cliente pagou / a receber” | Skill **proposta §6** / checkpoint: `_index` + perfil + entregas + **Próximo** em `projetos.md` + `ativo` (não só uma linha). |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
@@ -62,6 +63,7 @@ During the session, automatically invoke `session-checkpoint` when you detect:
 - **Link ou documento relevante:** URL, PR, issue que precisa ser registrada
 - **Insight estratégico:** conexão entre coisas, epifania sobre o negócio
 - **Comercial:** lead, DM, proposta, call, status de cliente
+- **Call agendada:** `_index` status=`call` + contexto do cliente (não só texto solto no chat)
 - **Task só humana:** grava **Fila humana** + alerta `⚠️ Sua vez:`
 - **Usuário diz qualquer gatilho:** "guarda isso", "anota", "não esquece"
 

@@ -1,39 +1,25 @@
-# Hormozi Squad
+# Hormozi Squad (estratégia — não é post)
 
-16 specialized agents implementing Alex Hormozi's business scaling frameworks.
+**PT-BR · INVOS**
 
-## Quick Start
+Este squad é **consultoria de oferta / leads / crescimento** (frameworks Hormozi).  
+**Não** é fábrica de feed. **Não** posta no Instagram sozinho.
 
-```
-@hormozi-chief       # Activate the orchestrator
-*diagnose            # Triage your business challenge
-*business-turnaround # Full business turnaround workflow
-*offer-pipeline      # End-to-end offer creation
-```
+| Pedido do user | O que fazer |
+|----------------|-------------|
+| “melhora minha oferta”, “roda hormozi” | Diagnóstico/estratégia em 1 página (`conteudo/` ou chat) |
+| “posta isso no IG” | Usar `social-content` ou `instagram-carrossel` MVP + ⚠️ humano |
+| “publica sozinho” | Recusar sem integração real |
 
-## Agents (16)
+## Quick start (avançado)
 
-- **hormozi-chief** — Orchestrator
-- **hormozi-offers** — Grand Slam Offer creation
-- **hormozi-leads** — $100M Leads framework
-- **hormozi-pricing** — Value-based pricing
-- **hormozi-closer** — CLOSER framework & sales
-- **hormozi-ads** — Paid advertising strategy
-- **hormozi-content** — Content machine
-- **hormozi-hooks** — Hook creation
-- **hormozi-launch** — Launch strategy
-- **hormozi-retention** — Churn reduction & LTV
-- **hormozi-scale** — Scaling $1M to $100M+
-- **hormozi-models** — Business model design
-- **hormozi-audit** — Business evaluation
-- **hormozi-copy** — Hormozi-style copy
-- **hormozi-workshop** — Workshop design
-- **hormozi-advisor** — Strategic advice
+Agentes e tasks estão em `agents/` e `tasks/`. Só use se o user pediu framework Hormozi de propósito.
 
-## Components
+Orquestrador do kit: skill **não** existe — o harness lê este README + agents sob demanda.  
+No dia a dia do prestador: **ignore este squad** até precisar de oferta/pricing/close.
 
-- **16 agents**, **10 tasks**, **2 workflows**, **1 checklist**
+## Agents (referência)
 
-## Requirements
+- hormozi-chief, offers, leads, pricing, closer, ads, content, hooks, launch, retention, scale, models, audit, copy, workshop, advisor
 
-- AIOS >= 4.0.0
+Detalhe: pastas `agents/` e `tasks/` neste diretório.

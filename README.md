@@ -13,6 +13,21 @@ Não te trata como estranho. Não devolve “produtividade genérica”.
 
 ---
 
+## Core do dia a dia (só isto)
+
+| Você digita | O sistema faz |
+|-------------|----------------|
+| `O que importa hoje?` | 1 prioridade + dono (você ou agente) |
+| `Proposta pro [cliente]: …` | HTML pronto + texto de envio + ⚠️ você manda |
+| `Post / legenda …` | Texto na sua voz (`marca/`) |
+| `Faz um carrossel: [tema]` | **MVP:** 1–2 slides HTML + caption (PNG opcional) |
+| `fim` | Arquiva a sessão |
+
+**Resto** (Hormozi, Composio, fábrica completa com research, audit…) = **só se você pedir**.  
+Detalhe do setup: [COMECE-AQUI.md](./COMECE-AQUI.md).
+
+---
+
 ## O problema em um desenho
 
 ```text

@@ -39,7 +39,8 @@ Ideias estratégicas e epifanias de sessões anteriores.
 
 ### 6. Ler `memoria/regras/`
 
-Todas as regras arquivadas. Leia cada arquivo — não pule.
+Leia regras **permanentes** (lições reais).  
+**Não leia** templates de exemplo: `exemplo.md`, `README.md`, qualquer arquivo cujo nome ou 1ª linha diga `PREENCHA` / `template` / `example`.
 
 ### 7. Ler `memoria/ativo.md`
 

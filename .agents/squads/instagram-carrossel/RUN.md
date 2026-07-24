@@ -8,6 +8,12 @@ Não exige runtime OpenSquad: leia este arquivo e execute os steps.
 **Menos ações pro dono.** Em cada checkpoint, mostre opções claras e peça **uma** resposta (número ou “aprovado”).  
 Entre checkpoints, **não** fique perguntando — execute.
 
+## Default no kit INVOS
+
+O dia a dia do prestador usa a skill **`instagram-carrossel` em modo MVP** (1–2 HTML + caption), **sem** este pipeline de 13 steps.
+
+Só execute este RUN se o user pediu **fábrica completa / squad full / research + ângulos**.
+
 ## Boot obrigatório (antes do step 01)
 
 Leia:

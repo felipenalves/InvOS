@@ -1,42 +1,56 @@
 ---
 name: instagram-carrossel
 description: >-
-  Roda a fábrica de carrossel Instagram do INVOS (squad multi-agente): pesquisa,
-  ângulos, copy, visual, slides PNG, review e pack pra publicar. Use quando:
-  "fábrica de carrossel", "carrossel Instagram", "squad instagram-carrossel",
-  "conteúdo IG completo", "produz carrossel da semana".
+  Carrossel Instagram INVOS. Default = modo MVP (1–2 slides HTML + caption +
+  handoff). Pipeline completo só se o user pedir "fábrica completa" / "squad
+  full". Use: fábrica de carrossel, carrossel Instagram, slides IG, pack carrossel.
 ---
 
-# Skill wrapper → Squad Instagram Carrossel
+# Instagram carrossel (INVOS)
 
-Esta skill **não** reimplementa o pipeline. Ela manda o agente executar o squad.
+## Default: modo MVP (dia a dia)
 
-## Ação
+Para prestador que quer **sair em 5–15 min**, **não** rode os 13 steps do squad.
 
-1. Abrir e seguir **na íntegra**:  
-   `.agents/squads/instagram-carrossel/RUN.md`  
-2. Usar definição:  
-   `.agents/squads/instagram-carrossel/squad.yaml`  
-3. Steps:  
-   `.agents/squads/instagram-carrossel/pipeline/`  
+1. Leia `marca/marca.md` + `memoria/empresa.md` (+ prova em `clientes/` se houver).  
+2. Crie pasta `conteudo/carrosseis/YYYY-MM-DD-kebab/`.  
+3. Entregue:
+   - `caption.txt` (legenda colável)  
+   - `slide-01.html` (e opcional `slide-02.html`) — 1080×1350, cores da marca  
+   - `README.md` com: como abrir no browser, Imprimir→PDF/PNG se quiser, ⚠️ postar no app  
+4. Atualize `conteudo/_fila.md` (peça da semana / status).  
+5. Chat: paths + `⚠️ Sua vez: subir no Instagram na ordem`.
+
+**PNG via Chrome** (`image-creator`): só se o user pedir **e** Chrome/Python existirem.  
+Se não der: HTML + handoff — **não finja** que o squad de 13 steps rodou.
+
+## Quando rodar a fábrica completa
+
+Só se o user disser explicitamente: **“fábrica completa”**, **“modo squad”**, **“pipeline full”**, **“com research e ângulos”**.
+
+Aí siga na íntegra:
+
+1. `.agents/squads/instagram-carrossel/RUN.md`  
+2. `squad.yaml` + `pipeline/`  
+3. Preferir **modo turbo** do RUN se o user não quiser checkpoints demais.
 
 ## Atalhos
 
 | User diz | Comportamento |
 |----------|----------------|
-| tema já na mensagem | Pula re-intake; step 01 preenchido |
-| “modo turbo” | Auto-escolhe research/ângulo/visual; para em copy + imagens |
-| “só o pack, eu posto” | Até step 13 handoff humano |
-| “publica” | Só se integração real; senão ⚠️ Sua vez |
+| “faz um carrossel” / tema na msg | **MVP** (default) |
+| “modo turbo” + full | Auto-escolhe ângulo/visual no pipeline |
+| “só o pack, eu posto” | MVP ou até handoff |
+| “publica” | Só se integração real; senão ⚠️ |
 
 ## Relação com outras skills
 
 | Skill | Quando |
 |-------|--------|
-| `social-content` | Só texto/legenda rápido, sem fábrica |
+| `social-content` | Só **texto/legenda** — nunca slides PNG |
 | `design-marca` | Marca vazia antes do visual |
-| Squad (este) | Peça completa (pesquisa → PNG → caption) |
+| `image-creator` | Render HTML→PNG (opcional) |
 
 ## Dono do negócio
 
-Objetivo: **mínimo de ações** — aprovar checkpoints e (se preciso) subir o carrossel no app em 2 min com o pack em `conteudo/carrosseis/`.
+Mínimo de ações: aprovar copy se pediu full; senão só **subir pack no app**.

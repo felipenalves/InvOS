@@ -9,4 +9,4 @@ Pasta opcional pro prestador que posta. **Não** é CMS.
 | `conteudo/carrosseis/` | Saída da **fábrica** (squad instagram-carrossel): PNG + caption |
 
 - Texto rápido: skill `social-content`  
-- Carrossel completo (mínimo de trabalho do dono): **“Roda fábrica de carrossel: [tema]”**
+- Carrossel (MVP): **“Faz um carrossel: [tema]”** → HTML + caption. Full: **“fábrica completa”**.

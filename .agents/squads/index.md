@@ -2,8 +2,8 @@
 
 ## Produção (conteúdo — dono aprova, time executa)
 
-- **[instagram-carrossel](instagram-carrossel/README.md)** — fábrica de carrossel IG.  
-  Disparo: “fábrica de carrossel”. Orquestração: `RUN.md`.
+- **[instagram-carrossel](instagram-carrossel/README.md)** — carrossel IG.  
+  Dia a dia: skill **MVP** (1–2 HTML + caption). Pipeline full: “fábrica completa” → `RUN.md`.
 
 ## Estratégia / consultoria (não é produção de post)
 
