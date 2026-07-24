@@ -22,8 +22,9 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 
 **Core vs bônus:**
 - **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
-- **Leve:** `conteudo/` (fila de post)
-- **Bônus:** squads (advisory-board, brand, hormozi) e skills extras — opcional; se squad brand rodar, **grave** em `marca/marca.md`
+- **Leve:** `conteudo/` + skill `social-content`
+- **Opcional:** `integracoes/composio/` (CLI pra apps externos — não bloqueia o core)
+- **Bônus:** squads (advisory-board, brand, hormozi); brand squad → resumo em `marca/marca.md`
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 
@@ -39,11 +40,12 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 | “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML em `clientes/<slug>/propostas/*.html`; brand de **`marca/marca.md`**; `_index` com valor/pagto; msg de envio + Fila humana. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
 | “Extrai marca do site” / cores / logo | Skill **`design-marca`** → `marca/marca.md` + `marca/assets/`. |
-| “O que posto essa semana?” | `conteudo/_fila.md` + voz em `marca/`; 1 peça com dono. |
+| “O que posto essa semana?” / post LinkedIn / legenda IG | Skill **`social-content`** → `conteudo/` + voz `marca/` + ⚠️ publicar |
+| “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** `composio search|link|execute` |
 | “Cliente pagou / a receber” | Atualiza `_index` colunas **valor** / **pagto**. |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
-**Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`.
+**Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`. **Integrações:** `integracoes/README.md` (opcional).
 
 **Toda task tem dono** (`agente` | `humano`) — `memoria/regras/task-com-dono.md`. Pendência > 3 dias → alerta no boot.
 
@@ -135,6 +137,7 @@ SECURITY.md
 | onboard | Primeiro uso (automático) — entrevista inicial |
 | **proposta** | HTML pronto pra enviar (lê `marca/` + `clientes/`) |
 | **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
+| **social-content** | Posts/legendas na voz da marca → `conteudo/` |
 | humanizer | Remover padrões de IA do texto em PT-BR |
 | stop-slop | Remover padrões de IA do texto em EN |
 | audit | Auditoria Four Cs — nota 0-100 pro seu sistema |

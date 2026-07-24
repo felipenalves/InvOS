@@ -24,6 +24,7 @@ O `.gitignore` já bloqueia a maioria. Mas o agente também **nunca** deve escre
 - Não escreva `.env` preenchido em arquivo versionado
 - Se precisar de credencial pra teste, use variável de ambiente ou `.env.local` (no `.gitignore`)
 - Dados de cliente (nome, empresa, contato) em `memoria/` são ok — mas sem senha, token ou dado financeiro
+- **Composio / OAuth:** `COMPOSIO_API_KEY` e tokens só em ambiente ou `.env` local (gitignore). Nunca em `integracoes/`, `memoria/` ou commit. OAuth fica na conta Composio do usuário.
 
 ## Checklist de segurança (antes de push)
 

@@ -17,9 +17,10 @@
 | `clientes/_index.md` | Pipeline + **valor** + **pagto** |
 | `clientes/<slug>/` | Ficha, suporte, propostas, arquivos |
 | `conteudo/_fila.md` | Marketing leve (peça da semana) |
+| `integracoes/composio/` | CLI Composio (apps externos) — opcional |
 
 ## Boot
 
 `AGENTS.md` → skill `session-start`.
 
-Dia a dia: prioridade · cliente · proposta · design-marca · fila de conteúdo.
+Dia a dia: prioridade · cliente · proposta · design-marca · social-content · (opcional) composio.

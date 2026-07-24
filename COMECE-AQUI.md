@@ -146,7 +146,8 @@ Resposta esperada: **1 prioridade** + **próximo passo** (de `ativo` / PRIORIDAD
 | “Cria o cliente …” | Passo 4 (template + linha no `_index`) |
 | “Proposta / orçamento pro X” | Skill proposta → HTML em `clientes/X/propostas/` (brand `marca/`) + msg + `_index` valor/pagto |
 | “Extrai marca do site” | Skill `design-marca` → `marca/marca.md` |
-| “O que posto essa semana?” | `conteudo/_fila.md` |
+| “O que posto essa semana?” / post | Skill `social-content` → `conteudo/` |
+| “Conecta Gmail / envia por e-mail” | `integracoes/composio/` (opcional, CLI) |
 
 ---
 

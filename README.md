@@ -187,7 +187,9 @@ teu-negocio-invos/
 │       ├── propostas/  ← HTML pronto
 │       └── arquivos/
 ├── conteudo/           ← fila de post (opcional)
-└── .agents/skills/     ← session-*, onboard, proposta, design-marca
+├── integracoes/        ← opcional (Composio CLI)
+│   └── composio/
+└── .agents/skills/     ← session-*, onboard, proposta, design-marca, social-content
 ```
 
 | Em português | Path |
@@ -208,7 +210,8 @@ teu-negocio-invos/
 - Tasks com dono (agente vs humano)  
 - Loop de sessão + onboard  
 - Skill **proposta** (HTML com brand)  
-- Marketing leve: `conteudo/_fila.md`  
+- Marketing leve: `conteudo/` + skill **social-content**  
+- Opcional: `integracoes/composio/` (CLI pra Gmail, Sheets, ads…)  
 
 ### Bônus (pode ignorar no dia 1)
 
