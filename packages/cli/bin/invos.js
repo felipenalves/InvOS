@@ -14,19 +14,29 @@ const KIT_ROOT = resolve(__dirname, '../../..');
 const cmd = process.argv[2];
 const args = process.argv.slice(3);
 
+function extractDir(args) {
+  const idx = args.indexOf('--dir');
+  if (idx !== -1 && args[idx + 1]) {
+    const dir = resolve(process.cwd(), args[idx + 1]);
+    args.splice(idx, 2);
+    return dir;
+  }
+  return null;
+}
+
 function help() {
   console.log(`
 INVOS CLI — npx invos <command>
 
 Commands:
-  init [dir]       Create new INVOS project from scratch
-  install          Install INVOS into current directory
-  update [--dry-run]  Update shipped files, preserve user data
-  doctor [--fix]   Validate installation
+  init [dir]           Create new INVOS project from scratch
+  install [--dir <p>]  Install INVOS into dir (default: cwd)
+  update [--dir <p>]   Update shipped files, preserve user data
+  doctor [--dir <p>]   Validate installation
 
 Options:
-  --help           Show this help
-  --version        Show version
+  --help               Show this help
+  --version            Show version
 `);
 }
 
@@ -49,13 +59,13 @@ async function main() {
       await init(kit, KIT_ROOT, args);
       break;
     case 'install':
-      await install(kit, KIT_ROOT, process.cwd(), args);
+      await install(kit, KIT_ROOT, extractDir(args) || process.cwd(), args);
       break;
     case 'update':
-      await update(kit, KIT_ROOT, process.cwd(), args);
+      await update(kit, KIT_ROOT, extractDir(args) || process.cwd(), args);
       break;
     case 'doctor':
-      await doctor(kit, KIT_ROOT, process.cwd(), args);
+      await doctor(kit, KIT_ROOT, extractDir(args) || process.cwd(), args);
       break;
     default:
       console.error('Unknown command:', cmd);

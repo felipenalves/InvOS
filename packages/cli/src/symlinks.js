@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, symlinkSync, unlinkSync, readlinkSync, readdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, symlinkSync, unlinkSync, readlinkSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 
 const CLAUDE_SKILLS_RELPATH = '../../.agents/skills';
@@ -11,23 +11,19 @@ export function syncClaudeSymlinks(kitRoot, targetRoot) {
     mkdirSync(agentsDir, { recursive: true });
   }
 
-  // Read manifest to get seeded skills
   const manifestPath = resolve(kitRoot, 'INVOS.json');
   if (!existsSync(manifestPath)) return;
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
   const skills = manifest.seed?.skills || [];
 
-  // Ensure .claude/skills exists
   mkdirSync(claudeDir, { recursive: true });
 
   for (const skill of skills) {
     const target = resolve(agentsDir, skill);
     const linkPath = resolve(claudeDir, skill);
 
-    // Only create symlink if the agents skill dir exists
     if (!existsSync(target)) continue;
 
-    // Remove existing if it's a broken symlink or wrong type
     if (existsSync(linkPath)) {
       try {
         const existing = readlinkSync(linkPath);
@@ -44,7 +40,6 @@ export function syncClaudeSymlinks(kitRoot, targetRoot) {
 
 export function checkClaudeSymlinks(targetRoot) {
   const claudeDir = resolve(targetRoot, '.claude', 'skills');
-  const agentsDir = resolve(targetRoot, '.agents', 'skills');
   if (!existsSync(claudeDir)) return { ok: false, errors: ['.claude/skills/ not found'] };
 
   const errors = [];
@@ -57,14 +52,22 @@ export function checkClaudeSymlinks(targetRoot) {
     const linkPath = resolve(claudeDir, entry);
     try {
       const target = readlinkSync(linkPath);
-      const expected = `${CLAUDE_SKILLS_RELPATH}/${entry}`;
-      if (target !== expected) {
-        errors.push(`${entry}: points to ${target}, expected ${expected}`);
-      }
-      // Verify target exists
       const absTarget = resolve(dirname(linkPath), target);
+
+      // Resolve target — must exist and be a dir with SKILL.md
       if (!existsSync(absTarget)) {
         errors.push(`${entry}: target missing (${target})`);
+        continue;
+      }
+      const st = statSync(absTarget);
+      if (!st.isDirectory()) {
+        errors.push(`${entry}: target not a directory (${target})`);
+        continue;
+      }
+      // Nested skills like apple-notes → ../../.agents/skills/apple/apple-notes
+      // are valid if the resolved target has SKILL.md
+      if (!existsSync(resolve(absTarget, 'SKILL.md'))) {
+        errors.push(`${entry}: target has no SKILL.md (${target})`);
       }
     } catch {
       errors.push(`${entry}: not a symlink or unreadable`);
