@@ -2,9 +2,13 @@
 
 ## Produção (conteúdo — dono aprova, time executa)
 
-- **[instagram-carrossel](instagram-carrossel/README.md)** — fábrica de carrossel IG: research → ângulos → copy → visual → PNG → pack.  
-  Disparo: skill `instagram-carrossel` ou “roda fábrica de carrossel”.  
-  Orquestração: `instagram-carrossel/RUN.md`.
+- **[instagram-carrossel](instagram-carrossel/README.md)** — fábrica de carrossel IG.  
+  Disparo: “fábrica de carrossel”. Orquestração: `RUN.md`.
+
+## Qualidade do sistema (ops)
+
+- **[cacador-ops](cacador-ops/README.md)** — 3 agentes: Caçador → Testador → Revisor.  
+  Disparo: “caça o INVOS”. Visão: `VISAO.md`. Saída: `docs/ops-hunt/`.
 
 ## Estratégia / consultoria (não é produção de post)
 

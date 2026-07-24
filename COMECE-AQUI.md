@@ -10,6 +10,20 @@ Você não está “instalando um zip”. Está **ligando o sistema de memória 
 
 ---
 
+## Depois de ligado — só isto no dia a dia
+
+| Você digita | O sistema faz |
+|-------------|----------------|
+| `O que importa hoje?` | 1 prioridade + quem executa (você ou agente) |
+| `Proposta pro [cliente]: …` | HTML pronto + texto de envio + ⚠️ você manda |
+| `Post / legenda …` | Texto na sua voz (`marca/`) |
+| `Fábrica de carrossel: [tema]` | Time monta slides; você aprova e posta |
+| `fim` | Arquiva a sessão |
+
+Resto (Hormozi, Composio, audit profundo) = **só se você pedir**. Não é o caminho do dia 1.
+
+---
+
 ## Objetivo
 
 Em poucos minutos:

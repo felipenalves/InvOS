@@ -26,6 +26,7 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 - **Leve (só texto):** `social-content` + `conteudo/_fila.md`
 - **Opcional:** `integracoes/composio/`
 - **Estratégia (não é post):** squads advisory-board, brand, hormozi — brand → resumo em `marca/`
+- **Qualidade do sistema:** squad/skill **`cacador-ops`** (3 agentes: caça → teste → review; não inflar o kit)
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 
@@ -45,6 +46,7 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 | “Carrossel IG” / “fábrica de carrossel” / “produz conteúdo Instagram” | Squad + skill **`instagram-carrossel`** → `RUN.md` (time executa; dono aprova) |
 | “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** |
 | “Cliente pagou / a receber” | Atualiza `_index` colunas **valor** / **pagto**. |
+| “Caça o INVOS” / “o que tá quebrado” / antes do zip | Squad **`cacador-ops`** → `docs/ops-hunt/` |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
 **Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`. **Integrações:** `integracoes/README.md` (opcional).
@@ -141,6 +143,7 @@ SECURITY.md
 | **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
 | **social-content** | Posts/legendas texto rápido → `conteudo/` |
 | **instagram-carrossel** | Fábrica completa (squad multi-agente) → PNG + caption |
+| **cacador-ops** | Caça falhas/confusão (3 agentes) → `docs/ops-hunt/` |
 | humanizer | Remover padrões de IA do texto em PT-BR |
 | stop-slop | Remover padrões de IA do texto em EN |
 | audit | Auditoria Four Cs — nota 0-100 pro seu sistema |
@@ -152,6 +155,7 @@ SECURITY.md
 | Squad | O que faz |
 |-------|-----------|
 | **instagram-carrossel** | **Produção** de carrossel IG (research→copy→visual→pack). Dono aprova. |
+| **cacador-ops** | Caça gaps/bugs/confusão do sistema (não produz post) |
 | advisory-board | Conselho estratégico (não produz post) |
 | brand | Posicionamento/identidade → gravar em `marca/` |
 | hormozi-squad | Oferta/leads/growth (framework; não é fábrica de feed) |
