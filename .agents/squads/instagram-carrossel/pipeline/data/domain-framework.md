@@ -47,7 +47,7 @@ Este framework define o processo operacional para transformar um texto/notícia 
 2. **Caption assembly**: Copy da legenda com hashtags (5-8) no final
 3. **Validation check**: Formato, dimensões, count de imagens, tamanho de arquivo
 4. **Confirmation**: Apresentar preview completo + aguardar confirmação explícita
-5. **Publish**: Pack em `conteudo/carrosseis/` + handoff humano; opcional `.agents/skills/instagram-publisher` se .env e user pediu
+5. **Publish**: Pack em `conteudo/carrosseis/` + handoff humano; opcional ``.agents/skills/instagram-carrossel/references/publish.md`` se .env e user pediu
 
 ---
 

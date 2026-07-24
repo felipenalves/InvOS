@@ -104,11 +104,21 @@ else
   echo "  ❌ squad instagram-carrossel — FALTA"
   ERROS=$((ERROS+1))
 fi
+# Pacote único: skill instagram-carrossel + references (render/fetch/publish)
+if [ -f ".agents/skills/instagram-carrossel/SKILL.md" ] \
+  && [ -f ".agents/skills/instagram-carrossel/references/render-png.md" ] \
+  && [ -f ".agents/skills/instagram-carrossel/references/fetch-assets.md" ] \
+  && [ -f ".agents/skills/instagram-carrossel/references/publish.md" ] \
+  && [ -f ".agents/skills/instagram-carrossel/scripts/publish.js" ]; then
+  echo "  ✅ skill instagram-carrossel (pacote + references + publish.js)"
+else
+  echo "  ❌ skill instagram-carrossel incompleta (SKILL + references/ + scripts/publish.js)"
+  ERROS=$((ERROS+1))
+fi
+# Skills antigas separadas não devem existir (foram fundidas)
 for f in image-creator image-fetcher instagram-publisher; do
-  if [ -f ".agents/skills/$f/SKILL.md" ]; then
-    echo "  ✅ skill $f (deps carrossel)"
-  else
-    echo "  ❌ skill $f — FALTA (dep do carrossel)"
+  if [ -d ".agents/skills/$f" ]; then
+    echo "  ❌ skill $f ainda existe — deve viver em instagram-carrossel/references/"
     ERROS=$((ERROS+1))
   fi
 done

@@ -16,7 +16,7 @@ depends_on: step-09
 Executar as duas tasks do Davi Design em sequência:
 
 1. **create-slides**: Cria arquivos HTML individuais para cada slide em `output/slides/`, usando a identidade visual selecionada em `output/selected-visual.yaml`. Sempre verificar o slide 1 renderizado antes do batch completo.
-2. **render-export**: Renderiza todos os slides como PNG via skill image-creator, verifica qualidade e gera o manifest em `output/slides/rendered/manifest.json`
+2. **render-export**: Renderiza todos os slides como PNG via references/render-png.md, verifica qualidade e gera o manifest em `output/slides/rendered/manifest.json`
 
 ## Inputs para este Step
 
@@ -34,7 +34,7 @@ Executar as duas tasks do Davi Design em sequência:
 ## Execution Mode
 
 - **Modo:** Inline
-- **Skills permitidas:** image-creator (para renderizar os slides), image-fetcher (se necessário)
+- **Skills permitidas:** render-png (instagram-carrossel) (para renderizar os slides), fetch-assets (se necessário)
 
 ## Quality Gate
 

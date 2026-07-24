@@ -22,7 +22,7 @@ Executar `agents/publisher/tasks/validate-publish.md`.
 - `output/slides/rendered/manifest.json` → lista de imagens prontas para upload
 - `output/carousel-draft.md` → legenda final e hashtags
 - `output/review-final.md` → confirmação de aprovação da qualidade (se Step 12 foi executado)
-- `.agents/skills/instagram-publisher/SKILL.md` → protocolo de publicação
+- `.agents/skills/instagram-carrossel/references/publish.md` → protocolo de publicação
 
 ## Expected Outputs
 
@@ -31,7 +31,7 @@ Executar `agents/publisher/tasks/validate-publish.md`.
 ## Execution Mode
 
 - **Modo:** Inline
-- **Skills:** instagram-publisher (opcional); default = pack + ⚠️ humano
+- **Skills:** publish (instagram-carrossel) (opcional); default = pack + ⚠️ humano
 
 ## Quality Gate
 

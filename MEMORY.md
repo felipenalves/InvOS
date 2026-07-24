@@ -18,11 +18,14 @@
 | `clientes/<slug>/` | Ficha, suporte, propostas, arquivos |
 | `conteudo/_fila.md` | Fila de conteúdo |
 | `conteudo/carrosseis/` | Runs da fábrica IG (PNG + caption) |
+| `.agents/skills/` | Skills canônicas (todas as harnesses) |
+| `.claude/skills/` | Symlinks → `.agents/skills` (Claude Code) |
 | `.agents/squads/instagram-carrossel/` | Squad produção carrossel |
-| `integracoes/composio/` | CLI Composio — opcional |
+| `.agents/squads/advisory-board/` + `brand/` | Bônus estratégia/branding |
+| `integracoes/composio/` | CLI Composio — redes/apps extras |
 
 ## Boot
 
-`AGENTS.md` → skill `session-start`.
+`AGENTS.md` → skill `session-start` (não carregar todos os corpos de SKILL no boot; harness lista descriptions).
 
-Dia a dia: prioridade · cliente · proposta · design-marca · social-content · (opcional) composio.
+Dia a dia: prioridade · cliente · proposta · marca · social/carrossel · Gmail/Notion sob demanda.

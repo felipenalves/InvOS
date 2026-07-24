@@ -7,8 +7,7 @@ icon: "🎨"
 squad: "instagram-carrossel"
 execution: inline
 skills:
-  - image-creator
-  - image-fetcher
+  - instagram-carrossel   # references/render-png.md + fetch-assets.md
 tasks:
   - tasks/define-design-system.md
   - tasks/create-slides.md

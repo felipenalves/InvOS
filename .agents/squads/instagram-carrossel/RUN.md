@@ -22,7 +22,7 @@ Leia:
 2. `memoria/empresa.md` + `memoria/perfil.md`  
 3. `conteudo/_fila.md`  
 4. Este squad: `squad.yaml` + `pipeline/data/tone-of-voice.md` + `anti-patterns.md` + `quality-criteria.md`  
-5. Skills de render: `.agents/skills/image-creator/SKILL.md`  
+5. Skills de render: `.agents/skills/instagram-carrossel/references/render-png.md`  
 6. Se o tema envolver cliente/prova: `clientes/_index.md` ou ficha citada  
 7. Mapa de deps: `DEPENDENCIES.md` (se path falhar)  
 

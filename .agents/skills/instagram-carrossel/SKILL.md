@@ -1,56 +1,79 @@
 ---
 name: instagram-carrossel
 description: >-
-  Carrossel Instagram INVOS. Default = modo MVP (1–2 slides HTML + caption +
-  handoff). Pipeline completo só se o user pedir "fábrica completa" / "squad
-  full". Use: fábrica de carrossel, carrossel Instagram, slides IG, pack carrossel.
+  Instagram no INVOS: carrossel (default MVP 1–2 slides HTML + caption + handoff),
+  opcional render PNG, opcional publish Graph API. Use quando: carrossel, slides IG,
+  fábrica de carrossel, pack carrossel, render PNG dos slides, publica no Instagram
+  (Business + .env). NÃO use para só legenda texto (social-content).
 ---
 
-# Instagram carrossel (INVOS)
+# Instagram carrossel (pacote único)
+
+Uma skill de entrada. Dependências antigas (`image-creator`, `image-fetcher`, `instagram-publisher`) vivem em **`references/`** — o agente carrega o subdoc **só quando o passo exigir**.
+
+```text
+User: carrossel / slides
+        → este SKILL (MVP ou full)
+User: gera PNG / render
+        → references/render-png.md
+User: busca imagem / screenshot pra slide
+        → references/fetch-assets.md
+User: publica no IG (API)
+        → references/publish.md + scripts/publish.js
+```
+
+---
 
 ## Default: modo MVP (dia a dia)
 
-Para prestador que quer **sair em 5–15 min**, **não** rode os 13 steps do squad.
+Prestador em 5–15 min — **não** rode 13 steps do squad.
 
 1. Leia `marca/marca.md` + `memoria/empresa.md` (+ prova em `clientes/` se houver).  
-2. Crie pasta `conteudo/carrosseis/YYYY-MM-DD-kebab/`.  
+2. Pasta `conteudo/carrosseis/YYYY-MM-DD-kebab/`.  
 3. Entregue:
-   - `caption.txt` (legenda colável)  
-   - `slide-01.html` (e opcional `slide-02.html`) — 1080×1350, cores da marca  
-   - `README.md` com: como abrir no browser, Imprimir→PDF/PNG se quiser, ⚠️ postar no app  
-4. Atualize `conteudo/_fila.md` (peça da semana / status).  
-5. Chat: paths + `⚠️ Sua vez: subir no Instagram na ordem`.
+   - `caption.txt`
+   - `slide-01.html` (+ opcional `slide-02.html`) — 1080×1350, cores da marca  
+   - `README.md` (abrir browser / print / ⚠️ postar no app)  
+4. `conteudo/_fila.md` atualizado.  
+5. Chat: paths + `⚠️ Sua vez: subir no Instagram`.
 
-**PNG via Chrome** (`image-creator`): só se o user pedir **e** Chrome/Python existirem.  
-Se não der: HTML + handoff — **não finja** que o squad de 13 steps rodou.
+**PNG:** só se user pedir **e** Chrome/Python ok → siga `references/render-png.md`.  
+Senão: HTML + handoff. **Não finja** pipeline completo.
 
-## Quando rodar a fábrica completa
+## Fábrica completa (opcional)
 
-Só se o user disser explicitamente: **“fábrica completa”**, **“modo squad”**, **“pipeline full”**, **“com research e ângulos”**.
-
-Aí siga na íntegra:
+Só se user disser: **“fábrica completa”**, **“modo squad”**, **“pipeline full”**, **“com research e ângulos”**.
 
 1. `.agents/squads/instagram-carrossel/RUN.md`  
 2. `squad.yaml` + `pipeline/`  
-3. Preferir **modo turbo** do RUN se o user não quiser checkpoints demais.
+3. Preferir modo turbo do RUN.
+
+## Publicar no Instagram (opcional)
+
+Só se user disser **“publica” / “pode postar”** **e** `.env` com tokens Business.
+
+1. Leia `references/publish.md`  
+2. Script: `node --env-file=.env .agents/skills/instagram-carrossel/scripts/publish.js …`  
+3. Sem env / falha → handoff humano. **Nunca** invente permalink.
 
 ## Atalhos
 
-| User diz | Comportamento |
-|----------|----------------|
-| “faz um carrossel” / tema na msg | **MVP** (default) |
-| “modo turbo” + full | Auto-escolhe ângulo/visual no pipeline |
-| “só o pack, eu posto” | MVP ou até handoff |
-| “publica” | Só se integração real; senão ⚠️ |
+| User diz | O que rodar |
+|----------|-------------|
+| “faz um carrossel” / tema | **MVP** deste arquivo |
+| “gera PNG” / “exporta slides” | MVP (se falta HTML) + `references/render-png.md` |
+| “busca imagem pro slide” | `references/fetch-assets.md` |
+| “publica no IG” | pack pronto + `references/publish.md` ou ⚠️ |
+| “só legenda” | **Não** esta skill → `social-content` |
 
-## Relação com outras skills
+## Relação
 
-| Skill | Quando |
-|-------|--------|
-| `social-content` | Só **texto/legenda** — nunca slides PNG |
-| `design-marca` | Marca vazia antes do visual |
-| `image-creator` | Render HTML→PNG (opcional) |
+| Skill / path | Quando |
+|--------------|--------|
+| `social-content` | Texto/legenda sem slides |
+| `design-marca` | Marca vazia |
+| Squad `instagram-carrossel` | Só no modo full |
 
-## Dono do negócio
+## Dono
 
-Mínimo de ações: aprovar copy se pediu full; senão só **subir pack no app**.
+Mínimo: subir pack no app. API e PNG são extras.

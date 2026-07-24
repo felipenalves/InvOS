@@ -7,7 +7,7 @@ icon: "📤"
 squad: "instagram-carrossel"
 execution: inline
 skills:
-  - instagram-publisher
+  - instagram-carrossel   # references/publish.md + scripts/publish.js
 tasks:
   - tasks/validate-publish.md
 ---
@@ -15,7 +15,7 @@ tasks:
 ## Calibration (INVOS)
 
 - **Default:** montar pack em `conteudo/carrosseis/$SLUG/` + caption + `⚠️ Sua vez` (dono posta no app).  
-- **API publish:** só se user pediu e `.env` + skill `instagram-publisher` ok.  
+- **API publish:** só se user pediu e `.env` + `references/publish.md` ok.  
 - **Nunca** inventar URL de post.  
 - Preview completo antes de qualquer API call.
 

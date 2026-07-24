@@ -9,19 +9,19 @@ Auditoria vs OpenSquad (`opensquad-master`). Objetivo: **zero path quebrado** no
 | `npx opensquad` / `bin/opensquad.js` | Não usado |
 | `_opensquad/core/runner.pipeline.md` | `RUN.md` no squad |
 | `_opensquad/_memory/company.md` | `memoria/empresa.md` + `marca/marca.md` |
-| `_opensquad/config/playwright.config.json` | Opcional; Chrome headless no `image-creator` |
+| `_opensquad/config/playwright.config.json` | Opcional; Chrome headless em `references/render-png.md` |
 | Dashboard Phaser | Não usado |
 | `base_agent` registry core | Ignorado — agents são `.custom.md` + tasks |
 
 ## Skills (vendidas no INVOS)
 
-| Skill | Path INVOS | Obrigatória? |
-|-------|------------|--------------|
-| image-creator | `.agents/skills/image-creator/` | Sim pra PNG (Chrome) |
-| image-fetcher | `.agents/skills/image-fetcher/` | Não (só se precisar stock/screenshot) |
-| instagram-publisher | `.agents/skills/instagram-publisher/` | Não (default = handoff) |
-| social-content | `.agents/skills/social-content/` | Não (atalho texto) |
-| instagram-carrossel | `.agents/skills/instagram-carrossel/` | Wrapper do squad |
+| Skill / doc | Path INVOS | Obrigatória? |
+|-------------|------------|--------------|
+| **instagram-carrossel** (entrada) | `.agents/skills/instagram-carrossel/SKILL.md` | Sim (MVP ou full) |
+| render PNG (ex image-creator) | `…/instagram-carrossel/references/render-png.md` | Só se pedir PNG |
+| fetch assets (ex image-fetcher) | `…/instagram-carrossel/references/fetch-assets.md` | Não |
+| publish API (ex publisher) | `…/instagram-carrossel/references/publish.md` + `scripts/publish.js` | Não (default handoff) |
+| social-content | `.agents/skills/social-content/` | Não (só texto/legenda) |
 
 ## Paths internos do squad (ok se relativos ao squad)
 

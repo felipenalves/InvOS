@@ -24,8 +24,11 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 - **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
 - **Produção IG:** skill **`instagram-carrossel`** default **MVP** (HTML+caption); pipeline full opcional
 - **Leve (só texto):** `social-content` + `conteudo/_fila.md`
-- **Opcional:** `integracoes/composio/`
+- **Empresário digital (sob demanda):** `google-workspace` (Gmail etc.), `notion`, `llm-wiki` (pesquisa → KB), `popular-web-designs` (site/UI cliente ou próprio), `pd-ikigai`, `powerpoint`/`ocr`/`nano-pdf`, `apple-*` (macOS)
+- **Composio:** redes/apps extras (IG/TikTok/Telegram…) — **não** substitui skill Gmail/Notion nativa
 - **Estratégia (não é post):** squads advisory-board, brand, hormozi — brand → resumo em `marca/`
+
+**Skills multi-harness:** canônico = `.agents/skills/` (Codex, OpenCode, Grok, Gemini, Antigravity…). Claude Code = `.claude/skills/` (symlinks para o mesmo). Não duplicar conteúdo.
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 
@@ -44,7 +47,10 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE #1** (ou `#2`…) 
 | “O que posto essa semana?” / legenda / post texto | Skill **`social-content`** |
 | “Carrossel” / “faz um carrossel” | Skill **`instagram-carrossel`** **modo MVP** (1–2 HTML + caption). Full pipeline só se pedir “fábrica completa”. |
 | “Call amanhã …” / agendar call com cliente | `_index`: status **`call`**, próximo, dono=humano, desde=hoje + linha no `contexto.md` |
-| “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** |
+| “Gmail / Calendar / Drive / manda e-mail” | Skill **`google-workspace`** (nativa). Composio só se toolkit diferente ou já linkado. |
+| “Notion …” | Skill **`notion`** (em `productivity/notion`) |
+| “Pesquisa e guarda no segundo cérebro / wiki” | Skill **`llm-wiki`** (+ cliente em `clientes/<slug>/` se for do cliente) |
+| “Site / UI estilo X (Stripe, Linear…)” | Skill **`popular-web-designs`** |
 | “Cliente pagou / a receber” | Skill **proposta §6** / checkpoint: `_index` + perfil + entregas + **Próximo** em `projetos.md` + `ativo` (não só uma linha). |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
@@ -144,12 +150,16 @@ SECURITY.md
 | **proposta** | HTML pronto pra enviar (lê `marca/` + `clientes/`) |
 | **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
 | **social-content** | Posts/legendas texto rápido → `conteudo/` |
-| **instagram-carrossel** | Fábrica completa (squad multi-agente) → PNG + caption |
-| humanizer | Remover padrões de IA do texto em PT-BR |
-| stop-slop | Remover padrões de IA do texto em EN |
-| audit | Auditoria Four Cs — nota 0-100 pro seu sistema |
-| notion | CLI/API do Notion — ler, escrever, buscar |
-| pd-ikigai | Encontrar ideia de negócio lucrativa (framework Ikigai) |
+| **instagram-carrossel** | Carrossel IG: default MVP (HTML+caption); full/squad opcional |
+| **google-workspace** | Gmail, Calendar, Drive, Docs, Sheets |
+| **notion** | Notion API/CLI |
+| **llm-wiki** | Wiki/KB interligada (pesquisa → guardar) |
+| **popular-web-designs** | Design systems reais (site/UI) |
+| pd-ikigai | Ikigai / ideia e estratégia de oferta |
+| apple-notes / apple-reminders | Notes e Reminders (macOS) |
+| powerpoint / ocr / nano-pdf | PPTX, OCR, PDF leve |
+| humanizer / stop-slop | Limpar texto IA (PT / EN) |
+| audit | Four Cs — sob demanda |
 
 ## Squads disponíveis
 

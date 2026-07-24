@@ -31,7 +31,7 @@ Cria os arquivos HTML auto-suficientes para cada slide do carrossel, seguindo ri
    - Indicação visual de scroll (ex: arrow icon SVG ou texto "↓")
    - VERIFICAR VISUALMENTE antes de prosseguir
 
-4. **Verificar slide 1 renderizado.** Usar a skill image-creator para renderizar o slide 1 como imagem. Verificar:
+4. **Verificar slide 1 renderizado.** Usar a render-png.md para renderizar o slide 1 como imagem. Verificar:
    - Texto legível e fora das bordas?
    - Contraste adequado?
    - Dado âncora em destaque visual máximo?

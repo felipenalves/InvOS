@@ -3,7 +3,7 @@ task: "Render and Export"
 order: 3
 input:
   - slide_html_files: output/slides/slide-0*.html (todos os arquivos HTML gerados)
-  - image_creator_skill: .agents/skills/image-creator/SKILL.md
+  - image_creator_skill: .agents/skills/instagram-carrossel/references/render-png.md
 output:
   - rendered_images: Imagens PNG renderizadas de cada slide em output/slides/rendered/
   - export_manifest: output/slides/rendered/manifest.json com lista de imagens prontas
@@ -11,11 +11,11 @@ output:
 
 # Render and Export
 
-Renderiza slides HTML → PNG via skill **image-creator** (Chrome headless no INVOS; Playwright opcional).
+Renderiza slides HTML → PNG via skill **render-png** (Chrome headless no INVOS; Playwright opcional).
 
 ## Process
 
-1. **Ler** `.agents/skills/image-creator/SKILL.md` (Chrome headless é o path padrão).
+1. **Ler** `.agents/skills/instagram-carrossel/references/render-png.md` (Chrome headless é o path padrão).
 
 2. **Criar** `output/slides/rendered/` e espelho em `conteudo/carrosseis/$SLUG/rendered/`.
 
@@ -74,7 +74,7 @@ Salvar em `output/slides/rendered/manifest.json`:
 
 ## Critical Notes
 
-1. **image-creator** é o mecanismo. Preferir Chrome headless do SKILL; se falhar, reportar e entregar HTML.
+1. **render-png** é o mecanismo. Preferir Chrome headless do SKILL; se falhar, reportar e entregar HTML.
 
 2. **O slide 1 é a validação antes do batch.** Um erro sistêmico (como falta de fonte ou overflow de container) vai aparecer no slide 1. Corrigi-lo antes de renderizar os demais economiza tempo.
 
@@ -97,4 +97,4 @@ Salvar em `output/slides/rendered/manifest.json`:
 | Fonte não carregada (texto sistema) | Verificar @import no HTML, corrigir e rerenderizar |
 | Texto fora do container | Corrigir CSS do slide problemático e rerenderizar |
 | Arquivo acima de 30MB | Comprimir ou converter para JPEG antes de continuar |
-| Render falha completamente | Verificar se Playwright/image-creator está disponível |
+| Render falha completamente | Verificar se Playwright/render-png está disponível |
