@@ -1,0 +1,17 @@
+{
+  "name": "invos",
+  "version": "1.0.0",
+  "description": "CLI do kit INVOS — cérebro do negócio em arquivos",
+  "type": "module",
+  "bin": {
+    "invos": "./bin/invos.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "files": [
+    "bin/",
+    "src/"
+  ]
+}
