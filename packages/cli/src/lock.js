@@ -1,38 +1,35 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { sha256File, collectFiles, isDenylisted } from './utils.js';
-import { loadManifest } from './manifest.js';
+import { sha256File, collectFiles } from './utils.js';
 
 export function readLock(targetDir) {
   const path = resolve(targetDir, 'INVOS-LOCK.json');
   if (!existsSync(path)) return null;
   try {
-    return JSON.parse(readFileSync(path, 'utf-8'));
+    return JSON.parse(readFileSync(path, 'utf8'));
   } catch {
     return null;
   }
 }
 
 export function writeLock(targetDir, data) {
-  const path = resolve(targetDir, 'INVOS-LOCK.json');
-  writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+  writeFileSync(resolve(targetDir, 'INVOS-LOCK.json'), JSON.stringify(data, null, 2) + '\n');
 }
 
 export function computeShippedSha(kitRoot) {
-  const files = collectFiles(kitRoot, '', true);
   const shipped = {};
-  // INVOS.json itself
   shipped['INVOS.json'] = sha256File(resolve(kitRoot, 'INVOS.json'));
-  for (const f of files) {
+  for (const f of collectFiles(kitRoot, '', true)) {
+    if (f.relPath.startsWith('packages/')) continue;
     shipped[f.relPath] = sha256File(f.fullPath);
   }
   return shipped;
 }
 
-export function buildLock(kitRoot, targetDir, custom = {}) {
+export function buildLock(kitRoot, kitVersion = '2.0.0', custom = {}) {
   const now = new Date().toISOString();
   return {
-    version: '1.0.0',
+    version: kitVersion,
     shippedSha: computeShippedSha(kitRoot),
     custom,
     installedAt: now,
@@ -40,8 +37,9 @@ export function buildLock(kitRoot, targetDir, custom = {}) {
   };
 }
 
-export function updateLockShipped(kitRoot, lock) {
+export function updateLockShipped(kitRoot, lock, kitVersion) {
   lock.shippedSha = computeShippedSha(kitRoot);
   lock.updatedAt = new Date().toISOString();
+  if (kitVersion) lock.version = kitVersion;
   return lock;
 }

@@ -1,175 +1,118 @@
-# AGENTS.md
+# AGENTS.md — INVOS (sistema operacional do negócio)
 
-## Purpose
+Regras de operação **multi-harness** (Claude Code, Codex, Cursor, Grok, OpenCode, Gemini…).  
+`CLAUDE.md` só aponta pra cá (`@AGENTS.md`). Não invente regras fora deste arquivo + `_memoria/`.
 
-This file defines how agents should operate in the **INVOS system** (business memory for any AI agent). Universal for any harness (Claude Code, Codex, OpenCode, Grok, Cursor, Gemini, etc.).
+Esse arquivo é editável. O `/instalar` **complementa o final** com regras do perfil — não apaga o boot.
 
-**SOT multi-harness.** `CLAUDE.md` (se existir) só aponta pra cá (`@AGENTS.md`).  
-O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + este arquivo.
+---
 
-## Required Context Order
+## Contexto do negócio
 
-**Leitura obrigatória no início de TODA sessão:**
+No **início de toda conversa**, ler (quando existirem e estiverem preenchidos):
 
-0. Se for **primeira abertura** do kit, user pediu instalar/setup/“como começo”, ou pasta ainda se chama `invos-kit`: leia e siga **`COMECE-AQUI.md`** (instalação, renomear pasta, duplicar template de cliente).
-1. Carregar skill `session-start` — lê `memoria/*` core, `clientes/_index.md`, `marca/marca.md`, último histórico
-2. **Onboard obrigatório se a memória ainda for template.** Disparar skill `onboard` **antes** de anunciar estado ou continuar o trabalho se **qualquer** um for verdadeiro:
-   - `memoria/empresa.md` contém `[o que` **ou** `[seu nome]` **ou** `PREENCHA`
-   - `memoria/projetos.md` contém `PREENCHA`
-   - `memoria/ativo.md` contém `primeira sessão`
-3. Se a memória já está configurada: anunciar estado (founder, oferta, cliente ideal, projeto, foco) e **provar segunda sessão** em 1 parágrafo — **sem** re-entrevistar
-4. `memoria/` está carregado, seguir para o que o usuário pedir
+1. `_memoria/empresa.md` — quem é o usuário, o que faz, como funciona o negócio  
+2. `_memoria/preferencias.md` — tom de voz, estilo de escrita, o que evitar  
+3. `_memoria/estrategia.md` — foco atual, prioridades, prazos  
 
-**Core vs bônus:**
-- **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
-- **Produção IG:** skill **`instagram-carrossel`** default **MVP** (HTML+caption); pipeline full opcional
-- **Leve (só texto):** `social-content` + `conteudo/_fila.md`
-- **Empresário digital (sob demanda):** `google-workspace` (Gmail etc.), `notion`, `llm-wiki` (pesquisa → KB), `popular-web-designs` (site/UI cliente ou próprio), `pd-ikigai`, `powerpoint`/`ocr`/`nano-pdf`, `apple-*` (macOS)
-- **Composio:** redes/apps extras (IG/TikTok/Telegram…) — **não** substitui skill Gmail/Notion nativa
-- **Estratégia (não é post):** squads advisory-board, brand, hormozi — brand → resumo em `marca/`
+Usar como base pra qualquer resposta ou decisão. Ao priorizar, considerar o foco em `estrategia.md`.
 
-**Skills multi-harness:** canônico = `.agents/skills/` (Codex, OpenCode, Grok, Gemini, Antigravity…). Claude Code = `.claude/skills/` (symlinks para o mesmo). Não duplicar conteúdo.
+Pra tarefa visual (carrossel, post, landing): consultar `marca/design-guide.md`.
 
-**Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
+**Não** listar o que foi lido. Só usar o contexto.
 
-## Dia a dia do prestador (rituais)
+### Primeira vez
 
-Prioridade de projeto no inventário = linha com **PRIORIDADE #1** (ou `#2`…) em `memoria/projetos.md` (não invente).
+Se a memória ainda for placeholder / vazia → skill **`instalar`** antes de qualquer outra coisa.
 
-| O user diz (ou similar) | Você faz |
-|-------------------------|----------|
-| “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + dono + próximo passo (`ativo` + PRIORIDADE em `projetos` + `_index` clientes). Se dono=agente → execute ou ofereça executar. Se dono=humano → `⚠️ Sua vez:`. |
-| “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/` + linha no `_index`. |
-| “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche + **1 linha em `_index`**. Detalhe: `COMECE-AQUI.md` passo 4. |
-| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML em `clientes/<slug>/propostas/*.html`; brand de **`marca/marca.md`**; `_index` com valor/pagto; msg de envio + Fila humana. |
-| “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
-| “Extrai marca do site” / cores / logo | Skill **`design-marca`** → `marca/marca.md` + `marca/assets/`. |
-| “O que posto essa semana?” / legenda / post texto | Skill **`social-content`** |
-| “Carrossel” / “faz um carrossel” | Skill **`instagram-carrossel`** **modo MVP** (1–2 HTML + caption). Full pipeline só se pedir “fábrica completa”. |
-| “Call amanhã …” / agendar call com cliente | `_index`: status **`call`**, próximo, dono=humano, desde=hoje + linha no `contexto.md` |
-| “Gmail / Calendar / Drive / manda e-mail” | Skill **`google-workspace`** (nativa). Composio só se toolkit diferente ou já linkado. |
-| “Notion …” | Skill **`notion`** (em `productivity/notion`) |
-| “Pesquisa e guarda no segundo cérebro / wiki” | Skill **`llm-wiki`** (+ cliente em `clientes/<slug>/` se for do cliente) |
-| “Site / UI estilo X (Stripe, Linear…)” | Skill **`popular-web-designs`** |
-| “Cliente pagou / a receber” | Skill **proposta §6** / checkpoint: `_index` + perfil + entregas + **Próximo** em `projetos.md` + `ativo` (não só uma linha). |
-| Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
+---
 
-**Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`. **Integrações:** `integracoes/README.md` (opcional).
+## Fluxo de trabalho
 
-**Toda task tem dono** (`agente` | `humano`) — `memoria/regras/task-com-dono.md`. Pendência > 3 dias → alerta no boot.
+1. Antes de executar: se existir skill relevante em **`.agents/skills/`** (canônico), **seguir a skill**.  
+   Claude Code também vê as mesmas skills via symlink em `.claude/skills/`.
+2. Se não houver skill, executar a tarefa.  
+3. Se a tarefa for **repetível**, perguntar:  
+   > "Isso pode virar uma skill pra próxima vez. Quer que eu crie?"  
+   → `mapear-rotinas` se sim.
 
-## Proactive Behavior
+Não perguntar em tarefa pontual ou pergunta simples.
 
-During the session, automatically invoke `session-checkpoint` when you detect:
+---
 
-- **Decisão arquitetural ou de produto:** "vamos usar X em vez de Y", "mudamos de direção"
-- **Lição aprendida:** algo quebrou e descobrimos o porquê
-- **Escopo alterado:** feature cortada, nova prioridade, prazo mudou
-- **Deploy / release:** algo foi pra produção
-- **Link ou documento relevante:** URL, PR, issue que precisa ser registrada
-- **Insight estratégico:** conexão entre coisas, epifania sobre o negócio
-- **Comercial:** lead, DM, proposta, call, status de cliente
-- **Call agendada:** `_index` status=`call` + contexto do cliente (não só texto solto no chat)
-- **Task só humana:** grava **Fila humana** + alerta `⚠️ Sua vez:`
-- **Usuário diz qualquer gatilho:** "guarda isso", "anota", "não esquece"
+## Aprender com correções
 
-Não pergunte "quer que eu salve?" — apenas salve e avise "Checkpoint salvo: [tipo]". Se o usuário não quiser, ele vai falar.
+Correção permanente (“sempre…”, “não faça…”, “prefiro…”, “da próxima vez…”):
 
-**Execução:** o que for dono=`agente` e estiver no escopo do chat/repo — faça. Não empurre pro humano por preguiça.
+> "Quer que eu salve isso pra não precisar repetir?"
 
-**Estado vivo:** se `_index` (pagto/status) contradiz `ativo`/`projetos` “Próximo”, **alinhe o disco** (verdade = pipeline + o que o user disse na sessão). Não deixe a 2ª sessão com “enviar proposta” se já pagou.
+| Tipo | Onde |
+|------|------|
+| Negócio (clientes, serviços, mercado) | `_memoria/empresa.md` |
+| Preferências / tom | `_memoria/preferencias.md` |
+| Prioridades / foco | `_memoria/estrategia.md` |
+| Regra de comportamento do workspace | **este** `AGENTS.md` (final do arquivo, seção do perfil) |
 
-## Proactive Content — Formato Seriado
+Uma linha nova. Não reformatar o arquivo inteiro. Confirmar a linha salva.
 
-Toda ação relevante vira conteúdo. Mas conteúdo isolado não prende. O formato é **seriado** — como um programa de TV sobre construir o negócio em público.
+Só perguntar quando a info tiver valor duradouro (não em correção óbvia de contexto).
 
-### Estrutura de cada episódio
+---
 
-Cada conteúdo precisa ter:
+## Manter contexto atualizado
 
-1. **Cena** — onde estamos agora (o problema, o momento, a decisão)
-2. **Tentativa** — o que eu fiz pra resolver
-3. **Resultado** — o que aconteceu (acertei? errei?)
-4. **Próximo episódio** — o que vem a seguir (gancho pra continuar assistindo)
+Ao terminar tarefa que mudou algo relevante (cliente, foco, processo, skill, estrutura):
 
-O ICP precisa sentir que se ele perder o próximo episódio, ele perdeu algo.
+> "Isso mudou algo no teu contexto. Quer que eu atualize a memória?"
 
-### Exemplo aplicado
+| Mudança | Onde |
+|---------|------|
+| Cliente, serviço, equipe, ferramenta | `_memoria/empresa.md` |
+| Prioridade / foco | `_memoria/estrategia.md` |
+| Tom / estilo | `_memoria/preferencias.md` |
+| Pasta / regra de organização / skill | `AGENTS.md` |
+| Visual | `marca/design-guide.md` |
 
-"Episódio 1: Toda vez que abro meu Claude, ele me trata como estranho. Cena: to há 15 minutos reexplicando quem sou. Tentativa: criei um template que responde 6 perguntas. Resultado: agora ele sabe meu nome, meu cliente, meu projeto. Próximo episódio: mostrar os bônus que botei dentro."
+Mostrar o diff antes de salvar. **Não** perguntar em tarefa pontual sem impacto.
 
-### Regras do formato
+Dica: `/atualizar` pra varredura completa.
 
-- **ICP é o protagonista**, não eu. Ele se vê na cena.
-- **Sem nome de famoso**, sem framework importado. "Seu agente te trata como estranho" → ele sente.
-- **Gancho no final** de todo conteúdo. "Amanhã vou mostrar como coloquei um consultor de vendas dentro do template."
-- **Realidade, não perfeição.** Mostrar o erro, a tentativa, o aprendizado. Isso é o que prende.
+---
 
-### Gatilhos
+## Criação de skills
 
-Quando detectar evento (commit, decisão, bug, feature, aprendizado):
-1. Traduz em cena do ICP ("você já passou por isso?")
-2. Enquadra como episódio ("Episódio X: [título que o ICP falaria]")
-3. Define gancho ("Próximo episódio: [o que vem]")
+Quando o usuário pedir skill nova:
 
-Apresente como: "Episódio: [título na voz do ICP]. Cena: [onde ele está]. Gancho: [próximo]."
-Não peça permissão — sugira e siga. Se o usuário ignorar, guarde no checkpoint.
+1. Ver se já existe skill em `.agents/skills/`  
+2. Local do projeto → `.agents/skills/<nome>/SKILL.md` + symlink em `.claude/skills/<nome>` apontando pra ela
+3. Calibrar com `_memoria/empresa.md` e `preferencias.md`  
+4. Arquivos de apoio dentro da pasta da skill  
 
-## Core Behavior
+---
 
-- Treat `memoria/` as real operating data, not demo content.
-- Do not leak secrets, keys, or local machine paths into tracked files.
-- Do not push automatically.
-- Do not commit automatically unless the user explicitly asks.
-- Verify changes before claiming success.
-- Prefer the smallest correct change.
+## Squads (opcional — times multi-agente)
 
-## Denylist Paths
+Pasta: **`.agents/squads/`** (mapa: `README.md`).
 
-Nunca auto-editar sem human gate:
+| Squad | Uso |
+|-------|-----|
+| `advisory-board` | Conselho pra decisão / direção |
+| `brand` | Posicionamento e identidade |
+| `hormozi-squad` | Oferta, leads, growth |
 
-```
-.env*
-**/secrets/**
-**/credentials/**
-**/*_key*
-**/*_secret*
-**/token*
-**/auth*
-SECURITY.md
-```
+Carrossel IG = skill **`/carrossel`**. Não use advisory/hormozi pra “fazer o post”.
 
-## Skills disponíveis
+---
 
-| Skill | Quando usar |
-|-------|-------------|
-| session-start | Início de toda sessão |
-| session-end | Fim da sessão |
-| session-checkpoint | Durante a sessão (automático) |
-| onboard | Primeiro uso (automático) — entrevista inicial |
-| **proposta** | HTML pronto pra enviar (lê `marca/` + `clientes/`) |
-| **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
-| **social-content** | Posts/legendas texto rápido → `conteudo/` |
-| **instagram-carrossel** | Carrossel IG: default MVP (HTML+caption); full/squad opcional |
-| **google-workspace** | Gmail, Calendar, Drive, Docs, Sheets |
-| **notion** | Notion API/CLI |
-| **llm-wiki** | Wiki/KB interligada (pesquisa → guardar) |
-| **popular-web-designs** | Design systems reais (site/UI) |
-| pd-ikigai | Ikigai / ideia e estratégia de oferta |
-| apple-notes / apple-reminders | Notes e Reminders (macOS) |
-| powerpoint / ocr / nano-pdf | PPTX, OCR, PDF leve |
-| humanizer / stop-slop | Limpar texto IA (PT / EN) |
-| audit | Four Cs — sob demanda |
+## Comportamento
 
-## Squads disponíveis
+- `_memoria/` e dados do negócio são **reais**, não demo.  
+- Não commit/push sozinho — skill **`salvar`** quando o user pedir.  
+- Não vazar secrets.  
+- Mudança mínima que resolve.
 
-| Squad | O que faz |
-|-------|-----------|
-| **instagram-carrossel** | **Produção** de carrossel IG (research→copy→visual→pack). Dono aprova. |
-| advisory-board | Conselho estratégico (não produz post) |
-| brand | Posicionamento/identidade → gravar em `marca/` |
-| hormozi-squad | Oferta/leads/growth (framework; não é fábrica de feed) |
+---
 
-Ver `.agents/squads/index.md`.
+## Perfil do negócio
 
-Ver `.agents/skills/` para detalhes de cada uma.
+*(Preenchido / adaptado pelo `/instalar` a partir de `templates/perfis/`. Não apague o boot acima.)*

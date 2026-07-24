@@ -2,103 +2,70 @@ import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { loadManifest } from '../manifest.js';
 import { readLock } from '../lock.js';
-import { checkClaudeSymlinks } from '../symlinks.js';
-
-const ESSENTIAL_FILES = [
-  'AGENTS.md', 'MEMORY.md', 'SECURITY.md', '.env.example', 'COMECE-AQUI.md',
-  'INVOS.json',
-];
-
-const ESSENTIAL_DIRS = [
-  'memoria', 'marca', 'clientes', 'conteudo', 'scripts',
-  '.agents/skills', '.agents/squads',
-];
+import { checkClaudeSymlinks, syncClaudeSymlinks } from '../symlinks.js';
 
 export async function doctor(kit, kitRoot, targetDir, args) {
   const fix = args.includes('--fix');
-  let allOk = true;
-  const report = [];
+  let ok = true;
+  const r = [];
 
-  report.push('INVOS Doctor — ' + targetDir);
+  r.push('INVOS Doctor — ' + targetDir);
 
-  // 1. Essential files
-  let filesOk = 0;
-  for (const f of ESSENTIAL_FILES) {
-    const p = resolve(targetDir, f);
-    if (existsSync(p)) {
-      filesOk++;
-    } else {
-      report.push('  ✗ ' + f + ' — missing');
-      allOk = false;
-    }
-  }
-  report.push('  Files: ' + filesOk + '/' + ESSENTIAL_FILES.length);
-
-  // 2. Essential dirs
-  let dirsOk = 0;
-  for (const d of ESSENTIAL_DIRS) {
-    const p = resolve(targetDir, d);
-    if (existsSync(p)) {
-      dirsOk++;
-    } else {
-      report.push('  ✗ ' + d + '/ — missing');
-      allOk = false;
-    }
-  }
-  report.push('  Dirs: ' + dirsOk + '/' + ESSENTIAL_DIRS.length);
-
-  // 3. Skills vs manifest
-  const man = loadManifest(resolve(targetDir, 'INVOS.json'));
-  const agentsSkillsDir = resolve(targetDir, '.agents', 'skills');
-  const manifestSkills = man?.seed?.skills || [];
-
-  if (existsSync(agentsSkillsDir)) {
-    const present = readdirSync(agentsSkillsDir).filter(e => {
-      return existsSync(resolve(agentsSkillsDir, e, 'SKILL.md'));
-    });
-    const missing = manifestSkills.filter(s => {
-      if (s === 'notion') {
-        return !existsSync(resolve(targetDir, '.claude', 'skills', 'notion'));
-      }
-      return !present.includes(s);
-    });
-    if (missing.length > 0) {
-      report.push('  Skills missing: ' + missing.join(', '));
-      allOk = false;
-    } else {
-      report.push('  Skills: all ' + manifestSkills.length + ' present');
+  for (const f of ['AGENTS.md', 'CLAUDE.md', 'INVOS.json']) {
+    if (existsSync(resolve(targetDir, f))) r.push('  ✓ ' + f);
+    else {
+      r.push('  ✗ ' + f);
+      ok = false;
     }
   }
 
-  // 4. Lock file
+  const mem = existsSync(resolve(targetDir, '_memoria')) || existsSync(resolve(targetDir, 'memoria'));
+  if (mem) r.push('  ✓ _memoria|memoria');
+  else {
+    r.push('  ✗ memory dir');
+    ok = false;
+  }
+
+  const skillsDir = resolve(targetDir, '.agents/skills');
+  if (existsSync(skillsDir)) {
+    const n = readdirSync(skillsDir).filter(e =>
+      existsSync(resolve(skillsDir, e, 'SKILL.md')),
+    ).length;
+    r.push(`  ✓ skills: ${n}`);
+    if (n < 5) ok = false;
+  } else {
+    r.push('  ✗ .agents/skills');
+    ok = false;
+  }
+
   const lock = readLock(targetDir);
-  if (lock) {
-    report.push('  Lock: ✓ (' + lock.version + ', installed ' + (lock.installedAt ? lock.installedAt.substring(0, 10) : '?') + ')');
+  if (lock) r.push(`  ✓ lock v${lock.version}`);
+  else {
+    r.push('  ✗ INVOS-LOCK.json');
+    ok = false;
+  }
+
+  if (fix) {
+    syncClaudeSymlinks(kitRoot, targetDir);
+    r.push('  --fix: symlinks');
+  }
+
+  const sym = checkClaudeSymlinks(targetDir);
+  if (sym.ok) r.push('  ✓ .claude symlinks');
+  else {
+    r.push('  ✗ symlinks: ' + sym.errors.slice(0, 3).join('; '));
+    ok = false;
+  }
+
+  const man = loadManifest(resolve(targetDir, 'INVOS.json'));
+  r.push(`  kit ${man?.version || kit?.version || '?'}`);
+  r.push('  update: npm package kit (npx invos@latest update)');
+
+  console.log(r.join('\n'));
+  if (!ok) {
+    console.log('  Status: ⚠️');
+    process.exitCode = 1;
   } else {
-    report.push('  Lock: ✗ INVOS-LOCK.json missing');
-    allOk = false;
+    console.log('  Status: ✓');
   }
-
-  // 5. Claude symlinks
-  const symCheck = checkClaudeSymlinks(targetDir);
-  if (symCheck.ok) {
-    report.push('  Symlinks: ✓');
-  } else {
-    report.push('  Symlinks: ✗ ' + symCheck.errors.join('; '));
-    allOk = false;
-  }
-
-  // 6. Version
-  report.push('  Kit version: ' + (man?.version || 'unknown'));
-
-  console.log(report.join('\n'));
-
-  if (!allOk) {
-    console.log('  Status: ⚠️  issues found');
-    if (fix) console.log('  Run: invos install');
-    else console.log('  Run: invos doctor --fix');
-    return;
-  }
-
-  console.log('  Status: ✓ all checks passed');
 }

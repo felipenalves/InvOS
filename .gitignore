@@ -1,35 +1,30 @@
-# === INV Starter Kit — .gitignore ===
-# Segurança: nunca versionar chaves, tokens ou dados sensíveis
+# Sistema operacional
+.DS_Store
+Thumbs.db
 
-# Ambiente
-.env
-.env.*
-.env.local
-.env.production
-.env.development
+# Editores
+.vscode/
+.idea/
 
-# Arquivos locais
-*.local
-*.secret
-secrets/
-credentials/
+# Claude Code (sessões locais, não devem ir pro repo)
+.claude/projects/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/telemetry/
+.claude/file-history/
+.claude/backups/
 
 # Dependências
 node_modules/
-vendor/
-dist/
-build/
 
-# Sistema
-.DS_Store
-Thumbs.db
+# Arquivos temporários
 *.log
-.cache/
+*.tmp
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
+# Drop zone do usuário (só o README vai versionado)
+dados/*
+!dados/README.md
+
+# CLI bundled kit (generated)
 packages/cli/kit/
+

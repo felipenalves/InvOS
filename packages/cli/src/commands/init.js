@@ -1,44 +1,55 @@
-import { existsSync, mkdirSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { collectFiles, copyFileWithDirs, ensureDir } from '../utils.js';
+import { existsSync } from 'node:fs';
+import { resolve, basename } from 'node:path';
+import { collectFiles, copyFileWithDirs, ensureDir, isDevPath } from '../utils.js';
 import { buildLock, writeLock } from '../lock.js';
 import { syncClaudeSymlinks } from '../symlinks.js';
 
 export async function init(kit, kitRoot, args) {
-  const idx = args.indexOf('--dir');
-  let targetDir;
-  if (idx !== -1 && args[idx + 1]) {
-    targetDir = resolve(process.cwd(), args[idx + 1]);
-  } else {
-    targetDir = resolve(process.cwd(), args[0] || '.');
+  let name = null;
+  let targetDir = null;
+  const rest = [...args];
+
+  for (let i = 0; i < rest.length; i++) {
+    if (rest[i] === '--name' && rest[i + 1]) {
+      name = rest[i + 1];
+      rest.splice(i, 2);
+      i--;
+    } else if (rest[i] === '--dir' && rest[i + 1]) {
+      targetDir = resolve(process.cwd(), rest[i + 1]);
+      rest.splice(i, 2);
+      i--;
+    }
   }
 
-  if (targetDir === '.' || !args[0]) {
-    targetDir = process.cwd();
+  if (!targetDir) {
+    const slug = name || rest[0];
+    targetDir = slug && slug !== '.'
+      ? resolve(process.cwd(), slug)
+      : process.cwd();
   }
 
-  if (existsSync(targetDir) && targetDir !== process.cwd()) {
-    console.error(`Directory ${targetDir} already exists. Use install for existing projects.`);
+  if (existsSync(resolve(targetDir, 'AGENTS.md')) && existsSync(resolve(targetDir, 'INVOS-LOCK.json'))) {
+    console.error('Já parece INVOS. Use: npx invos install --dir', targetDir);
     process.exit(1);
   }
 
   ensureDir(targetDir);
-  const files = collectFiles(kitRoot, '', true);
-
-  let count = 0;
+  const files = collectFiles(kitRoot, '', true).filter(f => !isDevPath(f.relPath));
+  let n = 0;
   for (const f of files) {
     const dest = resolve(targetDir, f.relPath);
-    copyFileWithDirs(f.fullPath, dest);
-    count++;
+    if (!existsSync(dest)) {
+      copyFileWithDirs(f.fullPath, dest);
+      n++;
+    }
   }
 
-  // Generate lock
-  const lock = buildLock(kitRoot, targetDir);
+  const lock = buildLock(kitRoot, kit.version || '2.0.0');
   writeLock(targetDir, lock);
-
-  // Symlinks
   syncClaudeSymlinks(kitRoot, targetDir);
 
-  console.log(`✓ invos init complete — ${count} files in ${targetDir}`);
-  console.log('  Run: cd ' + targetDir + ' && npx invos doctor');
+  console.log(`✓ invos init — ${n} files → ${targetDir}`);
+  console.log(`  kit ${kit.version || '?'}`);
+  console.log(`  Next: open folder → /instalar`);
+  console.log(`  Doctor: npx invos doctor --dir ${basename(targetDir)}`);
 }

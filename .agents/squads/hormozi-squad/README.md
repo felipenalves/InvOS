@@ -8,8 +8,7 @@ Este squad é **consultoria de oferta / leads / crescimento** (frameworks Hormoz
 | Pedido do user | O que fazer |
 |----------------|-------------|
 | “melhora minha oferta”, “roda hormozi” | Diagnóstico/estratégia em 1 página (`conteudo/` ou chat) |
-| “posta isso no IG” | Usar `social-content` ou `instagram-carrossel` MVP + ⚠️ humano |
-| “publica sozinho” | Recusar sem integração real |
+| “publica sozinho” / “posta no IG” | Fora do escopo deste squad |
 
 ## Quick start (avançado)
 

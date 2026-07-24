@@ -1,39 +1,32 @@
-# invos
-
-CLI do **INVOS** — sistema de memória multi-agente em arquivos (prioridade, clientes, proposta, conteúdo).
-
-## Install
+# invos (CLI) — INVOS v2
 
 ```bash
-npx invos@latest init meu-negocio
-# ou
-npm i -g invos
-invos init meu-negocio
+npx invos init --name meu-negocio
+npx invos install
+npx invos update          # sem token — kit no npm
+npx invos doctor
 ```
 
-## Commands
-
-| Command | What it does |
-|---------|----------------|
-| `invos init [dir]` | Cria pasta nova com o kit |
-| `invos install` | Injeta INVOS no diretório atual (repo existente) |
-| `invos update` | Atualiza skills/sistema; **não** mexe em `memoria/` / clientes reais |
-| `invos doctor` | Valida instalação |
-
-## After init
+## Release (você)
 
 ```bash
-cd meu-negocio
-# Abra no Claude / Cursor / Codex / Grok
-# Diga: Segue o COMECE-AQUI
+cd packages/cli
+npm run bundle-kit        # empacota raiz InvOS.v2 → kit/
+npm version patch
+npm publish --access public
 ```
 
-## Env (opcional)
+Comunidade: `npx invos@latest update`
 
-| Var | Uso |
-|-----|-----|
-| `INVOS_KIT_PATH` | Override do kit (dev / kit custom) |
+## O que o update não toca
 
-## Site
+`_memoria/`, `marca/*` (conteúdo), `clientes/`, `marketing/*` gerado, `saidas/`, `dados/` real, `.env`
 
-https://inovadigitalid.com/invos
+## Dev
+
+```bash
+cd packages/cli
+npm run bundle-kit
+node bin/invos.js init --name smoke /tmp/invos-v2-smoke
+node bin/invos.js doctor --dir /tmp/invos-v2-smoke
+```

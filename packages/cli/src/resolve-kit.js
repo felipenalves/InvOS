@@ -5,29 +5,30 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
- * Kit source resolution (first hit wins):
- * 1. INVOS_KIT_PATH env
- * 2. Bundled kit next to package (npm install / npx)
- * 3. Monorepo layout: packages/cli → invos root
+ * 1. INVOS_KIT_PATH
+ * 2. packages/cli/kit (bundled — npm)
+ * 3. parent InvOS.v2 root (dev)
  */
 export function resolveKitRoot() {
   if (process.env.INVOS_KIT_PATH) {
     const p = resolve(process.env.INVOS_KIT_PATH);
     if (existsSync(resolve(p, 'INVOS.json'))) return p;
-    console.error('INVOS_KIT_PATH set but INVOS.json missing:', p);
+    console.error('INVOS_KIT_PATH without INVOS.json:', p);
     process.exit(1);
   }
 
   const bundled = resolve(__dirname, '../kit');
   if (existsSync(resolve(bundled, 'INVOS.json'))) return bundled;
 
-  const monorepo = resolve(__dirname, '../../..');
-  if (existsSync(resolve(monorepo, 'INVOS.json'))) return monorepo;
+  // packages/cli → ../.. = InvOS.v2 root
+  const v2 = resolve(__dirname, '../..');
+  if (existsSync(resolve(v2, 'INVOS.json'))) return v2;
 
   console.error(`
-INVOS kit not found.
-- Reinstall: npm i -g invos@latest  (or npx invos@latest)
-- Or set: export INVOS_KIT_PATH=/path/to/invos-kit
+Kit INVOS v2 não encontrado.
+- Dev: rode a partir de InvOS.v2 (tem INVOS.json na raiz)
+- Publish: npm run bundle-kit
+- Override: export INVOS_KIT_PATH=/path/to/InvOS.v2
 `);
   process.exit(1);
 }
