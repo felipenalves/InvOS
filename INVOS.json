@@ -7,7 +7,7 @@
     "distribution": "private",
     "checkout": "hotmart+npm",
     "cli": "npx invos",
-    "github": "felipenalves/InvOS"
+    "github": "felipenalves/invos"
   },
   "seed": {
     "skills": [
