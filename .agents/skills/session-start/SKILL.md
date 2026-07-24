@@ -55,6 +55,11 @@ Sempre o **índice** (pipeline + valor/pagto). Não ler pastas `clientes/<slug>/
 Se houver linhas com `dono=humano` e `desde` > 3 dias → alerta de atraso.  
 Se houver `pagto` pendente/parcial com valor → citar “a receber” em 1 linha no anúncio.
 
+**Estado vivo (autocorreção leve):** se `_index` diz `pagto=pago` e `memoria/projetos.md` ou `ativo.md` ainda mandam “enviar proposta” / missão de onboard já concluída:
+1. No anúncio, use a **verdade do `_index`/histórico** como prioridade.  
+2. **Corrija** projetos Próximo + ativo (missão/filas) sem perguntar — 1 linha no chat: `Estado alinhado: [slug] pago · próximo [entrega].`  
+3. Não reescreva histórico; só estado vivo.
+
 ### 7b. Ler `marca/marca.md` (resumo)
 
 Ler só se existir. Se ainda for template (`[ex:` ou `Logo presente? não` e sem cor real) **e** o user tiver site em empresa/marca: no anúncio, 1 linha opcional — “Marca incompleta; diga *extrai marca do site*”.

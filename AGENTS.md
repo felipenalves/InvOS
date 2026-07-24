@@ -44,7 +44,7 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE #1** (ou `#2`…) 
 | “O que posto essa semana?” / legenda / post texto | Skill **`social-content`** |
 | “Carrossel IG” / “fábrica de carrossel” / “produz conteúdo Instagram” | Squad + skill **`instagram-carrossel`** → `RUN.md` (time executa; dono aprova) |
 | “Conecta Gmail / planilha / manda e-mail” | `integracoes/composio/` — **CLI** |
-| “Cliente pagou / a receber” | Atualiza `_index` colunas **valor** / **pagto**. |
+| “Cliente pagou / a receber” | Skill **proposta §6** / checkpoint: `_index` + perfil + entregas + **Próximo** em `projetos.md` + `ativo` (não só uma linha). |
 | Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
 **Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`. **Integrações:** `integracoes/README.md` (opcional).
@@ -68,6 +68,8 @@ During the session, automatically invoke `session-checkpoint` when you detect:
 Não pergunte "quer que eu salve?" — apenas salve e avise "Checkpoint salvo: [tipo]". Se o usuário não quiser, ele vai falar.
 
 **Execução:** o que for dono=`agente` e estiver no escopo do chat/repo — faça. Não empurre pro humano por preguiça.
+
+**Estado vivo:** se `_index` (pagto/status) contradiz `ativo`/`projetos` “Próximo”, **alinhe o disco** (verdade = pipeline + o que o user disse na sessão). Não deixe a 2ª sessão com “enviar proposta” se já pagou.
 
 ## Proactive Content — Formato Seriado
 

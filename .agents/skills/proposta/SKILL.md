@@ -112,15 +112,31 @@ Qualquer ajuste é só falar.
 + path do HTML + “Imprimir → PDF” + PDF pode ir em `arquivos/`  
 + `⚠️ Sua vez: enviar pro cliente`
 
-### 5. Atualizar sistema
+### 5. Atualizar sistema (depois de gerar)
 
 - `contexto.md` se fechou escopo/valor  
 - **`_index`:** status `proposta` ou `enviado`, **valor**, **pagto=pendente**, próximo=enviar, dono=humano, desde=hoje  
 - `perfil.md` do cliente: valor + pagto se souber  
-- `ativo` → Fila humana  
+- `entregas.md`: 1 linha na tabela (data · proposta enviável path · rascunho/enviado)  
+- `ativo` → Fila humana enviar  
 - **Não** invente cases/logo
 
-Quando o user disser que **pagou**: atualize `_index` pagto=`pago` (e perfil).
+### 6. Evento **“cliente pagou”** / “marcou pago” / “fechou o deal”
+
+Gatilhos: “pagou”, “cliente pagou”, “recebi o pix”, “fechou”, “deal pago”.
+
+**Atualizar tudo na hora (não só o `_index`):**
+
+| Onde | O quê |
+|------|--------|
+| `clientes/_index.md` | status=`ativo` (ou encerrado se for o caso), **pagto=pago**, **próximo**=entrega (wire/kickoff), dono=`agente` se houver trabalho no repo, desde=hoje |
+| `clientes/<slug>/perfil.md` | status + pagto + próximo passo da entrega |
+| `clientes/<slug>/contexto.md` | 1 linha na tabela: data · “pagamento confirmado · R$ …” |
+| `clientes/<slug>/entregas.md` | linha: data · “proposta aceita / kickoff” · aprovado; em andamento = entrega |
+| `memoria/projetos.md` | no bloco do cliente/deal: **Próximo** = entrega (nunca deixar “enviar proposta” se já pagou) |
+| `memoria/ativo.md` | missão = entrega; Fila agente com o próximo passo; remover “enviar proposta” da Fila humana se existir |
+
+Confirmar no chat: `Checkpoint salvo: pagto — [slug] pago · próximo: [entrega]`.
 
 ---
 

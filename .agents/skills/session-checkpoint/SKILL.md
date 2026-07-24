@@ -21,6 +21,7 @@ Registra momentos importantes DURANTE a sessão, sem precisar esperar o fim.
 - Deploy ou mudança em produção
 - Link/documento relevante descoberto
 - **Comercial:** lead, DM, resposta, proposta, call, mudança de status de cliente
+- **Pagamento:** “pagou”, “recebi”, “fechou o deal” → seguir skill **proposta §6** (estado vivo completo)
 - **Task:** pendência só do humano → **Fila humana** + alerta `⚠️ Sua vez:`
 
 ## Sequence
@@ -48,9 +49,10 @@ Registra momentos importantes DURANTE a sessão, sem precisar esperar o fim.
 - **Task agente**: linha em `## Fila agente` com `desde:` + `done quando:`
 - **Task humana**: linha em `## Fila humana` + chat: `⚠️ Sua vez: …`
 - **Cliente:** atualize `clientes/_index.md`; ficha em `clientes/<slug>/` (copiar de `_template/` se novo).  
-  Arquivos (html/pdf/img/md) → `clientes/<slug>/arquivos/`. Propostas → `propostas/`. Log → `entregas.md`.
+  Arquivos → `arquivos/`. Propostas → `propostas/`. Log → `entregas.md`.
+- **Pagou:** skill `proposta` seção **“cliente pagou”** — `_index` + perfil + contexto + entregas + `projetos.md` Próximo + `ativo` (não só uma linha no índice).
 
-Não reescreva arquivos inteiros — apenas insira ou atualize a linha relevante.
+Não reescreva arquivos inteiros — apenas insira ou atualize a linha relevante (exceto `ativo` se a missão mudou de verdade).
 
 ### 3. Se for regra, criar arquivo permanente
 

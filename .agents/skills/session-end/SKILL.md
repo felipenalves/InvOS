@@ -66,9 +66,20 @@ Se decisões foram tomadas, adicione linhas na tabela correta:
 
 Se status de projeto ou cliente mudou, atualize a linha relevante (não reescreva o arquivo inteiro).
 
-### 6. Atualizar `memoria/ativo.md`
+**Obrigatório — alinhar “Próximo” com a verdade:**
+- Se `_index` tem `pagto=pago` e o projeto ainda diz “enviar proposta” / “fechar deal” → reescreva **Próximo** para a entrega (ex: wire/landing/kickoff).  
+- Se deal perdeu / pausou → espelhe no bloco do projeto.
 
-Substitua com estado limpo **preservando filas abertas** (não apague `desde` original):
+### 6. Atualizar `memoria/ativo.md` (sempre reescrever — não deixar lixo da sessão)
+
+Substitua o arquivo com estado **da próxima abertura**. Regras:
+
+1. **Data** = dia real ISO de **hoje** (quando roda o end).  
+2. **Sessão anterior** = data de hoje + resumo de 1 linha do que fechou (nunca “nenhuma” se houve trabalho).  
+3. **Foco / Missão** = o que falta **amanhã**, não “onboard” se o onboard já terminou.  
+4. **Proibido** deixar: `primeira sessão`, `PREENCHA`, missão “Configuração inicial do kit” se memória já está preenchida.  
+5. Filas: só o que **ainda está aberto**; itens done **saem**. Abertas **migram** com o mesmo `desde`.  
+6. **Clientes (ponte):** slug em foco + 1 linha do `_index` (status/pagto).
 
 ```markdown
 # Ativo
@@ -78,10 +89,10 @@ Substitua com estado limpo **preservando filas abertas** (não apague `desde` or
 ## Contexto da sessão
 
 - **Data:** YYYY-MM-DD
-- **Sessão anterior:** YYYY-MM-DD — [resumo 1 linha]
-- **Foco:** [próxima sessão define se vazio]
-- **Missão do dia:**
-- **Done quando:**
+- **Sessão anterior:** YYYY-MM-DD — [resumo 1 linha do que fechou]
+- **Foco:** [próximo trabalho real do negócio]
+- **Missão do dia:** [1 frase acionável]
+- **Done quando:** [critério binário]
 - **Dono da missão:** agente | humano
 
 ## Fila agente
@@ -99,14 +110,13 @@ Substitua com estado limpo **preservando filas abertas** (não apague `desde` or
 ## Clientes (ponte)
 
 - Índice: clientes/_index.md
-- Cliente em foco: …
+- Cliente em foco: [slug ou nenhum]
+- Estado: [ex: clinica-x pago · próximo wire]
 
 ## Regras ativas
 
 [herdadas + novas]
 ```
-
-Tasks **concluídas** saem da fila. Abertas **migram** com a mesma data `desde`.
 
 ### 7. Registrar regras novas
 
