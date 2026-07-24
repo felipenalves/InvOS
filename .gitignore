@@ -32,3 +32,4 @@ Thumbs.db
 *.swp
 *.swo
 *~
+packages/cli/kit/

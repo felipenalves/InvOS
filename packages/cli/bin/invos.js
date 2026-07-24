@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { init } from '../src/commands/init.js';
@@ -7,9 +7,9 @@ import { install } from '../src/commands/install.js';
 import { update } from '../src/commands/update.js';
 import { doctor } from '../src/commands/doctor.js';
 import { loadManifest } from '../src/manifest.js';
+import { resolveKitRoot } from '../src/resolve-kit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const KIT_ROOT = resolve(__dirname, '../../..');
 
 const cmd = process.argv[2];
 const args = process.argv.slice(3);
@@ -48,6 +48,7 @@ async function main() {
     return;
   }
 
+  const KIT_ROOT = resolveKitRoot();
   const kit = loadManifest(resolve(KIT_ROOT, 'INVOS.json'));
   if (!kit) {
     console.error('INVOS.json not found at', KIT_ROOT);
