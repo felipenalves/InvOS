@@ -60,7 +60,7 @@ fi
 # 3. Memoria completa
 echo ""
 echo "3/5 — Sistema de memória:"
-for f in memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md; do
+for f in memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md marca/marca.md; do
   if [ -f "$f" ]; then
     echo "  ✅ $f"
   else
@@ -74,11 +74,17 @@ else
   echo "  ❌ clientes/_template/ — FALTA"
   ERROS=$((ERROS+1))
 fi
+if [ -d "marca/assets" ]; then
+  echo "  ✅ marca/assets/"
+else
+  echo "  ❌ marca/assets/ — FALTA"
+  ERROS=$((ERROS+1))
+fi
 
 # 4. Skills
 echo ""
 echo "4/5 — Skills:"
-for f in session-start session-end session-checkpoint onboard proposta; do
+for f in session-start session-end session-checkpoint onboard proposta design-marca; do
   if [ -f ".agents/skills/$f/SKILL.md" ]; then
     echo "  ✅ $f"
   else

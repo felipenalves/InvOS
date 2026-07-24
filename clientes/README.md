@@ -8,10 +8,11 @@ Assim o agente não mistura o João com a Maria, e a skill **proposta** usa o co
 
 | Arquivo | Pra quê |
 |---------|---------|
-| `clientes/_index.md` | Pipeline: status, próximo passo, **dono**, data. Lido no session-start. |
-| `clientes/<slug>/` | Ficha + entregas + propostas daquele cliente só. |
+| `clientes/_index.md` | Pipeline: status, **valor**, **pagto**, próximo, dono, desde. Boot. |
+| `clientes/<slug>/` | Ficha + suporte + propostas + arquivos daquele cliente. |
 
-Não coloque HTML/PDF/imagem de cliente na raiz do projeto — só em `clientes/<slug>/arquivos/`.
+Não coloque HTML/PDF/imagem de cliente na raiz — só em `clientes/<slug>/arquivos/`.  
+Logo **sua** (prestador) → `marca/assets/`, não aqui.
 
 ## Criar cliente novo
 

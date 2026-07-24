@@ -144,7 +144,9 @@ Resposta esperada: **1 prioridade** + **próximo passo** (de `ativo` / PRIORIDAD
 | “O que importa hoje?” / início de sessão | 1 prioridade + **dono** + próximo passo; alerta fila humana / atraso |
 | “Cliente atual: X” | Lê `clientes/X/` (+ `_index`) |
 | “Cria o cliente …” | Passo 4 (template + linha no `_index`) |
-| “Proposta / orçamento pro X” | Skill proposta → **HTML pronto** em `clientes/X/propostas/` + msg de envio + `_index` |
+| “Proposta / orçamento pro X” | Skill proposta → HTML em `clientes/X/propostas/` (brand `marca/`) + msg + `_index` valor/pagto |
+| “Extrai marca do site” | Skill `design-marca` → `marca/marca.md` |
+| “O que posto essa semana?” | `conteudo/_fila.md` |
 
 ---
 

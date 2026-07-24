@@ -50,9 +50,16 @@ Itens em **Fila humana** → alertar no anúncio. Itens com `desde` > 3 dias →
 
 ### 7a. Ler `clientes/_index.md`
 
-Sempre o **índice** (pipeline). Não ler pastas `clientes/<slug>/` no boot — só se o foco/missão citar o cliente ou o user pedir.
+Sempre o **índice** (pipeline + valor/pagto). Não ler pastas `clientes/<slug>/` no boot — só se o foco/missão citar o cliente ou o user pedir.
 
-Se houver linhas com `dono=humano` e `desde` > 3 dias → alerta de atraso.
+Se houver linhas com `dono=humano` e `desde` > 3 dias → alerta de atraso.  
+Se houver `pagto` pendente/parcial com valor → citar “a receber” em 1 linha no anúncio.
+
+### 7b. Ler `marca/marca.md` (resumo)
+
+Ler só se existir. Se ainda for template (`[ex:` ou `Logo presente? não` e sem cor real) **e** o user tiver site em empresa/marca: no anúncio, 1 linha opcional — “Marca incompleta; diga *extrai marca do site*”.
+
+Não ler `conteudo/` no boot salvo se a missão for conteúdo.
 
 ### 8. Ler `memoria/perfil.md`
 
@@ -75,7 +82,7 @@ Se houver gaps, avise: "⚠️ Gap detectado no histórico: [dias faltantes]"
 ### 11. Validar integridade
 
 ```bash
-ls memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md > /dev/null 2>&1 && echo "OK" || echo "FALHA"
+ls memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md marca/marca.md > /dev/null 2>&1 && echo "OK" || echo "FALHA"
 ```
 
 ### 12. Onboard obrigatório se memória ainda for template
@@ -110,7 +117,8 @@ Se o onboard **já foi concluído** (sem placeholders / sem first-run):
    - Feche com: *“Quer que eu execute esse próximo passo agora?”* (se dono=agente) **ou** `⚠️ Sua vez: …` (se dono=humano)
 3. **Fila humana** (se houver): listar com `⚠️ Sua vez:`
 4. **Atrasos** (> 3 dias em ativo ou `_index`)
-5. Regras ativas: [número] · Última sessão: [data se existir]
+5. **A receber** (se `_index` tiver pagto pendente/parcial): total ou lista curta
+6. Regras ativas: [número] · Última sessão: [data se existir]
 
 **Formato curto preferido:**
 

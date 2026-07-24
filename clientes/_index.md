@@ -1,26 +1,32 @@
 # Clientes — índice
 
-> Pipeline do prestador. Boot: ler **só este arquivo**.  
-> Ficha e arquivos do cliente: `clientes/<slug>/` (não misturar com o resto do negócio).
+> Pipeline comercial + dinheiro leve. Boot: ler **só este arquivo**.  
+> Ficha e arquivos: `clientes/<slug>/`.
 
 ## Como usar
 
 | Campo | Significado |
 |-------|-------------|
 | **slug** | pasta `clientes/<slug>/` |
-| **status** | lead · dm · call · proposta · ativo · pausado · perdido · encerrado |
+| **status** | lead · dm · call · proposta · enviado · aceito · ativo · pausado · perdido · encerrado |
 | **próximo** | 1 ação concreta |
-| **dono** | `agente` (pode executar no repo/chat) ou `humano` (só você: DM real, call, cobrar, decidir) |
+| **dono** | `agente` ou `humano` |
 | **desde** | data ISO da pendência atual |
+| **valor** | R$ da proposta/deal (número ou `—`) |
+| **pagto** | — · pendente · parcial · pago · cancelado |
 
-**Novo cliente:** `cp -R clientes/_template clientes/<slug>` → preencher → **1 linha neste índice**.
+**Novo cliente:** `cp -R clientes/_template clientes/<slug>` → preencher → **1 linha aqui**.
 
 ## Pipeline
 
-| slug | nome | status | próximo | dono | desde | pasta |
-|------|------|--------|---------|------|-------|-------|
-| — | *(vazio — 1ª ficha no 1º lead real)* | | | | | |
+| slug | nome | status | valor | pagto | próximo | dono | desde | pasta |
+|------|------|--------|-------|-------|---------|------|-------|-------|
+| — | *(vazio — 1ª ficha no 1º lead real)* | | — | — | | | | |
+
+## A receber (visão rápida)
+
+Linhas com `pagto` = pendente ou parcial e `valor` preenchido → session-start pode citar “em aberto: R$ …”.
 
 ## Atrasados
 
-Se `desde` > 3 dias e status aberto → session-start alerta: pendência velha.
+Se `desde` > 3 dias e status aberto → alerta no boot.

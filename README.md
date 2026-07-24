@@ -174,19 +174,20 @@ teu-negocio-invos/
 ├── AGENTS.md           ← regras multi-harness (fonte da verdade)
 ├── MEMORY.md           ← mapa curto do cérebro
 ├── memoria/            ← cérebro do negócio
-│   ├── perfil.md
-│   ├── empresa.md
-│   ├── projetos.md
-│   ├── ativo.md        ← missão do dia + filas com dono
-│   ├── decisoes.md · insights.md · regras/ · historico/
+│   ├── perfil.md · empresa.md · projetos.md · ativo.md
+│   └── decisoes · insights · regras · historico
+├── marca/              ← identidade visual (proposta lê daqui)
+│   ├── marca.md        ← cores, voz, contato
+│   └── assets/         ← logo.png / logo.svg
 ├── clientes/
-│   ├── _index.md       ← pipeline (lido no boot)
-│   ├── _template/      ← copiar pra cada cliente novo
-│   └── ana-studio/     ← exemplo de pasta real
-│       ├── perfil.md · contexto.md · entregas.md
-│       ├── propostas/  ← skill proposta
-│       └── arquivos/   ← html, pdf, imagens desse cliente
-└── .agents/skills/     ← session-start/end, onboard, proposta…
+│   ├── _index.md       ← pipeline + valor + pagto
+│   ├── _template/
+│   └── ana-studio/
+│       ├── perfil · contexto · entregas
+│       ├── propostas/  ← HTML pronto
+│       └── arquivos/
+├── conteudo/           ← fila de post (opcional)
+└── .agents/skills/     ← session-*, onboard, proposta, design-marca
 ```
 
 | Em português | Path |
@@ -202,14 +203,17 @@ teu-negocio-invos/
 ### Core (é o produto)
 
 - Memória em `memoria/`  
-- Clientes: `_index` + pasta por cliente  
+- **Marca** em `marca/` (cores, voz, logo) + skill **design-marca**  
+- Clientes: `_index` (valor + pagto) + pasta por cliente  
 - Tasks com dono (agente vs humano)  
 - Loop de sessão + onboard  
-- Skill **proposta**  
+- Skill **proposta** (HTML com brand)  
+- Marketing leve: `conteudo/_fila.md`  
 
 ### Bônus (pode ignorar no dia 1)
 
-Skills extras (humanizer, audit, notion…) e squads (advisory-board, brand, hormozi).
+Skills extras (humanizer, audit, notion…) e squads (advisory-board, brand, hormozi).  
+Squad brand → resumo **sempre** em `marca/marca.md`.
 
 ---
 

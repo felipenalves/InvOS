@@ -1,25 +1,25 @@
 # MEMORY
 
-> Este repositório usa `memoria/` como sistema de contexto universal.
+> Mapa do cérebro e das pastas operacionais do INVOS.
 
-| Arquivo | O que contém |
-|---------|-------------|
-| `memoria/perfil.md` | Sua essência, mentalidade, framework de criação |
-| `memoria/empresa.md` | Visão, modelo de negócio, oferta |
-| `memoria/projetos.md` | Projetos ativos e status |
-| `memoria/decisoes.md` | Decisões organizadas por tópico |
-| `memoria/insights.md` | Ideias e epifanias estratégicas |
-| `memoria/ativo.md` | Sessão atual — missão + filas com dono |
-| `memoria/regras/` | Lições aprendidas (um arquivo por regra) |
-| `memoria/historico/` | Sessões anteriores arquivadas |
-| `clientes/_index.md` | Pipeline (boot) — status, próximo, dono, desde |
-| `clientes/<slug>/` | Ficha do cliente (perfil, contexto, entregas) |
-| `clientes/<slug>/propostas/` | Propostas (skill `proposta`) |
-| `clientes/<slug>/arquivos/` | HTML, PDF, imagens, MD daquele cliente |
+| Path | O que contém |
+|------|-------------|
+| `memoria/perfil.md` | Essência, mentalidade |
+| `memoria/empresa.md` | Visão, oferta, resumo brand |
+| `memoria/projetos.md` | Projetos e PRIORIDADE ATUAL |
+| `memoria/decisoes.md` | Decisões por tópico |
+| `memoria/insights.md` | Sementes |
+| `memoria/ativo.md` | Missão + filas com dono |
+| `memoria/regras/` | Lições (1 arquivo cada) |
+| `memoria/historico/` | Diários de sessão |
+| **`marca/marca.md`** | **Cores, voz, logo path** (fonte visual) |
+| **`marca/assets/`** | logo.svg / logo.png |
+| `clientes/_index.md` | Pipeline + **valor** + **pagto** |
+| `clientes/<slug>/` | Ficha, suporte, propostas, arquivos |
+| `conteudo/_fila.md` | Marketing leve (peça da semana) |
 
-## Boot sequence
+## Boot
 
-Ver `AGENTS.md` → Required Context Order + rituais do prestador.
+`AGENTS.md` → skill `session-start`.
 
-No início de sessão: skill `session-start` (memória).  
-No dia a dia: “o que importa hoje?”, pasta do cliente, skill `proposta`.
+Dia a dia: prioridade · cliente · proposta · design-marca · fila de conteúdo.

@@ -23,6 +23,12 @@
 
 (1–3 frases: o problema real, não o “quero um site”)
 
+## Dinheiro (leve)
+
+- **Valor do deal:** R$
+- **Pagamento:** — | pendente | parcial | pago | cancelado
+- **Espelhar no** `clientes/_index.md` (colunas valor / pagto)
+
 ## Próximo passo
 
 - **Ação:**
@@ -30,3 +36,12 @@
 - **Desde:** YYYY-MM-DD
 - **Done quando:** (critério binário)
 - **Até quando:** (opcional)
+
+## Suporte / o que o cliente espera
+
+> Pós-venda e retainer. Evita “sumiu o combinado”.
+
+- **Expectativa atual do cliente:** (1–2 frases)
+- **Pendência aberta dele:** (se houver)
+- **Canal de suporte:** WhatsApp | e-mail | outro
+- **SLA informal:** (ex: respondo em 24h úteis)

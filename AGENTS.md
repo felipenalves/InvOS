@@ -12,7 +12,7 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 **Leitura obrigatória no início de TODA sessão:**
 
 0. Se for **primeira abertura** do kit, user pediu instalar/setup/“como começo”, ou pasta ainda se chama `invos-kit`: leia e siga **`COMECE-AQUI.md`** (instalação, renomear pasta, duplicar template de cliente).
-1. Carregar skill `session-start` — lê `memoria/perfil.md`, `memoria/empresa.md`, `memoria/projetos.md`, `memoria/decisoes.md`, `memoria/insights.md`, `memoria/regras/*`, `memoria/ativo.md`, `clientes/_index.md`, último histórico
+1. Carregar skill `session-start` — lê `memoria/*` core, `clientes/_index.md`, `marca/marca.md`, último histórico
 2. **Onboard obrigatório se a memória ainda for template.** Disparar skill `onboard` **antes** de anunciar estado ou continuar o trabalho se **qualquer** um for verdadeiro:
    - `memoria/empresa.md` contém `[o que` **ou** `[seu nome]` **ou** `PREENCHA`
    - `memoria/projetos.md` contém `PREENCHA`
@@ -21,8 +21,9 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 4. `memoria/` está carregado, seguir para o que o usuário pedir
 
 **Core vs bônus:**
-- **Core:** `memoria/` + session-start/end/checkpoint/onboard + (prestador) `clientes/` + skill `proposta`
-- **Bônus:** squads (advisory-board, brand, hormozi) e skills extras — opcional
+- **Core:** `memoria/` + `marca/` + `clientes/` + session skills + onboard + `proposta` + `design-marca`
+- **Leve:** `conteudo/` (fila de post)
+- **Bônus:** squads (advisory-board, brand, hormozi) e skills extras — opcional; se squad brand rodar, **grave** em `marca/marca.md`
 
 **Ao encerrar:** Quando o usuário disser que a sessão acabou ("fim", "acabou", "sessão encerrada"), disparar skill `session-end`.
 
@@ -35,13 +36,16 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 | “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + dono + próximo passo (`ativo` + PRIORIDADE em `projetos` + `_index` clientes). Se dono=agente → execute ou ofereça executar. Se dono=humano → `⚠️ Sua vez:`. |
 | “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/` + linha no `_index`. |
 | “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche + **1 linha em `_index`**. Detalhe: `COMECE-AQUI.md` passo 4. |
-| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML **pronto pra enviar** em `clientes/<slug>/propostas/*.html` + msg de envio; brand de `empresa.md`; atualiza `_index` + Fila humana. |
+| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML em `clientes/<slug>/propostas/*.html`; brand de **`marca/marca.md`**; `_index` com valor/pagto; msg de envio + Fila humana. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
-| Arquivo/HTML/PDF pro cliente | Salva em `clientes/<slug>/arquivos/` (nunca na raiz). |
+| “Extrai marca do site” / cores / logo | Skill **`design-marca`** → `marca/marca.md` + `marca/assets/`. |
+| “O que posto essa semana?” | `conteudo/_fila.md` + voz em `marca/`; 1 peça com dono. |
+| “Cliente pagou / a receber” | Atualiza `_index` colunas **valor** / **pagto**. |
+| Arquivo/HTML/PDF pro cliente | `clientes/<slug>/arquivos/` (nunca na raiz; logo **sua** em `marca/assets/`). |
 
-**Clientes:** ver `clientes/README.md`. Uma pasta por cliente + `_index.md`. Não misture dados de clientes diferentes.
+**Clientes:** `clientes/README.md`. **Marca:** `marca/README.md`.
 
-**Toda task tem dono** (`agente` | `humano`) — regra `memoria/regras/task-com-dono.md`. Sem dono = não grava. Pendência > 3 dias → alerta no boot.
+**Toda task tem dono** (`agente` | `humano`) — `memoria/regras/task-com-dono.md`. Pendência > 3 dias → alerta no boot.
 
 ## Proactive Behavior
 
@@ -129,7 +133,8 @@ SECURITY.md
 | session-end | Fim da sessão |
 | session-checkpoint | Durante a sessão (automático) |
 | onboard | Primeiro uso (automático) — entrevista inicial |
-| **proposta** | Orçamento / proposta pro cliente (lê memória + `clientes/`) |
+| **proposta** | HTML pronto pra enviar (lê `marca/` + `clientes/`) |
+| **design-marca** | Cores/fontes/logo → `marca/marca.md` (site ou manual) |
 | humanizer | Remover padrões de IA do texto em PT-BR |
 | stop-slop | Remover padrões de IA do texto em EN |
 | audit | Auditoria Four Cs — nota 0-100 pro seu sistema |

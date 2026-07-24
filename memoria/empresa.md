@@ -20,14 +20,15 @@
 - **Cliente ideal:** [quem paga você — ex: "Pequeno empresário que precisa de site"]
 - **Ferramentas:** [Figma, WordPress, Instagram, WhatsApp, Notion...]
 
-## Brand (proposta / PDF)
+## Brand (resumo — fonte completa em `marca/marca.md`)
 
-> Usado pela skill **proposta** no HTML pronto pra enviar. Preencha o mínimo.
+> Não duplique sistema visual aqui. Atualize **`marca/marca.md`** + `marca/assets/`.  
+> Skill `design-marca` preenche a partir do site. Skill `proposta` lê `marca/` primeiro.
 
-- **Marca:** [nome que aparece no topo da proposta — ex: "Studio Ana"]
-- **Cor:** [#0f766e]  ← hex; se vazio o agente usa este verde
+- **Marca:** [mesmo nome que em marca/marca.md]
+- **Cor:** [#0f766e]
 - **Site ou Instagram:** [https://… ou @seuuser]
-- **Contato na proposta:** [WhatsApp ou e-mail que o cliente pode responder]
+- **Contato na proposta:** [WhatsApp ou e-mail]
 
 ## Estratégia de conteúdo (se aplicável)
 
@@ -35,6 +36,7 @@
 - Formatos:
 - Frequência:
 - Nicho:
+- **Fila operacional:** `conteudo/_fila.md`
 
 ## Preferências operacionais
 

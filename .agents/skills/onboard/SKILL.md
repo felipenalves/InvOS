@@ -48,7 +48,22 @@ Pergunte uma de cada vez:
 5. "Quem é seu cliente ideal? (ou quem você quer servir quando estiver pronto)"
 6. "Qual seu tom de voz? Como você se comunica?"
 
-**Imediatamente após a 6ª resposta**, escreva `memoria/empresa.md` com dados reais (zero placeholders `[o que`, `[seu nome]`, `PREENCHA`). Mantenha a estrutura do template (Identidade, Estratégia de conteúdo se fizer sentido, Preferências operacionais).
+**Imediatamente após a 6ª resposta**, escreva `memoria/empresa.md` com dados reais (zero placeholders `[o que`, `[seu nome]`, `PREENCHA`). Mantenha a estrutura do template (Identidade, Brand resumo, Estratégia de conteúdo se fizer sentido, Preferências operacionais).
+
+### 2b. Marca → grava `marca/marca.md` na hora
+
+Máximo 4 perguntas (pule se o user disser “depois”):
+
+1. "Qual o **nome da marca** que aparece pro cliente? (pode ser seu nome)"
+2. "Tem **site**? Se sim, manda a URL (posso extrair cores com design-marca)."
+3. "Cor principal da marca em hex, se souber? (ex: #0f766e) — se não souber e tiver site, extraímos depois."
+4. "WhatsApp ou e-mail de **contato na proposta**?"
+
+**Gravação imediata** em `marca/marca.md` (nome, site, cor, contato, founder = nome do passo 2).  
+Espelhe Marca/Cor/Site/Contato no resumo Brand de `empresa.md`.
+
+Se mandou URL e quiser extrair agora: rode skill **`design-marca`** (não bloqueie o resto do onboard).  
+Se tiver arquivo de logo: salve em `marca/assets/logo.png` ou `.svg`.
 
 ### 3. Perfil → grava `memoria/perfil.md` na hora
 
@@ -113,6 +128,7 @@ Liste o que foi gravado e feche:
 
 Arquivos escritos:
 - [x] memoria/empresa.md
+- [x] marca/marca.md (se respondeu 2b)
 - [x] memoria/perfil.md
 - [x] memoria/projetos.md
 - [x/—] memoria/decisoes.md (se houve decisão)
@@ -125,12 +141,12 @@ Agora, sempre que você abrir uma sessão:
 - Vai arquivar tudo no final
 
 **Primeira ação (obrigatória):** proponha 1 passo concreto amarrado ao "Próximo" de `projetos.md` / `ativo.md`.  
-Se for prestador de serviço: ofereça criar o **primeiro cliente** em `clientes/` ou rodar uma **proposta** de teste. Não termine só com "o que você quer fazer?".
+Se for prestador: ofereça **primeiro cliente**, **proposta** de teste, ou *“Extrai a marca do meu site”* (design-marca). Não termine só com "o que você quer fazer?".
 
 Bora. Seu próximo passo registrado é: [citar o Próximo].  
-Dica: "O que importa hoje?", "Cria o cliente X", "Gera proposta pro X".
+Dica: "O que importa hoje?", "Cria o cliente X", "Gera proposta pro X", "Extrai marca do site".
 ```
 
 ## Output
 
-`memoria/empresa.md`, `memoria/perfil.md`, `memoria/projetos.md`, `memoria/ativo.md` (e `decisoes.md` se aplicável) preenchidos com dados reais. Próximo `session-start` **não** re-entrevista — prova segunda sessão com memória.
+`memoria/` + `marca/marca.md` (se 2b) preenchidos. Próximo `session-start` **não** re-entrevista.
