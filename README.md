@@ -2,130 +2,274 @@
 
 **A IA que conhece teu negócio — e de manhã diz por onde começar.**
 
-Sistema de memória multi-agente: clientes, prazos, prioridades.  
-Não te trata como estranho. Não te devolve produtividade genérica.
+Sistema de memória multi-agente em arquivos: quem você é, clientes, prazos, prioridades e **quem faz o quê** (você ou o agente).  
+Não te trata como estranho. Não devolve “produtividade genérica”.
 
-Site e compra: **[inovadigitalid.com/invos](https://inovadigitalid.com/invos)** · R$97 · pagamento único  
-**Como chega:** kit completo em **ZIP** (Hotmart) — o valor é o **sistema**, não o arquivo.
-
-**Setup (agente ou humano):** **[COMECE-AQUI.md](./COMECE-AQUI.md)** — ativar o sistema, renomear o projeto, onboard, clientes, rituais.  
-O agente deve **seguir** esse arquivo no primeiro uso (não só linkar).
+| | |
+|--|--|
+| **Comprar / página** | [inovadigitalid.com/invos](https://inovadigitalid.com/invos) · **R$97** · pagamento único |
+| **Como chega** | Kit em **ZIP** (Hotmart) — o ZIP é o frete; o valor é o **sistema** |
+| **Ativar** | Abra a pasta no agente e diga: *“Segue o [COMECE-AQUI.md](./COMECE-AQUI.md)”* |
 
 ---
 
-## O fator wow (o que você sente em minutos)
+## O problema em um desenho
 
-Não é “mais um download”. É o momento em que a IA **para de te entrevistar** e começa a **trabalhar com o teu negócio**.
+```text
+  VOCÊ                         IA SEM MEMÓRIA
+    │                                │
+    │  "Quem eu sou, o que vendo,    │
+    │   cliente X, o que decidimos…" │
+    ├───────────────────────────────►│
+    │                                │  responde ok…
+    │◄───────────────────────────────┤
+    │                                │
+    │         [ fecha o chat ]       │
+    │                                │
+    │  amanhã: tudo de novo          │  "Em que posso ajudar?"
+    ├───────────────────────────────►│  (zero contexto)
+```
 
-### Wow 1 — Toda manhã: por onde começar
+Isso não é “usar mal a IA”. É IA **sem cérebro do negócio**.
 
-**Sem INVOS:**
+---
 
-> Você: “O que importa hoje?”  
-> IA: “Depende das suas prioridades. Quais são seus projetos? Tem prazo?”
+## O que o INVOS faz (mesmo desenho, depois)
 
-**Com INVOS:**
+```text
+  VOCÊ              PASTA INVOS (no disco)              IA (Claude/Cursor/…)
+    │                      │                                  │
+    │  "O que importa      │  lê memoria/ + clientes/         │
+    │   hoje?"             │  + filas com dono                │
+    ├─────────────────────►│─────────────────────────────────►│
+    │                      │                                  │
+    │◄─────────────────────┴──────────────────────────────────┤
+    │   "Prioridade: proposta Clínica Vida (sexta).           │
+    │    Dono: eu redijo; você envia. Quer que eu escreva?"   │
+    │                                                         │
+    │  [ fecha o chat ]                                       │
+    │  amanhã, outro agente, outro PC…                        │
+    │  mesma pasta = mesmo cérebro                            │
+```
 
-> Você: “O que importa hoje?”  
-> IA: “Prioridade: proposta da Clínica Vida (sexta). Depois follow-up do Beta. Quer que eu escreva a proposta?”
+**Em uma frase:** o INVOS é o **sistema de contexto** do teu negócio. Ativa uma vez; a memória **compõe**. Proposta e cliente no teu tom, sem reexplicar.
 
-Ele leu `memoria/` e `clientes/`. Resposta do **teu** negócio — não coach genérico.
+---
 
-### Wow 2 — Segunda sessão: não é estranho
+## Como o sistema se encaixa (mapa)
 
-**Sem INVOS:** reexplica nome, oferta, cliente.  
-**Com INVOS (chat novo, mesma pasta):**
+```mermaid
+flowchart TB
+  subgraph boot["Toda sessão (automático)"]
+    A[AGENTS.md] --> B[session-start]
+    B --> M[memoria/]
+    B --> I[clientes/_index.md]
+    B --> P{Prioridade de hoje}
+  end
+
+  P --> Q1["1 missão + dono"]
+  Q1 --> AG{Dono?}
+  AG -->|agente| EX[Agente executa no repo/chat]
+  AG -->|humano| AL["⚠️ Sua vez: você faz"]
+
+  subgraph pasta["O que fica no disco"]
+    M --> M1[perfil · empresa · projetos]
+    M --> M2[ativo: filas agente / humana]
+    M --> M3[decisões · regras · histórico]
+    I --> C[clientes/slug/]
+    C --> C1[perfil · contexto]
+    C --> C2[propostas/]
+    C --> C3[arquivos/ html pdf img]
+  end
+
+  EX --> pasta
+  AL --> pasta
+```
+
+Leitura de leigo:
+
+1. **memoria/** = cérebro (você + empresa + o que fazer hoje).  
+2. **clientes/** = um cliente por pasta + um **índice** da fila comercial.  
+3. **Dono da task** = se o agente pode fazer sozinho, ele faz; se só você pode (DM, call, cobrar), ele **grava e te avisa**.
+
+---
+
+## Os 3 wows (o que você sente)
+
+### 1 — Manhã: por onde começar
+
+| Sem INVOS | Com INVOS |
+|-----------|-----------|
+| “Depende… quais são seus projetos?” | “Prioridade: proposta Clínica Vida. Depois follow-up Beta. **Dono: agente redige / você envia.** Quer que eu escreva?” |
+
+### 2 — Segunda sessão: não é estranho
+
+Chat **novo**, mesma pasta:
 
 > “Quem eu sou e no que estou trabalhando?”  
-> → ele responde com os **teus** dados, sem re-entrevista.
+> → responde com **os teus** dados. Sem re-entrevista.
 
-### Wow 3 — Qualquer agente + fecha o serviço
+### 3 — Cliente certo + proposta no teu tom
 
-Claude, Cursor, Codex, Gemini, Grok… **mesma pasta** = mesmo cérebro.
+```text
+Você:  Gera proposta pro ana-studio: landing, 2 semanas, R$3.500
+INVOS: lê tua empresa + pasta da Ana → grava clientes/ana-studio/propostas/…
+       atualiza o índice → ⚠️ Sua vez: enviar a proposta
+```
+
+Claude, Cursor, Codex, Gemini, Grok… **mesma pasta = mesmo cérebro.**
+
+---
+
+## Fluxo do dia a dia (prestador)
+
+```mermaid
+flowchart LR
+  M["Manhã:\nO que importa hoje?"] --> F{Fila}
+  F -->|Agente| T1[Escreve proposta / organiza]
+  F -->|Você| T2[DM · call · cobrar]
+  T1 --> C[Pasta do cliente]
+  T2 --> C
+  C --> N[Amanhã: memória maior]
+```
 
 | Você digita | O que acontece |
 |-------------|----------------|
-| `O que importa hoje?` | 1 prioridade + próximo passo |
+| `O que importa hoje?` | 1 prioridade + **dono** + próximo passo |
+| `Cria o cliente ana-studio: …` | Copia template + linha no `_index` |
 | `Cliente atual: ana-studio` | Contexto **dela**, sem misturar |
-| `Gera proposta pro ana-studio: …` | No **teu** tom, arquivo em `clientes/…/propostas/` |
-
-Conhece o negócio → prioriza a manhã → trabalha o cliente certo.
-
----
-
-## Em uma frase
-
-O INVOS é o **sistema de contexto** do teu negócio: a IA conhece clientes, prazos e prioridades — e de manhã diz **por onde começar**.  
-Ativa uma vez (entrevista). Depois a memória **compõe**. Proposta e cliente no teu tom, sem reexplicar.
-
-Entrega em **kit ZIP** (simples). O valor é o **sistema**, não o arquivo.
-
-Não é curso. Não é Notion. Não é app na nuvem.
+| `Gera proposta pro ana-studio: …` | Arquivo em `propostas/` + te avisa se o próximo passo é teu |
+| `Salva esse PDF na pasta do cliente X` | Vai pra `clientes/X/arquivos/` |
 
 ---
 
-## Pra quem é (incluindo se você é leigo)
+## Toda task tem dono (anti-fila eterna)
 
-Se você:
-
-- cansa de **reexplicar** o negócio em toda sessão  
-- presta serviço (design, marketing, consultoria, freela…) e joga **vários clientes** na mesma IA  
-- quer **proposta / prioridade do dia** sem montar stack de engenheiro  
-- está **começando** no Cursor / Claude / terminal  
-
-…o INVOS foi feito pra você.
-
-Você **não** precisa programar.  
-Recebe o kit → abre o sistema no agente → responde o onboard em português.
-
----
-
-## O problema (do jeito que acontece)
-
-1. Você abre o terminal ou o Cursor.  
-2. Chama a IA.  
-3. Ela pergunta: *“Em que posso ajudar?”*  
-4. Você reexplica o negócio, o cliente, o que decidiu ontem.  
-5. Amanhã: **tudo de novo.**  
-6. Manda “faz uma proposta” → sai texto genérico, como se você fosse qualquer um.
-
-Isso não é “usar mal a IA”. É a IA **sem memória** e **sem o cliente no contexto**.
-
----
-
-## O que muda com o INVOS
-
-| Antes | Depois (wow) |
-|--------|----------------|
-| Toda sessão começa do zero | Ele já sabe quem você é e o foco de hoje |
-| Briefing colado de novo | Está em `memoria/` — o agente lê sozinho |
-| Troca de ferramenta = recomeçar | **Mesma pasta** em Claude, Cursor, Codex, Gemini, Grok… |
-| “Faz uma proposta” genérica | Proposta no teu tom, pro **cliente certo**, salva no disco |
-| Clientes misturados no chat | Uma pasta por cliente em `clientes/` |
-| Contexto morre no scroll | Decision / checkpoint / histórico entre sessões |
-
-**Promessa real:** contexto do negócio + uso no dia a dia do prestador — em qualquer harness.
-
----
-
-## Como funciona (3 passos até o wow)
-
-```
-1. Abre a pasta do INVOS no agente
-2. Primeira vez: entrevista curta → grava memoria/
-3. Fecha, abre de novo → "Quem eu sou e no que estou trabalhando?"
-   → WOW: ele responde sem recomeçar
+```text
+┌─────────────────────┐         ┌─────────────────────┐
+│   FILA AGENTE       │         │   FILA HUMANA       │
+│   (executa sozinho) │         │   (só você)         │
+├─────────────────────┤         ├─────────────────────┤
+│ redigir proposta    │         │ enviar DM de verdade│
+│ atualizar ficha     │         │ ligar / fechar      │
+│ organizar arquivos  │         │ decidir preço final │
+│ rascunho de post    │         │ pagar / assinar     │
+└─────────────────────┘         └─────────────────────┘
+         │                                │
+         ▼                                ▼
+   faz e grava                    grava + ⚠️ Sua vez:
 ```
 
-Depois disso (mesmo dia ou amanhã):
+Pendência **sempre** com data (`desde`). Se passar de ~3 dias, o boot **cobra**.
 
-```
-4. Cria um cliente (template pronto)
-5. "Gera proposta pro cliente X com este brief…"
-   → WOW 2: orçamento no teu tom, arquivo salvo
+---
+
+## O que tem dentro da pasta
+
+```text
+teu-negocio-invos/
+├── COMECE-AQUI.md      ← ligar o sistema (agente executa)
+├── AGENTS.md           ← regras multi-harness (fonte da verdade)
+├── MEMORY.md           ← mapa curto do cérebro
+├── memoria/            ← cérebro do negócio
+│   ├── perfil.md
+│   ├── empresa.md
+│   ├── projetos.md
+│   ├── ativo.md        ← missão do dia + filas com dono
+│   ├── decisoes.md · insights.md · regras/ · historico/
+├── clientes/
+│   ├── _index.md       ← pipeline (lido no boot)
+│   ├── _template/      ← copiar pra cada cliente novo
+│   └── ana-studio/     ← exemplo de pasta real
+│       ├── perfil.md · contexto.md · entregas.md
+│       ├── propostas/  ← skill proposta
+│       └── arquivos/   ← html, pdf, imagens desse cliente
+└── .agents/skills/     ← session-start/end, onboard, proposta…
 ```
 
-O sistema vive em arquivos simples (markdown). Sem install mágico. Sem configurar API na mão pro core funcionar.
+| Em português | Path |
+|--------------|------|
+| Cérebro digital | `memoria/` |
+| Fila comercial | `clientes/_index.md` |
+| Um cliente | `clientes/<slug>/` |
+| Proposta gerada | `clientes/<slug>/propostas/` |
+| Arquivos do cliente | `clientes/<slug>/arquivos/` |
+| Como o agente opera | `AGENTS.md` |
+| Setup | `COMECE-AQUI.md` |
+
+### Core (é o produto)
+
+- Memória em `memoria/`  
+- Clientes: `_index` + pasta por cliente  
+- Tasks com dono (agente vs humano)  
+- Loop de sessão + onboard  
+- Skill **proposta**  
+
+### Bônus (pode ignorar no dia 1)
+
+Skills extras (humanizer, audit, notion…) e squads (advisory-board, brand, hormozi).
+
+---
+
+## Começar (3 minutos até o wow)
+
+```mermaid
+flowchart LR
+  Z[Baixa ZIP] --> R[Renomeia pasta]
+  R --> A[Abre no agente]
+  A --> O[Onboard]
+  O --> W["Chat novo:\nQuem eu sou…"]
+  W --> 🎉[Wow]
+```
+
+1. Baixe o kit (ZIP Hotmart) e extraia.  
+2. **Renomeie** a pasta (ex.: `studio-ana-invos`) — isso **é** o teu sistema.  
+3. Abra no Cursor / Claude / Codex / Grok / OpenCode…  
+4. *“Segue o COMECE-AQUI”* ou *“Ativa o INVOS / roda o onboard”*.  
+5. Responda **uma pergunta por vez**.  
+6. **Teste:** chat novo → *“Quem eu sou e no que estou trabalhando?”*  
+7. Prestador: *“Cria o cliente …”* → *“Gera proposta…”*.
+
+```bash
+unzip invos-kit.zip -d ~/meu-invos
+cd ~/meu-invos && mv invos-kit meu-negocio-invos && cd meu-negocio-invos
+# abra esta pasta no agente
+```
+
+Zero Node/Docker pro core. Sistema = **pasta + agente**.
+
+Guia completo: **[COMECE-AQUI.md](./COMECE-AQUI.md)**.
+
+---
+
+## Prova em 3 minutos
+
+| # | Ação | Sucesso |
+|---|------|---------|
+| 1 | Pasta aberta no agente | — |
+| 2 | Onboard | `memoria/` sem “PREENCHA” |
+| 3 | **Nova** sessão | — |
+| 4 | “Quem eu sou e no que estou trabalhando?” | Responde com **seus** dados |
+| 5 | “O que importa hoje?” | 1 prioridade + dono |
+| 6 | Cria cliente + proposta | Arquivo em `clientes/…/propostas/` + linha no `_index` |
+
+Se o passo 4 falhar, o resto não importa — arrume a memória primeiro.
+
+```bash
+bash scripts/validar.sh              # estrutura do kit
+bash scripts/validar.sh --pos-onboard  # memória preenchida?
+```
+
+---
+
+## Pra quem é
+
+- Cansa de **reexplicar** o negócio toda sessão  
+- Presta serviço e joga **vários clientes** na mesma IA  
+- Quer **prioridade do dia + proposta** sem montar stack de engenheiro  
+- Está começando no Cursor / Claude / terminal  
+
+**Não precisa programar.** Abre a pasta e conversa.
 
 ---
 
@@ -133,134 +277,21 @@ O sistema vive em arquivos simples (markdown). Sem install mágico. Sem configur
 
 | | |
 |--|--|
-| **Página de vendas** | https://inovadigitalid.com/invos |
-| **Preço** | R$97 (pagamento único na Hotmart) |
-| **O que você compra** | O **sistema INVOS**: memória multi-agente + clientes + skill de proposta + loop de sessão + bônus |
-| **Como entrega** | **Kit em ZIP** na Hotmart (rápido, sem setup de conta extra) |
+| **Página** | https://inovadigitalid.com/invos |
+| **Preço** | R$97 (pagamento único, Hotmart) |
+| **O que compra** | Sistema: memória multi-agente + clientes + proposta + loop de sessão + bônus |
+| **Entrega** | Kit **ZIP** |
 | **Garantia** | 7 dias (conforme a página) |
 
-Já comprou? Baixe o kit na área do aluno / e-mail Hotmart e abra o **[COMECE-AQUI.md](./COMECE-AQUI.md)**.
-
----
-
-## Começar do zero (ativar o sistema)
-
-**Instrução completa (ideal pro agente executar):** → **[COMECE-AQUI.md](./COMECE-AQUI.md)**
-
-Resumo pro humano:
-
-1. Baixe o **kit** (arquivo ZIP na Hotmart) e extraia.  
-2. **Renomeie** a pasta do projeto (ex.: `meu-negocio-invos`) — é o “nome” do teu sistema.  
-3. Abra essa pasta no Cursor / Claude / Codex / Gemini / Grok…  
-4. Diga: *“Segue o COMECE-AQUI”* ou *“Ativa o INVOS / roda o onboard”*.  
-5. Responda a entrevista **uma pergunta por vez**.  
-6. **Teste do wow:** chat novo → *“Quem eu sou e no que estou trabalhando?”*  
-7. Prestador: *“Cria o cliente …”* (o agente **duplica** `clientes/_template`).
-
-```bash
-unzip invos-kit.zip -d ~/meu-invos
-cd ~/meu-invos/invos-kit
-cd .. && mv invos-kit meu-negocio-invos && cd meu-negocio-invos
-```
-
-(Ou renomeie no Finder e abra no agente.)  
-Zero Node/Docker pro core. Sistema = pasta do projeto + agente.
-
----
-
-## Prova em 3 minutos (checklist do wow)
-
-| # | Ação | Sinal de sucesso |
-|---|------|------------------|
-| 1 | Pasta do INVOS aberta no agente | — |
-| 2 | Entrevista / onboard feito | Arquivos em `memoria/` sem “PREENCHA” |
-| 3 | **Nova** sessão (chat novo) | — |
-| 4 | “Quem eu sou e no que estou trabalhando?” | Responde com **seus** dados |
-| 5 | (Opcional) “O que importa hoje?” | 1 prioridade, sem enrolação |
-| 6 | (Opcional) cria cliente + “gera proposta…” | Arquivo em `clientes/…/propostas/` |
-
-Se o passo 4 falhar, o resto não importa — arrume a memória primeiro.
-
----
-
-## Dia a dia do prestador (depois do wow)
-
-A memória sozinha já é o clique. Daqui pra frente o kit **paga o almoço**:
-
-### 1. O que importa hoje?
-
-```
-O que importa hoje? Me dá 1 prioridade e o próximo passo.
-```
-
-Lê `memoria/ativo.md` e `projetos.md` — some a ansiedade de “por onde começo?”.
-
-### 2. Clientes (não misturar João e Maria)
-
-```
-Cria o cliente ana-studio a partir do template: designer, lead, quer site em 30 dias.
-```
-
-```
-Cliente atual: ana-studio. O que já combinamos?
-```
-
-Detalhes: `clientes/README.md`.
-
-### 3. Proposta (dinheiro, no teu tom)
-
-```
-Gera proposta pro cliente ana-studio: landing + 3 revisões, prazo 2 semanas, R$3.500.
-```
-
-A skill **proposta** usa `memoria/empresa` + a pasta do cliente e **grava** o texto.  
-Você não cola de novo “eu sou designer, minha oferta é…”.
-
----
-
-## O que tem dentro (sem jargão demais)
-
-| Pasta / arquivo | Em português claro |
-|-----------------|-------------------|
-| `memoria/` | **Seu cérebro digital** — quem você é, empresa, projetos, decisões, o que está rolando agora |
-| `clientes/` | Um cliente por pasta (template pronto) — pra proposta e contexto sem misturar |
-| `COMECE-AQUI.md` | Instalação e uso inicial (**agente executa**; humano pode seguir) |
-| `AGENTS.md` | Regras de operação contínua — fonte da verdade multi-harness |
-| `CLAUDE.md` | Só pro Claude Code: uma linha `@AGENTS.md` (não duplica regras) |
-| `.agents/skills/` | “Modos” do agente: começar sessão, terminar, gravar decisão, entrevista inicial… |
-| `scripts/validar.sh` | Teste automático se o kit está ok |
-| `SECURITY.md` | O que **nunca** colocar no Git (senhas, chaves de API) |
-| `.agents/squads/` | **Bônus** — times de especialistas (estratégia, marca, ofertas). Não precisa no dia 1 |
-
-### Core (é o produto)
-
-- Memória em `memoria/`  
-- Clientes em `clientes/` (prestador)  
-- Loop de sessão + onboard  
-- Skill **proposta** (orçamento no teu tom)  
-
-### Bônus (já vem no pacote; use depois)
-
-Skills extras (humanizer, audit, notion…) e 3 squads (advisory-board, brand, hormozi).  
-**Não** são obrigatórios pro agente te conhecer.
-
----
-
-## Por que isso “gruda” (e template bonito some)
-
-- O contexto **compõe**: cada sessão e cada cliente ficam no sistema, não no chat.  
-- Você sente o wow na **2ª abertura** — não depois de um curso de 4h.  
-- É feito pra **execução** (prioridade, cliente, proposta), não pra “second brain” infinito.  
-- Multi-agente de verdade: o **INVOS é o sistema**; o modelo (Claude, Codex, Gemini…) é só o cérebro da vez.  
-- O ZIP é só o frete — o que permanece aberto no Cursor/Claude é o **sistema do teu negócio**.
+Já comprou? Baixe o kit → **[COMECE-AQUI.md](./COMECE-AQUI.md)**.
 
 ---
 
 ## Trabalhar de qualquer lugar
 
-1. O sistema inteiro está na **pasta do projeto** (arquivos que o agente lê).  
-2. Copia pro outro PC (ou usa git se quiser).  
-3. Abre no outro agente → **mesma memória**, mesmo cliente, mesmas propostas.
+1. O sistema inteiro está na **pasta**.  
+2. Copia pro outro PC (ou git).  
+3. Abre em outro agente → **mesma memória**, mesmos clientes, mesmas propostas.
 
 Não é login em SaaS. É o teu negócio estruturado pra IA usar de verdade.
 
@@ -268,52 +299,31 @@ Não é login em SaaS. É o teu negócio estruturado pra IA usar de verdade.
 
 ## O que o INVOS **não** é
 
-- Não é “só um ZIP de arquivos” (o ZIP é a **entrega**; o produto é o **sistema**)  
+- Não é “só um ZIP” (ZIP = frete; produto = sistema)  
 - Não é curso com aulas  
-- Não é substituto de mentoria  
-- Não é app na nuvem com conta  
+- Não é Notion / app na nuvem  
 - Não é “instalar 50 ferramentas”  
-- Não é monstro de config no dia 1  
-- Não é template que você abandona em uma semana  
+- Não é second brain infinito — é **execução** (prioridade, cliente, proposta)
 
-v1 = **sistema de memória (wow) + clientes + proposta (uso real)**.  
-v2 = mais workflows — sem abandonar a simplicidade.
-
----
-
-## Comandos úteis (quando quiser)
-
-```bash
-# Kit com estrutura ok? (template / ship)
-bash scripts/validar.sh
-
-# Depois do onboard: memória preenchida de verdade?
-bash scripts/validar.sh --pos-onboard
-```
+v1 = memória (wow) + clientes + proposta + filas com dono.  
+v2 = mais workflows, sem abandonar a simplicidade.
 
 ---
 
-## Segurança (leia 30 segundos)
+## Segurança (30 segundos)
 
-- **Não** coloque senha, token ou chave de API nos arquivos da pasta `memoria/` nem no Git.  
-- Use `.env` local se precisar (já está no ignore).  
-- Detalhes: [SECURITY.md](./SECURITY.md)
+- **Não** coloque senha, token ou chave em `memoria/` nem no Git.  
+- Use `.env` local se precisar (já no ignore).  
+- [SECURITY.md](./SECURITY.md)
 
 ---
 
 ## Dúvidas rápidas
 
-**Preciso saber programar?**  
-Não. Precisa abrir a pasta e conversar com o agente.
-
-**Funciona só no Claude?**  
-Não. Qualquer agente que leia a pasta do projeto (Cursor, Claude Code, Codex, Grok, OpenCode…).
-
-**E se eu errar na entrevista?**  
-Peça pro agente atualizar o arquivo certo em `memoria/` (ex.: “muda minha oferta principal para…”).
-
-**Onde compro / vejo a oferta completa?**  
-https://inovadigitalid.com/invos
+**Preciso saber programar?** Não.  
+**Só Claude?** Não — qualquer agente que leia a pasta.  
+**Errei no onboard?** “Atualiza minha oferta em empresa.md para…”.  
+**Onde compro?** https://inovadigitalid.com/invos  
 
 ---
 

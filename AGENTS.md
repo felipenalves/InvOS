@@ -12,7 +12,7 @@ O ZIP é só a entrega do sistema; o valor é memória + clientes + proposta + e
 **Leitura obrigatória no início de TODA sessão:**
 
 0. Se for **primeira abertura** do kit, user pediu instalar/setup/“como começo”, ou pasta ainda se chama `invos-kit`: leia e siga **`COMECE-AQUI.md`** (instalação, renomear pasta, duplicar template de cliente).
-1. Carregar skill `session-start` — lê `memoria/perfil.md`, `memoria/empresa.md`, `memoria/projetos.md`, `memoria/decisoes.md`, `memoria/insights.md`, `memoria/regras/*`, `memoria/ativo.md`, último histórico
+1. Carregar skill `session-start` — lê `memoria/perfil.md`, `memoria/empresa.md`, `memoria/projetos.md`, `memoria/decisoes.md`, `memoria/insights.md`, `memoria/regras/*`, `memoria/ativo.md`, `clientes/_index.md`, último histórico
 2. **Onboard obrigatório se a memória ainda for template.** Disparar skill `onboard` **antes** de anunciar estado ou continuar o trabalho se **qualquer** um for verdadeiro:
    - `memoria/empresa.md` contém `[o que` **ou** `[seu nome]` **ou** `PREENCHA`
    - `memoria/projetos.md` contém `PREENCHA`
@@ -32,13 +32,16 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 
 | O user diz (ou similar) | Você faz |
 |-------------------------|----------|
-| “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + próximo passo (`ativo` + PRIORIDADE em `projetos` + cliente se houver). Não lista genérica. Ofereça executar o passo. |
-| “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/`. |
-| “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche o que o user der. Detalhe: `COMECE-AQUI.md` passo 4. |
-| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`** (`.agents/skills/proposta/SKILL.md`). Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`. |
+| “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + dono + próximo passo (`ativo` + PRIORIDADE em `projetos` + `_index` clientes). Se dono=agente → execute ou ofereça executar. Se dono=humano → `⚠️ Sua vez:`. |
+| “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/` + linha no `_index`. |
+| “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche + **1 linha em `_index`**. Detalhe: `COMECE-AQUI.md` passo 4. |
+| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`; atualiza `_index`. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
+| Arquivo/HTML/PDF pro cliente | Salva em `clientes/<slug>/arquivos/` (nunca na raiz). |
 
-**Clientes:** ver `clientes/README.md`. Uma pasta por cliente. Não misture dados de clientes diferentes.
+**Clientes:** ver `clientes/README.md`. Uma pasta por cliente + `_index.md`. Não misture dados de clientes diferentes.
+
+**Toda task tem dono** (`agente` | `humano`) — regra `memoria/regras/task-com-dono.md`. Sem dono = não grava. Pendência > 3 dias → alerta no boot.
 
 ## Proactive Behavior
 
@@ -50,9 +53,13 @@ During the session, automatically invoke `session-checkpoint` when you detect:
 - **Deploy / release:** algo foi pra produção
 - **Link ou documento relevante:** URL, PR, issue que precisa ser registrada
 - **Insight estratégico:** conexão entre coisas, epifania sobre o negócio
+- **Comercial:** lead, DM, proposta, call, status de cliente
+- **Task só humana:** grava **Fila humana** + alerta `⚠️ Sua vez:`
 - **Usuário diz qualquer gatilho:** "guarda isso", "anota", "não esquece"
 
 Não pergunte "quer que eu salve?" — apenas salve e avise "Checkpoint salvo: [tipo]". Se o usuário não quiser, ele vai falar.
+
+**Execução:** o que for dono=`agente` e estiver no escopo do chat/repo — faça. Não empurre pro humano por preguiça.
 
 ## Proactive Content — Formato Seriado
 

@@ -1,6 +1,6 @@
 ---
 name: session-start
-description: Load memory context at the beginning of every session. Reads empresa.md, projetos.md, decisoes.md, insights.md, regras/, ativo.md. Archives previous session if new day. Must run before any other action. Runs onboard if placeholders remain.
+description: Load memory context at the beginning of every session. Reads empresa.md, projetos.md, decisoes.md, insights.md, regras/, ativo.md, clientes/_index.md. Archives previous session if new day. Must run before any other action. Runs onboard if placeholders remain.
 ---
 
 # Session Start
@@ -43,7 +43,16 @@ Todas as regras arquivadas. Leia cada arquivo — não pule.
 
 ### 7. Ler `memoria/ativo.md`
 
-Contexto da sessão atual: foco, em andamento, próximos, regras ativas.
+Contexto: foco, **missão**, **Fila agente** / **Fila humana**, regras ativas.
+
+**Tasks com dono:** toda pendência deve ter dono `agente` ou `humano` (regra `task-com-dono`).  
+Itens em **Fila humana** → alertar no anúncio. Itens com `desde` > 3 dias → marcar atraso.
+
+### 7a. Ler `clientes/_index.md`
+
+Sempre o **índice** (pipeline). Não ler pastas `clientes/<slug>/` no boot — só se o foco/missão citar o cliente ou o user pedir.
+
+Se houver linhas com `dono=humano` e `desde` > 3 dias → alerta de atraso.
 
 ### 8. Ler `memoria/perfil.md`
 
@@ -66,7 +75,7 @@ Se houver gaps, avise: "⚠️ Gap detectado no histórico: [dias faltantes]"
 ### 11. Validar integridade
 
 ```bash
-ls memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md > /dev/null 2>&1 && echo "OK" || echo "FALHA"
+ls memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md > /dev/null 2>&1 && echo "OK" || echo "FALHA"
 ```
 
 ### 12. Onboard obrigatório se memória ainda for template
@@ -94,17 +103,21 @@ Se o onboard **já foi concluído** (sem placeholders / sem first-run):
 
 1. **Prova de memória** (1 parágrafo): nome, oferta, cliente ideal, projeto, foco.
 2. **Prioridade de hoje (obrigatório — o “wow matinal”):**
-   - **#1:** [projeto com PRIORIDADE ATUAL em `projetos.md`, senão o **Foco** de `ativo.md`]
-   - **Próximo passo:** [de `ativo.md` → Próximo, ou do bloco do projeto]
-   - Se houver cliente em andamento em `clientes/`, cite o slug em 1 linha.
-   - Feche com: *“Quer que eu execute esse próximo passo agora?”*
-3. Regras ativas: [número] · Última sessão: [data se existir]
+   - **#1:** [projeto com PRIORIDADE ATUAL em `projetos.md`, senão **Missão/Foco** de `ativo.md`]
+   - **Dono da missão:** agente | humano
+   - **Próximo passo:** da fila correta; se dono=agente e for executável, ofereça **executar agora**
+   - Se houver cliente no `_index` com próximo aberto, cite o slug em 1 linha
+   - Feche com: *“Quer que eu execute esse próximo passo agora?”* (se dono=agente) **ou** `⚠️ Sua vez: …` (se dono=humano)
+3. **Fila humana** (se houver): listar com `⚠️ Sua vez:`
+4. **Atrasos** (> 3 dias em ativo ou `_index`)
+5. Regras ativas: [número] · Última sessão: [data se existir]
 
 **Formato curto preferido:**
 
 ```
-Prioridade de hoje: [1 coisa clara].
+Prioridade de hoje: [1 coisa clara] (dono: agente|humano).
 Próximo passo: [ação].
+⚠️ Sua vez: [se houver fila humana]
 [1 linha: quem você é / o que vende — só se ainda não falou no parágrafo.]
 ```
 

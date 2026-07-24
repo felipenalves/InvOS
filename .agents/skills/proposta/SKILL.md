@@ -28,9 +28,10 @@ Leia (com ferramenta de arquivo):
 
 ### 1. Cliente
 
-- Se já existe pasta em `clientes/<slug>/` → use.  
-- Se não existe: pergunte nome do cliente + 2–3 dados (o que precisa, prazo, se tem valor em mente) e **crie** a pasta copiando a estrutura de `clientes/_template/` (escreva os arquivos).  
-- Slug: minúsculo, hífen, sem acento (ex: `ana-studio`).
+- Se já existe pasta em `clientes/<slug>/` → use + confira linha em `clientes/_index.md`.  
+- Se não existe: pergunte nome do cliente + 2–3 dados (o que precisa, prazo, se tem valor em mente) e **crie** a pasta copiando `clientes/_template/` **e** 1 linha no `_index` (status=proposta ou lead, próximo, dono, desde).  
+- Slug: minúsculo, hífen, sem acento (ex: `ana-studio`).  
+- Anexos/HTML/PDF extras do deal → `clientes/<slug>/arquivos/` (não na raiz).
 
 ### 2. Buraco (só o que faltar)
 
@@ -86,8 +87,9 @@ R$ …
 
 1. Mostre o caminho do arquivo.  
 2. Ofereça 1 ajuste (tom / preço / escopo).  
-3. Se o user **fechou** valor ou escopo: atualize `clientes/<slug>/contexto.md` (1 linha na tabela) e avise “Checkpoint salvo: contexto do cliente”.  
-4. **Não** invente cases, NPS ou equipe se não estiver na memória.
+3. Se o user **fechou** valor ou escopo: atualize `clientes/<slug>/contexto.md` (1 linha na tabela), `clientes/_index.md` (status/próximo/dono) e avise “Checkpoint salvo: contexto do cliente”.  
+4. Próximo passo pós-proposta costuma ser **dono=humano** (enviar/cobrar) → `⚠️ Sua vez:` na Fila humana do `ativo` se ainda não estiver.  
+5. **Não** invente cases, NPS ou equipe se não estiver na memória.
 
 ## O que NÃO fazer
 

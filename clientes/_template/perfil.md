@@ -1,13 +1,15 @@
 # Cliente — [Nome]
 
-> Copie esta pasta `_template` e renomeie. Preencha o que souber; deixe o resto em branco.
+> Copie esta pasta `_template` e renomeie. Preencha o que souber; deixe o resto em branco.  
+> Depois: 1 linha em `clientes/_index.md`.
 
 ## Identidade
 
 - **Nome / empresa:**
+- **slug da pasta:** (ex: ana-studio)
 - **Contato principal:** (nome + canal: WhatsApp, e-mail…)
 - **Setor / o que faz:**
-- **Status:** lead | ativo | pausado | encerrado
+- **Status:** lead | dm | call | proposta | ativo | pausado | perdido | encerrado
 - **Como chegou:** indicação | Instagram | site | outro
 
 ## Relação comercial
@@ -24,4 +26,7 @@
 ## Próximo passo
 
 - **Ação:**
-- **Até quando:**
+- **Dono:** agente | humano
+- **Desde:** YYYY-MM-DD
+- **Done quando:** (critério binário)
+- **Até quando:** (opcional)

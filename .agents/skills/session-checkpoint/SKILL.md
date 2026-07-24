@@ -1,6 +1,6 @@
 ---
 name: session-checkpoint
-description: Capture important context mid-session — decisions, rules, insights, progress. Called explicitly by user OR proactively by agent.
+description: Capture important context mid-session — decisions, rules, insights, progress, clients, tasks with owner. Called explicitly by user OR proactively by agent.
 ---
 
 # Session Checkpoint
@@ -20,6 +20,8 @@ Registra momentos importantes DURANTE a sessão, sem precisar esperar o fim.
 - Escopo alterado significativamente
 - Deploy ou mudança em produção
 - Link/documento relevante descoberto
+- **Comercial:** lead, DM, resposta, proposta, call, mudança de status de cliente
+- **Task:** pendência só do humano → **Fila humana** + alerta `⚠️ Sua vez:`
 
 ## Sequence
 
@@ -31,16 +33,22 @@ Registra momentos importantes DURANTE a sessão, sem precisar esperar o fim.
 - **Alerta**: algo quebrou, risco identificado
 - **Insight**: ideia estratégica, semente
 - **Contexto**: informação pra próxima sessão
+- **Cliente**: lead/status/entrega
+- **Task**: item de fila com dono
 
 ### 2. Salvar
 
 - **Decisão**: adicione em `## Decisões da sessão` no ativo.md
 - **Regra**: adicione em `## Regras novas` no ativo.md
-- **Progresso**: atualize `## Em andamento` no ativo.md
+- **Progresso**: atualize `## Em andamento` ou marque item feito na fila
 - **Insight**: adicione em `memoria/insights.md`:
   ```
   - **Título:** descrição. [Fonte: contexto]
   ```
+- **Task agente**: linha em `## Fila agente` com `desde:` + `done quando:`
+- **Task humana**: linha em `## Fila humana` + chat: `⚠️ Sua vez: …`
+- **Cliente:** atualize `clientes/_index.md`; ficha em `clientes/<slug>/` (copiar de `_template/` se novo).  
+  Arquivos (html/pdf/img/md) → `clientes/<slug>/arquivos/`. Propostas → `propostas/`. Log → `entregas.md`.
 
 Não reescreva arquivos inteiros — apenas insira ou atualize a linha relevante.
 
@@ -51,7 +59,7 @@ cat > memoria/regras/$(date +%Y%m%d)-nome-da-regra.md << 'EOF'
 # [Nome]
 
 **Gatilho:** [quando se aplica]
-**Criada em:** $(date +%Y-%m-%d)
+**Criada em:** YYYY-MM-DD
 **Origem:** checkpoint durante sessão
 
 ## Regra

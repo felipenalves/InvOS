@@ -60,7 +60,7 @@ fi
 # 3. Memoria completa
 echo ""
 echo "3/5 — Sistema de memória:"
-for f in memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md; do
+for f in memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/decisoes.md memoria/insights.md memoria/ativo.md clientes/_index.md; do
   if [ -f "$f" ]; then
     echo "  ✅ $f"
   else
@@ -68,6 +68,12 @@ for f in memoria/perfil.md memoria/empresa.md memoria/projetos.md memoria/deciso
     ERROS=$((ERROS+1))
   fi
 done
+if [ -d "clientes/_template" ] && [ -f "clientes/_template/perfil.md" ]; then
+  echo "  ✅ clientes/_template/"
+else
+  echo "  ❌ clientes/_template/ — FALTA"
+  ERROS=$((ERROS+1))
+fi
 
 # 4. Skills
 echo ""

@@ -16,9 +16,9 @@ Resgate da memória recente:
 - **Foco principal:** qual era o objetivo da sessão
 - **O que foi feito:** tarefas concluídas, decisões, arquivos alterados
 - **Links importantes:** URLs, PRs, issues, documentos criados
-- **O que ficou pendente:** o que não deu tempo
+- **O que ficou pendente:** o que não deu tempo (com **dono** e **desde**)
 - **Regras aprendidas:** lições que devem virar regra permanente
-- **Mudanças de projeto:** status alterado?
+- **Mudanças de projeto / cliente:** status alterado? `_index` atualizado?
 - **Contexto restante:** informação que a próxima sessão precisa saber
 
 ### 2. Verificar trabalho não commitado
@@ -38,7 +38,7 @@ cat > memoria/historico/$(date +%Y-%m-%d).md << 'EOF'
 - [lista do que foi concluído, com links se houver]
 
 ## Pendente
-- [lista do que ficou]
+- [task · dono: agente|humano · desde: YYYY-MM-DD · done quando: …]
 
 ## Decisões
 - [decisões importantes]
@@ -49,8 +49,8 @@ cat > memoria/historico/$(date +%Y-%m-%d).md << 'EOF'
 ## Links
 - [PRs, deploys, docs, issues]
 
-## Projetos afetados
-- [quais projetos foram alterados]
+## Projetos / clientes afetados
+- [quais]
 EOF
 ```
 
@@ -59,16 +59,54 @@ EOF
 Se decisões foram tomadas, adicione linhas na tabela correta:
 
 ```
-| [Decisão] | $(date +%d-%m) | [Contexto] |
+| [Decisão] | DD-MM | [Contexto] |
 ```
 
-### 5. Atualizar `memoria/projetos.md`
+### 5. Atualizar `memoria/projetos.md` e `clientes/_index.md`
 
-Se status de projeto mudou, atualize a linha relevante.
+Se status de projeto ou cliente mudou, atualize a linha relevante (não reescreva o arquivo inteiro).
 
 ### 6. Atualizar `memoria/ativo.md`
 
-Substitua o conteúdo com estado limpo.
+Substitua com estado limpo **preservando filas abertas** (não apague `desde` original):
+
+```markdown
+# Ativo
+
+> Sessão atual. Fila com dono. Sem task órfã.
+
+## Contexto da sessão
+
+- **Data:** YYYY-MM-DD
+- **Sessão anterior:** YYYY-MM-DD — [resumo 1 linha]
+- **Foco:** [próxima sessão define se vazio]
+- **Missão do dia:**
+- **Done quando:**
+- **Dono da missão:** agente | humano
+
+## Fila agente
+
+- [ ] … · desde: YYYY-MM-DD · done quando: …
+
+## Fila humana
+
+- [ ] … · desde: YYYY-MM-DD · done quando: …
+
+## Em andamento
+
+[nada — sessão anterior arquivada]
+
+## Clientes (ponte)
+
+- Índice: clientes/_index.md
+- Cliente em foco: …
+
+## Regras ativas
+
+[herdadas + novas]
+```
+
+Tasks **concluídas** saem da fila. Abertas **migram** com a mesma data `desde`.
 
 ### 7. Registrar regras novas
 
@@ -79,7 +117,7 @@ cat > memoria/regras/$(date +%Y%m%d)-nome-da-regra.md << 'EOF'
 # [Nome]
 
 **Gatilho:** [quando se aplica]
-**Criada em:** $(date +%Y-%m-%d)
+**Criada em:** YYYY-MM-DD
 **Origem:** sessão
 
 ## Regra
@@ -99,10 +137,10 @@ EOF
 ### 9. Verificar integridade
 
 ```bash
-ls memoria/empresa.md memoria/projetos.md memoria/ativo.md > /dev/null 2>&1 || echo "FALHA"
+ls memoria/empresa.md memoria/projetos.md memoria/ativo.md clientes/_index.md > /dev/null 2>&1 || echo "FALHA"
 ls memoria/regras/ > /dev/null 2>&1 || echo "FALHA: regras vazias"
 ```
 
 ## Output
 
-Sessão arquivada. Ativo limpo. Projetos atualizados. Regras salvas.
+Sessão arquivada. Filas abertas migradas. Projetos/clientes atualizados. Regras salvas.

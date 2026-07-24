@@ -108,9 +108,10 @@ Se falhar: `bash scripts/validar.sh --pos-onboard` e complete o que faltar.
 cp -R clientes/_template "clientes/<slug>"
 ```
 
-3. Preencha `clientes/<slug>/perfil.md` com o que o user der (nome, contato, status, dor, próximo passo).  
-4. Confirme o caminho: `clientes/<slug>/`  
-5. Nunca edite `_template` no lugar do cliente real — o template fica limpo para o próximo.
+3. Preencha `clientes/<slug>/perfil.md` com o que o user der (nome, contato, status, dor, próximo passo + **dono**).  
+4. **Adicione 1 linha** em `clientes/_index.md` (slug, status, próximo, dono, desde).  
+5. Confirme o caminho: `clientes/<slug>/` (arquivos gerados → `arquivos/`).  
+6. Nunca edite `_template` no lugar do cliente real — o template fica limpo para o próximo.
 
 **Se o user der os dados em uma mensagem** (“cria o cliente Clínica Vida, Dra. Paula, lead, quer site”), o agente **cria a pasta e preenche** sem pedir 10 perguntas.
 
@@ -140,10 +141,10 @@ Resposta esperada: **1 prioridade** + **próximo passo** (de `ativo` / PRIORIDAD
 
 | User diz | Ação |
 |----------|------|
-| “O que importa hoje?” / início de sessão | 1 prioridade + próximo passo (memória real) |
-| “Cliente atual: X” | Lê `clientes/X/` |
-| “Cria o cliente …” | Passo 4 (duplicar template) |
-| “Proposta / orçamento pro X” | Skill `.agents/skills/proposta/SKILL.md` → grava em `clientes/X/propostas/` |
+| “O que importa hoje?” / início de sessão | 1 prioridade + **dono** + próximo passo; alerta fila humana / atraso |
+| “Cliente atual: X” | Lê `clientes/X/` (+ `_index`) |
+| “Cria o cliente …” | Passo 4 (template + linha no `_index`) |
+| “Proposta / orçamento pro X” | Skill proposta → `clientes/X/propostas/` + atualiza `_index` |
 
 ---
 

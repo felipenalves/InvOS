@@ -9,11 +9,13 @@
 | `memoria/projetos.md` | Projetos ativos e status |
 | `memoria/decisoes.md` | Decisões organizadas por tópico |
 | `memoria/insights.md` | Ideias e epifanias estratégicas |
-| `memoria/ativo.md` | Sessão atual — o que está rolando agora |
+| `memoria/ativo.md` | Sessão atual — missão + filas com dono |
 | `memoria/regras/` | Lições aprendidas (um arquivo por regra) |
 | `memoria/historico/` | Sessões anteriores arquivadas |
-| `clientes/` | Um cliente por pasta (prestador) — ver `clientes/README.md` |
-| `clientes/<slug>/propostas/` | Propostas geradas pela skill `proposta` |
+| `clientes/_index.md` | Pipeline (boot) — status, próximo, dono, desde |
+| `clientes/<slug>/` | Ficha do cliente (perfil, contexto, entregas) |
+| `clientes/<slug>/propostas/` | Propostas (skill `proposta`) |
+| `clientes/<slug>/arquivos/` | HTML, PDF, imagens, MD daquele cliente |
 
 ## Boot sequence
 
