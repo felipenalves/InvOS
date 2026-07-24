@@ -30,7 +30,9 @@ performance_mode: "alta-performance"
 skills:
   - web_search
   - web_fetch
-  - image-creator
+  - image-creator          # .agents/skills/image-creator (Chrome headless)
+  - image-fetcher          # opcional
+  - instagram-publisher    # opcional — default handoff
   - bash
 
 data:

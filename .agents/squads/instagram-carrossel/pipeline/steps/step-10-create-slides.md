@@ -52,4 +52,4 @@ O Davi Design deve implementar **exatamente** a identidade selecionada em select
 
 ## Nota sobre Aspect Ratio
 
-O squad usa 1080×1440px (3:4) por padrão. Se a skill instagram-publisher reportar problema de aspect ratio durante publicação, o Davi Design pode ser chamado de volta para reexportar em 1080×1350px (4:5).
+INVOS prefere **1080×1350** (4:5). 1080×1440 ok se HTML já nasceu assim.

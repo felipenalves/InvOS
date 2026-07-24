@@ -19,7 +19,7 @@ O Pesquisador deve fazer **pelo menos 3 buscas** com ângulos diferentes sobre o
 ## Inputs para este Step
 
 - `output/research-focus.md` → tema e período definidos pelo usuário no Step 01
-- `_opensquad/_memory/company.md` → contexto da empresa (público-alvo, nicho, tom)
+- `memoria/empresa.md + marca/marca.md` → contexto da empresa (público-alvo, nicho, tom)
 
 ## Expected Outputs
 

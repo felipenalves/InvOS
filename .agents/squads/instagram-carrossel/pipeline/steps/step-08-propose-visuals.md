@@ -19,7 +19,7 @@ O Designer lê o copy final, entende o tom e o conteúdo, e propõe **3 identida
 ## Inputs para este Step
 
 - `output/carousel-draft.md` → copy final dos slides (tom, conteúdo, momento emocional)
-- `_opensquad/_memory/company.md` → contexto da empresa e direção visual aprovada
+- `memoria/empresa.md + marca/marca.md` → contexto da empresa e direção visual aprovada
 - `pipeline/data/anti-patterns.md` → padrões visuais a evitar
 
 ## Expected Outputs

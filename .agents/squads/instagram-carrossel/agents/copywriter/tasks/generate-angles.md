@@ -4,7 +4,7 @@ order: 1
 input:
   - selected_story: Notícia escolhida pelo usuário (lida de output/selected-story.yaml)
   - domain_framework: pipeline/data/domain-framework.md (framework de ângulos)
-  - company_context: _opensquad/_memory/company.md
+  - company_context: memoria/empresa.md + marca/marca.md
   - tone_of_voice: pipeline/data/tone-of-voice.md
 output:
   - insights_brief: Fatos e tensão central extraídos da notícia (output/insights-brief.yaml)

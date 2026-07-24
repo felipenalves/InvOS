@@ -8,20 +8,21 @@ tasks:
 depends_on: step-12
 ---
 
-# Step 13: Paula Post — Publicação no Instagram
+# Step 13: Publisher — Pack final (+ publish opcional)
 
 ## Para o Pipeline Runner
 
-Executar a task validate-publish da Paula Post para publicar o carrossel no Instagram.
+Executar `agents/publisher/tasks/validate-publish.md`.  
+**Default INVOS:** pack em `conteudo/carrosseis/` + handoff humano. API só se user pediu e `.env` ok.
 
-**ATENÇÃO: Este step só é executado após aprovação explícita do usuário no Step 11.**
+**ATENÇÃO:** só após aprovação do Step 11 (imagens).
 
 ## Inputs para este Step
 
 - `output/slides/rendered/manifest.json` → lista de imagens prontas para upload
 - `output/carousel-draft.md` → legenda final e hashtags
 - `output/review-final.md` → confirmação de aprovação da qualidade (se Step 12 foi executado)
-- `skills/instagram-publisher/SKILL.md` → protocolo de publicação
+- `.agents/skills/instagram-publisher/SKILL.md` → protocolo de publicação
 
 ## Expected Outputs
 
@@ -30,7 +31,7 @@ Executar a task validate-publish da Paula Post para publicar o carrossel no Inst
 ## Execution Mode
 
 - **Modo:** Inline
-- **Skills:** instagram-publisher (principal), sem outras skills
+- **Skills:** instagram-publisher (opcional); default = pack + ⚠️ humano
 
 ## Quality Gate
 

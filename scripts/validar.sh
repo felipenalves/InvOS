@@ -104,6 +104,21 @@ else
   echo "  ❌ squad instagram-carrossel — FALTA"
   ERROS=$((ERROS+1))
 fi
+for f in image-creator image-fetcher instagram-publisher; do
+  if [ -f ".agents/skills/$f/SKILL.md" ]; then
+    echo "  ✅ skill $f (deps carrossel)"
+  else
+    echo "  ❌ skill $f — FALTA (dep do carrossel)"
+    ERROS=$((ERROS+1))
+  fi
+done
+# Paths legados OpenSquad (sem prefixo INVOS .agents/)
+if rg -n "_opensquad/_memory|_opensquad/core|(^|[^./])skills/image-creator|(^|[^./])skills/instagram-publisher" .agents/squads/instagram-carrossel --glob '!DEPENDENCIES.md' --glob '!RUN.md' 2>/dev/null | rg -v '\.agents/skills/' | head -1 | grep -q .; then
+  echo "  ❌ paths OpenSquad quebrados ainda no squad"
+  ERROS=$((ERROS+1))
+else
+  echo "  ✅ squad paths INVOS (sem deps OpenSquad quebradas)"
+fi
 
 echo ""
 echo "4b — Clientes (prestador):"

@@ -3,7 +3,7 @@ task: "Render and Export"
 order: 3
 input:
   - slide_html_files: output/slides/slide-0*.html (todos os arquivos HTML gerados)
-  - image_creator_skill: skills/image-creator/SKILL.md
+  - image_creator_skill: .agents/skills/image-creator/SKILL.md
 output:
   - rendered_images: Imagens PNG renderizadas de cada slide em output/slides/rendered/
   - export_manifest: output/slides/rendered/manifest.json com lista de imagens prontas
@@ -11,18 +11,18 @@ output:
 
 # Render and Export
 
-Renderiza todos os slides HTML como imagens PNG usando a skill image-creator via Playwright. Verifica cada imagem renderizada e produz o manifesto final pronto para o Publisher.
+Renderiza slides HTML → PNG via skill **image-creator** (Chrome headless no INVOS; Playwright opcional).
 
 ## Process
 
-1. **Ler a skill image-creator.** Carregar `skills/image-creator/SKILL.md` para entender o protocolo exato de chamada. Seguir as instruções da skill ao pé da letra.
+1. **Ler** `.agents/skills/image-creator/SKILL.md` (Chrome headless é o path padrão).
 
-2. **Criar diretório de output.** Garantir que `output/slides/rendered/` existe. Se não existir, criar.
+2. **Criar** `output/slides/rendered/` e espelho em `conteudo/carrosseis/$SLUG/rendered/`.
 
-3. **Renderizar slide 1 primeiro.** Chamar a skill image-creator para renderizar `output/slides/slide-01.html` → `output/slides/rendered/slide-01.png`. 
-   - Verificar o resultado visualmente após o primeiro render
-   - Confirmar: dimensões corretas (1080×1440), texto legível, sem overflow
-   - Se houver problema, identificar a causa no HTML e corrigir antes de continuar
+3. **Renderizar slide 1 primeiro** → `slide-01.png`  
+   - Dimensões: **1080×1350** (preferido INVOS) ou 1080×1440 se o HTML for 3:4  
+   - Texto legível, sem overflow  
+   - Se Chrome ausente: parar com handoff HTML + não inventar PNG
 
 4. **Renderizar todos os slides em sequência.** Após confirmar que o slide 1 está correto, renderizar todos os demais:
    - slide-02.html → slide-02.png
@@ -74,7 +74,7 @@ Salvar em `output/slides/rendered/manifest.json`:
 
 ## Critical Notes
 
-1. **A skill image-creator é o mecanismo de rendering.** Ler e seguir EXATAMENTE o protocolo descrito em `skills/image-creator/SKILL.md`. Não tentar fazer rendering de outra forma.
+1. **image-creator** é o mecanismo. Preferir Chrome headless do SKILL; se falhar, reportar e entregar HTML.
 
 2. **O slide 1 é a validação antes do batch.** Um erro sistêmico (como falta de fonte ou overflow de container) vai aparecer no slide 1. Corrigi-lo antes de renderizar os demais economiza tempo.
 

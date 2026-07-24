@@ -3,7 +3,7 @@ task: "Propose Visual Identities"
 order: 1
 input:
   - carousel_draft: output/carousel-draft.md (copy final dos slides — tom e conteúdo)
-  - company_context: _opensquad/_memory/company.md
+  - company_context: memoria/empresa.md + marca/marca.md
   - anti_patterns: pipeline/data/anti-patterns.md
 output:
   - visual_identities: 3 propostas de identidade visual distintas (output/visual-identities.yaml)
@@ -17,10 +17,10 @@ Antes de criar qualquer HTML ou imagem, propõe 3 identidades visuais distintas 
 
 1. **Ler o carousel-draft.md.** Identificar o tom emocional do conteúdo: é urgente? reflexivo? provocador? educacional? O design deve amplificar essa emoção, não contradizê-la.
 
-2. **Criar 3 identidades visuais distintas.** Cada uma deve ter uma personalidade visual clara e diferente das outras. Regras:
-   - Bold e colorido é o DNA do squad — nunca paleta corporativa genérica (azul + branco + cinza)
-   - Cada identidade tem exatamente 1 cor de acento (não 2+)
-   - As 3 identidades devem ser visivelmente distintas (não variações da mesma paleta)
+2. **Criar 3 identidades.** Regras INVOS:
+   - **Identidade #1** deve usar cores de `marca/marca.md` (primária + fundo + texto) — recomendada por default  
+   - #2 e #3 = variações coerentes com a marca (não inventar DNA “neon tech” se a marca for sóbria)  
+   - Cada uma: 1 acento principal
 
 3. **Para cada identidade, definir:**
    - **Nome**: identifica a proposta (ex: "Neon Night", "Solar Bold", "Deep Focus")

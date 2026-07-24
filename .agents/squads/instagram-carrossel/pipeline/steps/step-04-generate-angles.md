@@ -20,7 +20,7 @@ O Copywriter lê a notícia selecionada, extrai os insights mais fortes e gera *
 
 - `output/selected-story.yaml` → notícia escolhida pelo usuário (URL e contexto)
 - `pipeline/data/domain-framework.md` → framework de ângulos e construção de carrossel
-- `_opensquad/_memory/company.md` → contexto da empresa e público-alvo
+- `memoria/empresa.md + marca/marca.md` → contexto da empresa e público-alvo
 - `pipeline/data/tone-of-voice.md` → tom de voz aprovado
 
 ## Expected Outputs
