@@ -1,9 +1,10 @@
 ---
 name: social-content
 description: >-
-  Cria posts e peças de social (LinkedIn, Instagram, X, etc.) na voz da marca
-  do INVOS. Use em: o que posto, post LinkedIn, legenda Instagram, thread,
-  carrossel texto, repurpose, fila da semana. Lê marca/ e conteudo/. Não exige Composio.
+  Cria posts e legendas de social (LinkedIn, Instagram, X, etc.) em TEXTO na voz
+  da marca. Use em: o que posto, post LinkedIn, legenda Instagram, thread,
+  repurpose, fila da semana. NÃO use para "carrossel" / "fábrica de carrossel"
+  (isso é skill/squad instagram-carrossel). Lê marca/ e conteudo/.
 ---
 
 # Social content (INVOS)
@@ -26,7 +27,11 @@ Leia (arquivo):
 
 ## Gatilhos
 
-“o que posto”, “post LinkedIn”, “legenda IG”, “thread”, “carrossel”, “repurpose isso”, “fila da semana”, “social”.
+“o que posto”, “post LinkedIn”, “legenda IG”, “thread”, “repurpose isso”, “fila da semana”, “social”.
+
+**Não é gatilho desta skill:** “carrossel”, “fábrica de carrossel”, “slides IG”, “PNG carrossel”  
+→ desambiguar: se o user quiser **slides/PNG**, rodar skill **`instagram-carrossel`**.  
+Se quiser só **outline em texto** de slides, pode continuar aqui — e avisar “isto é rascunho de texto; pra PNG use fábrica de carrossel”.
 
 ## Fluxo (rápido)
 
@@ -39,8 +44,8 @@ Não faça entrevista de 6 perguntas se o brief já veio.
 
 | Plataforma | Default |
 |------------|---------|
-| LinkedIn | Post 800–1500 chars ou carrossel em bullets |
-| Instagram | Legenda + ideia de 1ª frame / carrossel slides em texto |
+| LinkedIn | Post 800–1500 chars (bullets ok) |
+| Instagram | Legenda + ideia de 1ª frame (outline de slides em texto só se pedir “só o texto”) |
 | X/Twitter | Post curto ou thread 5–8 tweets |
 | WhatsApp status / Stories | 1–3 linhas + CTA |
 
@@ -92,7 +97,7 @@ Não montar grade 3 redes × 7 dias vazia de verdade do negócio.
 ## Plataformas (1 parágrafo cada)
 
 - **LinkedIn:** história + lição B2B; link no comentário se precisar.  
-- **Instagram:** legenda conversacional; carrossel = 1 ideia por slide em texto (design visual = humano ou outra skill).  
+- **Instagram:** legenda conversacional; slides PNG = skill **instagram-carrossel**.  
 - **X:** densidade; thread com promessa no 1.  
 - **TikTok/Reels:** script falado 15–30s (hook 1s) — o user grava.
 

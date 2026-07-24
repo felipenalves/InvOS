@@ -67,17 +67,19 @@ Essência, operação e papel do founder.
 
 ### 9. Ler último histórico
 
+Só diários `YYYY-MM-DD.md`. **Ignorar** `README.md` e qualquer arquivo que não seja data ISO.
+
 ```bash
-ls -t memoria/historico/*.md 2>/dev/null | head -1 | xargs cat 2>/dev/null
+ls -t memoria/historico/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md 2>/dev/null | head -1 | xargs cat 2>/dev/null
 ```
 
 ### 10. Detectar gaps no histórico
 
 ```bash
-ls memoria/historico/*.md 2>/dev/null | sed 's/.*\/\([0-9-]*\)\.md/\1/' | sort
+ls memoria/historico/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md 2>/dev/null | sed 's/.*\/\([0-9-]*\)\.md/\1/' | sort
 ```
 
-Se houver gaps, avise: "⚠️ Gap detectado no histórico: [dias faltantes]"
+Se houver gaps entre datas sequenciais, avise: "⚠️ Gap detectado no histórico: [dias faltantes]"
 
 ### 11. Validar integridade
 
@@ -110,7 +112,7 @@ Se o onboard **já foi concluído** (sem placeholders / sem first-run):
 
 1. **Prova de memória** (1 parágrafo): nome, oferta, cliente ideal, projeto, foco.
 2. **Prioridade de hoje (obrigatório — o “wow matinal”):**
-   - **#1:** [projeto com PRIORIDADE ATUAL em `projetos.md`, senão **Missão/Foco** de `ativo.md`]
+   - **#1:** [projeto com **PRIORIDADE #1** no título em `projetos.md`, senão **Missão/Foco** de `ativo.md`]
    - **Dono da missão:** agente | humano
    - **Próximo passo:** da fila correta; se dono=agente e for executável, ofereça **executar agora**
    - Se houver cliente no `_index` com próximo aberto, cite o slug em 1 linha

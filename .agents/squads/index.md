@@ -5,11 +5,6 @@
 - **[instagram-carrossel](instagram-carrossel/README.md)** — fábrica de carrossel IG.  
   Disparo: “fábrica de carrossel”. Orquestração: `RUN.md`.
 
-## Qualidade do sistema (ops)
-
-- **[cacador-ops](cacador-ops/README.md)** — 3 agentes: Caçador → Testador → Revisor.  
-  Disparo: “caça o INVOS”. Visão: `VISAO.md`. Saída: `docs/ops-hunt/`.
-
 ## Estratégia / consultoria (não é produção de post)
 
 - [advisory-board](advisory-board/README.md) — conselho para decisão e direção  

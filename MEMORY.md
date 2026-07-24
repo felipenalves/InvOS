@@ -6,7 +6,7 @@
 |------|-------------|
 | `memoria/perfil.md` | Essência, mentalidade |
 | `memoria/empresa.md` | Visão, oferta, resumo brand |
-| `memoria/projetos.md` | Projetos e PRIORIDADE ATUAL |
+| `memoria/projetos.md` | Projetos e **PRIORIDADE #1** (marcador no título) |
 | `memoria/decisoes.md` | Decisões por tópico |
 | `memoria/insights.md` | Sementes |
 | `memoria/ativo.md` | Missão + filas com dono |
