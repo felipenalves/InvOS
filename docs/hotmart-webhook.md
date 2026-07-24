@@ -36,14 +36,22 @@ https://inovadigitalid.com/api/hotmart-invos
 - Se `HOTMART_HOTTOK` estiver vazio em produção (`VERCEL_ENV=production`): **503**
 - Se vazio em dev: aceita com warning implícito
 
-## Env vars necessárias
+## E-mail: Hotmart vs Resend
+
+**Não precisa Resend** se a Hotmart já envia e-mail de entrega pós-compra (área de membros / conteúdo do produto).  
+Configure o **conteúdo do e-mail da Hotmart** com: link do repo + “abra no agente e diga Segue o COMECE-AQUI”.
+
+Resend no webhook só se quiser **segundo** e-mail técnico nosso (`INVOS_SEND_EMAIL=1` + `RESEND_API_KEY`).
+
+## Env vars
 
 | Var | Obrigatória | Descrição |
 |-----|-------------|-----------|
-| `HOTMART_HOTTOK` | Sim (prod) | Token de validação do Hotmart form |
-| `RESEND_API_KEY` | Não | Se presente, envia e-mail de onboarding ao comprador |
-| `RESEND_FROM` | Não | Remetente do e-mail (default: INVOS <onboarding@inovadigitalid.com>) |
-| `INVOS_GITHUB_URL` | Não | Link do repositório no e-mail (default: github.com/felipenalves/invos) |
+| `HOTMART_HOTTOK` | Recomendado | Token do form Hotmart (header/body) |
+| `INVOS_SEND_EMAIL` | Não | Só `1` se quiser e-mail via Resend (default: off) |
+| `RESEND_API_KEY` | Não | Só com INVOS_SEND_EMAIL=1 |
+| `RESEND_FROM` | Não | Remetente Resend |
+| `INVOS_GITHUB_URL` | Não | Link no e-mail Resend (default: github.com/felipenalves/invos) |
 
 ## Body esperado (Hotmart 2.0.0)
 
