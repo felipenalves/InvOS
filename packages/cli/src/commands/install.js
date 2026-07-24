@@ -1,11 +1,13 @@
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { collectFiles, copyFileWithDirs, shouldCopyOnInstall, ensureDir } from '../utils.js';
+import { collectFiles, copyFileWithDirs, shouldCopyOnInstall, ensureDir, isDevPath } from '../utils.js';
 import { buildLock, readLock, writeLock } from '../lock.js';
 import { syncClaudeSymlinks } from '../symlinks.js';
 
 export async function install(kit, kitRoot, targetDir, args) {
-  const files = collectFiles(kitRoot, '');
+  // Collect ALL kit files (skip user-data denylist) then filter out dev infra
+  const allFiles = collectFiles(kitRoot, '', true);
+  const files = allFiles.filter(f => !isDevPath(f.relPath));
   let copied = 0;
   let skipped = 0;
 

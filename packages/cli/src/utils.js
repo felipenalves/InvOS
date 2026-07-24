@@ -30,6 +30,17 @@ export function isDenylisted(relPath) {
   return false;
 }
 
+// Paths that belong to dev infrastructure, never to be installed into a user dir
+export function isDevPath(relPath) {
+  const parts = relPath.split('/');
+  if (parts[0] === 'packages') return true;
+  if (parts[0] === 'node_modules') return true;
+  if (parts[0] === '.git') return true;
+  if (parts[0] === '.claude') return true;
+  if (parts[0] === 'docs' && parts[1] === 'prd-invos-cli.md') return true;
+  return false;
+}
+
 export function isTemplatePlaceholder(content) {
   if (!content || content.trim().length === 0) return true;
   const lines = content.trim().split('\n').filter(l => l.trim());
