@@ -113,8 +113,10 @@ Chat **novo**, mesma pasta:
 
 ```text
 Você:  Gera proposta pro ana-studio: landing, 2 semanas, R$3.500
-INVOS: lê tua empresa + pasta da Ana → grava clientes/ana-studio/propostas/…
-       atualiza o índice → ⚠️ Sua vez: enviar a proposta
+INVOS: lê tua marca + pasta da Ana
+       → HTML pronto em clientes/ana-studio/propostas/….html
+       → mensagem de WhatsApp/e-mail pra copiar
+       → ⚠️ Sua vez: enviar (abrir HTML / PDF e mandar)
 ```
 
 Claude, Cursor, Codex, Gemini, Grok… **mesma pasta = mesmo cérebro.**

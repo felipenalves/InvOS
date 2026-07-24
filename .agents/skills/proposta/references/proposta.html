@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proposta — {{CLIENTE}} · {{MARCA}}</title>
+  <style>
+    :root {
+      --brand: {{COR}};
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --bg: #ffffff;
+      --soft: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: #eef2f7;
+      line-height: 1.55;
+    }
+    .sheet {
+      max-width: 720px;
+      margin: 24px auto;
+      background: var(--bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+    header {
+      padding: 28px 32px 22px;
+      border-bottom: 4px solid var(--brand);
+      background: linear-gradient(180deg, var(--soft), #fff);
+    }
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand);
+      border: 1px solid color-mix(in srgb, var(--brand) 35%, #fff);
+      background: color-mix(in srgb, var(--brand) 8%, #fff);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    h1 {
+      margin: 18px 0 6px;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    main { padding: 8px 32px 28px; }
+    section {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    section:last-child { border-bottom: 0; }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--brand);
+    }
+    p { margin: 0 0 10px; }
+    ul { margin: 0; padding-left: 1.15rem; }
+    li { margin: 4px 0; }
+    .price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .price small {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .cta {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .cta ol { margin: 8px 0 0; padding-left: 1.2rem; }
+    footer {
+      padding: 16px 32px 24px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--line);
+    }
+    @media print {
+      body { background: #fff; }
+      .sheet { margin: 0; box-shadow: none; border-radius: 0; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <header>
+      <div class="brand-row">
+        <div>
+          <div class="brand-name">{{MARCA}}</div>
+          <div class="brand-meta">{{FOUNDER}}{{SITE_LINE}}</div>
+        </div>
+        <div class="badge">Proposta comercial</div>
+      </div>
+      <h1>Proposta para {{CLIENTE}}</h1>
+      <div class="sub">Data: {{DATA}} · Válida até: {{VALIDADE}}</div>
+    </header>
+    <main>
+      <section>
+        <h2>O problema</h2>
+        {{PROBLEMA}}
+      </section>
+      <section>
+        <h2>O que eu faço</h2>
+        {{SOLUCAO}}
+      </section>
+      <section>
+        <h2>O que entra</h2>
+        <ul>
+          {{ENTRA_LIS}}
+        </ul>
+      </section>
+      <section>
+        <h2>O que não entra</h2>
+        <ul>
+          {{NAO_ENTRA_LIS}}
+        </ul>
+      </section>
+      <section>
+        <h2>Prazo</h2>
+        <p>{{PRAZO}}</p>
+      </section>
+      <section>
+        <h2>Investimento</h2>
+        <div class="price">{{PRECO}}<small>{{PAGAMENTO}}</small></div>
+      </section>
+      <section>
+        <h2>Próximo passo</h2>
+        <div class="cta">
+          <p>Para seguir:</p>
+          <ol>
+            {{PROXIMOS_LIS}}
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer>
+      {{RODAPE}}
+    </footer>
+  </article>
+</body>
+</html>

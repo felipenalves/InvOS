@@ -35,7 +35,7 @@ Prioridade de projeto no inventário = linha com **PRIORIDADE ATUAL** em `memori
 | “O que importa hoje?” / “por onde começo?” / início de sessão | **Sempre** 1 prioridade + dono + próximo passo (`ativo` + PRIORIDADE em `projetos` + `_index` clientes). Se dono=agente → execute ou ofereça executar. Se dono=humano → `⚠️ Sua vez:`. |
 | “Cliente atual: X” / “abre o cliente X” | Lê `clientes/<slug>/`. Se não existir, oferece criar a partir de `clientes/_template/` + linha no `_index`. |
 | “Cria o cliente …” | **Duplica** `clientes/_template` → `clientes/<slug>` (não edite o `_template`). Preenche + **1 linha em `_index`**. Detalhe: `COMECE-AQUI.md` passo 4. |
-| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. Lê `memoria/` + pasta do cliente; grava em `clientes/<slug>/propostas/`; atualiza `_index`. |
+| “Proposta” / “orçamento” / “cotação pro X” | Skill **`proposta`**. HTML **pronto pra enviar** em `clientes/<slug>/propostas/*.html` + msg de envio; brand de `empresa.md`; atualiza `_index` + Fila humana. |
 | “Proposta completa / RFP / enterprise” | Skill proposta em modo avançado (`references/proposta-avancada.md`). |
 | Arquivo/HTML/PDF pro cliente | Salva em `clientes/<slug>/arquivos/` (nunca na raiz). |
 

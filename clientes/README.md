@@ -46,8 +46,8 @@ Depois no chat: **“Cliente atual: nome-do-cliente”**.
 | `perfil.md` | Quem é, o que compra, status, **próximo passo + dono** |
 | `contexto.md` | Histórico curto, combinados, decisões |
 | `entregas.md` | Log do que saiu / prazos (tabela) |
-| `propostas/` | Propostas geradas (skill `proposta`) |
-| `arquivos/` | HTML, PDF, imagens, MD e rascunhos **desse** cliente |
+| `propostas/` | **HTML pronto pra enviar** (`YYYY-MM-DD.html`) + MD opcional |
+| `arquivos/` | PDF exportado, imagens, anexos **desse** cliente |
 
 ## Dono da task
 

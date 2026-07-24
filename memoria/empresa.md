@@ -20,6 +20,15 @@
 - **Cliente ideal:** [quem paga você — ex: "Pequeno empresário que precisa de site"]
 - **Ferramentas:** [Figma, WordPress, Instagram, WhatsApp, Notion...]
 
+## Brand (proposta / PDF)
+
+> Usado pela skill **proposta** no HTML pronto pra enviar. Preencha o mínimo.
+
+- **Marca:** [nome que aparece no topo da proposta — ex: "Studio Ana"]
+- **Cor:** [#0f766e]  ← hex; se vazio o agente usa este verde
+- **Site ou Instagram:** [https://… ou @seuuser]
+- **Contato na proposta:** [WhatsApp ou e-mail que o cliente pode responder]
+
 ## Estratégia de conteúdo (se aplicável)
 
 - Posicionamento:
