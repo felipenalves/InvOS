@@ -1,6 +1,6 @@
 {
   "name": "invos",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "INVOS v2 — OS do negócio em arquivos. CLI: init, install, update, doctor.",
   "type": "module",
   "bin": {
