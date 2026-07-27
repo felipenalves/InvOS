@@ -4,6 +4,19 @@ import { loadManifest } from '../manifest.js';
 import { readLock } from '../lock.js';
 import { checkClaudeSymlinks, syncClaudeSymlinks } from '../symlinks.js';
 
+async function askFix(hasWarnings) {
+  if (!hasWarnings) return true;
+  try {
+    const rl = await import('node:readline/promises');
+    const r = rl.createInterface({ input: process.stdin, output: process.stdout });
+    const ans = await r.question('⚠️ Doctor found issues. Apply --fix? (y/N) ');
+    r.close();
+    return ans.toLowerCase().startsWith('y');
+  } catch {
+    return false; // non-TTY — fail safe
+  }
+}
+
 export async function doctor(kit, kitRoot, targetDir, args) {
   const fix = args.includes('--fix');
   let ok = true;
@@ -46,8 +59,13 @@ export async function doctor(kit, kitRoot, targetDir, args) {
   }
 
   if (fix) {
-    syncClaudeSymlinks(kitRoot, targetDir);
-    r.push('  --fix: symlinks');
+    const confirmed = await askFix(!ok);
+    if (!confirmed) {
+      r.push('  --fix: skipped (not confirmed)');
+    } else {
+      syncClaudeSymlinks(kitRoot, targetDir);
+      r.push('  --fix: symlinks');
+    }
   }
 
   const sym = checkClaudeSymlinks(targetDir);

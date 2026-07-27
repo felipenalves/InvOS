@@ -3,6 +3,18 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const INVOS_KIT_ALLOWED_DIRS = ['.']; // Only current dir or explicit path from dev
+
+function validateKitPath(p) {
+  if (!p || typeof p !== 'string') return false;
+  const resolved = resolve(p);
+  if (!existsSync(resolved)) {
+    console.error('INVOS_KIT_PATH directory does not exist:', resolved);
+    return false;
+  }
+  if (!existsSync(resolve(resolved, 'INVOS.json'))) return false;
+  return true;
+}
 
 /**
  * 1. INVOS_KIT_PATH
@@ -11,10 +23,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  */
 export function resolveKitRoot() {
   if (process.env.INVOS_KIT_PATH) {
+    if (!validateKitPath(process.env.INVOS_KIT_PATH)) {
+      console.error('INVOS_KIT_PATH points to invalid kit directory:', process.env.INVOS_KIT_PATH);
+      process.exit(1);
+    }
     const p = resolve(process.env.INVOS_KIT_PATH);
-    if (existsSync(resolve(p, 'INVOS.json'))) return p;
-    console.error('INVOS_KIT_PATH without INVOS.json:', p);
-    process.exit(1);
+    return p;
   }
 
   const bundled = resolve(__dirname, '../kit');
