@@ -5,13 +5,13 @@
 ║     | | | '_ \/ __| / _ \ | | | \__ \    ║
 ║    |___||_| |_\___| \___/ |_| |_|___/    ║
 ║                                          ║
-║  operating system for your AI agents     ║
+║  your AI co-founder                      ║
 ║  v2.0.1                                  ║
 ╚══════════════════════════════════════════╝
 </pre>
 
 <p align="center">
-  <b>O sistema operacional do seu negócio — memória + skills, pra qualquer agente de IA.</b>
+  <b>Seu cofundador artificial — memória do negócio + habilidades que executam, em qualquer agente de IA.</b>
 </p>
 
 <p align="center">
@@ -22,10 +22,11 @@
 
 ---
 
-INVOS transforma seu agente de IA num assistente que **entende seu negócio**.
-Não importa se você usa Claude, Codex, Cursor, Grok ou OpenCode — depois
-de rodar o `/instalar`, o agente sabe quem você é, como fala, o que importa
-essa semana, e tem comandos prontos pra operação e marketing.
+INVOS transforma qualquer agente de IA no **cofundador que você sempre quis**.
+Ele não só entende seu negócio — ele **executa**. Prioriza o dia, rascunha
+proposta no teu tom, audita posicionamento, cria conteúdo. Depois de uma
+entrevista de 5 minutos, seu agente vira um sócio que nunca esquece o contexto
+e tem habilidades prontas pra operação e marketing.
 
 ---
 
@@ -40,7 +41,7 @@ cd meu-negocio
 
 O `/instalar` te entrevista, monta a memória e escolhe o perfil ideal
 (solopreneur, freelancer, agência, empresa). Depois é uso diário —
-nenhuma sessão começa do zero.
+seu cofundador artificial já sabe quem você é e o que fazer hoje.
 
 Atualizar skills sem perder sua memória:
 
@@ -81,18 +82,19 @@ projeto/
 └── packages/cli/      ← CLI do INVOS (`npx invos`).
 ```
 
-O sistema não substitui você. Ele **guarda contexto** e **fecha loops**
-que hoje ficam abertos — você faz, esquece, e tem que reexplicar tudo
-na próxima sessão. INVOS acaba com isso.
+Você continua no comando. O INVOS é o cofundador que **executa o operacional**
+enquanto você pensa no que importa. Memória que não esquece + skills que
+entregam — sem reunião, sem reexplicar, sem perder o fio.
 
 ---
 
 ## Por que INVOS?
 
-- **Multi-harness:** funciona em Claude Code, Cursor, Grok, Codex, OpenCode — qualquer agente que leia `AGENTS.md`
-- **Memória viva:** seus dados ficam em arquivos Markdown no seu repo, não num banco externo
-- **Skills plugáveis:** de carrossel de Instagram a análise de dados — ative só o que você usa
-- **Open-source (MIT):** livre pra usar, modificar, compartilhar. Sem lock-in, sem surpresa
+- **Cofundador, não ferramenta:** ele sabe quem você é, o que importa hoje, e executa — prioridade, proposta, conteúdo, decisão
+- **Multi-harness:** Claude, Cursor, Grok, Codex, OpenCode — o cofundador te acompanha em qualquer agente
+- **Skills plugáveis:** carrossel de Instagram, análise de dados, humanizer, auditoria de posicionamento — ative só o que precisa
+- **Memória viva:** seus dados ficam em Markdown no seu repo, não num banco externo. Portável, editável, sua
+- **Open-source (MIT):** livre. Sem lock-in, sem surpresa, sem mensalidade
 
 ---
 
