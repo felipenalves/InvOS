@@ -1,13 +1,13 @@
 {
   "version": "2.0.1",
-  "manifest": "PRODUCT",
+  "manifest": "OPEN_SOURCE",
   "product": {
     "name": "invos",
-    "type": "kit",
-    "distribution": "private",
-    "checkout": "hotmart+npm",
+    "type": "framework",
+    "distribution": "public",
+    "license": "MIT",
     "cli": "npx invos",
-    "github": "felipenalves/invos"
+    "github": "felipenalves/InvOS"
   },
   "seed": {
     "skills": [

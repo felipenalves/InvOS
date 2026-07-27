@@ -125,6 +125,7 @@ Carrossel IG = skill **`/carrossel`**. Não use advisory/hormozi pra “fazer o 
 - Não commit/push sozinho — skill **`salvar`** quando o user pedir.  
 - Não vazar secrets.  
 - Mudança **mínima** que resolve.
+- Projeto open-source sob MIT. Contribuições são bem-vindas via PR.
 
 ---
 
