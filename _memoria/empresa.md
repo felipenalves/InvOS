@@ -1,10 +1,9 @@
 # Empresa
 
-> Memória central do negócio. O Claude lê esse arquivo antes de cada resposta.
-> Preenchido pelo `/instalar` — você pode editar a qualquer momento.
+> Memoria central do negocio. O agente le esse arquivo antes de cada resposta.
 
 **Nome:**
-**Negócio:**
+**Negocio:**
 **O que faz:**
 **Perfil:**
 **Atende clientes:**

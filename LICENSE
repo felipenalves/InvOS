@@ -1,54 +1,21 @@
-INVOS Proprietary License
-Copyright (c) 2026 Felipe Alves / INV
+MIT License
 
-All rights reserved.
+Copyright (c) 2026 Felipe Alves
 
-This software and its contents (the "Product") are the exclusive property
-of Felipe Alves ("Licensor").
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Grant
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-If you acquired the Product through an authorized channel (e.g. Hotmart,
-Documente.club, or direct sale by the Licensor), you receive a personal,
-non-exclusive, non-transferable license to:
-
-1. Install and use the Product on machines you control.
-2. Adapt memory, skills, and project files for your own business.
-3. Apply updates distributed by the Licensor (including via CLI tools
-   such as `npx invos`).
-
-## Restrictions
-
-You may NOT, without prior written permission from the Licensor:
-
-1. Resell, sublicense, or redistribute the Product (or a substantial
-   portion of it) as a competing kit, course, or template.
-2. Publish the full kit, private skills pack, or source tree as open
-   source or public mirror.
-3. Remove or alter this license notice or product branding in a way
-   that presents the Product as someone else's work.
-4. Use the Product to build a commercial "AI operating system" kit that
-   is sold as a substitute for INVOS.
-
-## What stays yours
-
-- Your `_memoria/`, client data, brand assets, and any skills you create
-  for your business remain yours.
-- Deliverables you produce with the Product for your clients remain yours
-  (or your clients'), subject to your agreements with them.
-
-## Disclaimer
-
-THE PRODUCT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE
-LICENSOR IS NOT LIABLE FOR BUSINESS LOSSES, DATA LOSS, OR DAMAGES ARISING
-FROM USE OF THE PRODUCT.
-
-## Contact
-
-Questions about licensing: use the support channel of your purchase
-or contact the Licensor via the official INV / Documente.club channels.
-
----
-
-Licença proprietária. Compra autorizada = uso no seu negócio.
-Redistribuição do kit como produto = proibido.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

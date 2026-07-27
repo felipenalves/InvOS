@@ -1,113 +1,108 @@
-# INVOS
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/felipenalves/InvOS/main/marca/logo-dark.svg">
+    <img alt="InvOS" src="https://raw.githubusercontent.com/felipenalves/InvOS/main/marca/logo-light.svg" width="420">
+  </picture>
+</p>
 
-> O sistema operacional do seu negócio — memória + skills, no Claude Code.
+<p align="center">
+  <b>O sistema operacional do seu negócio — memória + skills, pra qualquer agente de IA.</b>
+</p>
 
-Em poucos minutos o agente deixa de te tratar como estranho: sabe quem você é,
-como fala, o que importa essa semana, e tem comandos prontos pra operação e
-marketing.
+<p align="center">
+  <a href="https://github.com/felipenalves/InvOS/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://www.npmjs.com/package/invos"><img src="https://img.shields.io/npm/v/invos.svg" alt="npm version"></a>
+  <a href="https://github.com/felipenalves/InvOS"><img src="https://img.shields.io/github/stars/felipenalves/InvOS?style=social" alt="GitHub stars"></a>
+</p>
 
 ---
 
-## Ligar o sistema
+INVOS transforma seu agente de IA num assistente que **entende seu negócio**.
+Não importa se você usa Claude, Codex, Cursor, Grok ou OpenCode — depois
+de rodar o `/instalar`, o agente sabe quem você é, como fala, o que importa
+essa semana, e tem comandos prontos pra operação e marketing.
 
-### Pelo Claude (mais rápido)
+---
 
-Abre o Claude Code em qualquer pasta e cola:
-
-```
-Clona o repositório do INVOS na pasta atual, entra nela e roda o /instalar.
-```
-
-(Quando o `npx invos` estiver no ar, o fluxo vira um comando só — install + update.)
-
-### Pelo terminal (recomendado)
+## Começar
 
 ```bash
 npx invos@latest init --name meu-negocio
 cd meu-negocio
-# abre no Claude / Cursor / Grok e roda:
+# abre no seu agente preferido e roda:
 /instalar
 ```
 
-Atualizar skills sem perder memória:
+O `/instalar` te entrevista, monta a memória e escolhe o perfil ideal
+(solopreneur, freelancer, agência, empresa). Depois é uso diário —
+nenhuma sessão começa do zero.
+
+Atualizar skills sem perder sua memória:
 
 ```bash
 npx invos@latest update
 ```
 
-(CLI em `packages/cli` — kit bundled no npm, sem token.)
-
-O `/instalar` roda **uma vez**. Entrevista curta, monta a memória, escolhe o
-perfil (solopreneur, freela, agência, empresa). Depois é uso diário.
-
-Quando terminar, renomeia a pasta pro nome do **teu** negócio — não fica
-"invos" pra sempre.
-
 ---
 
-## O que é o núcleo
+## Comandos principais
 
-| Comando | Função |
-|---------|--------|
-| `/abrir` | Carrega memória no início da sessão |
+| Comando | O que faz |
+|---------|-----------|
+| `/abrir` | Carrega seu contexto no início da sessão |
 | `/salvar` | Commit + push no GitHub |
-| `/atualizar` | Alinha arquivos de contexto com o que mudou |
-| `/novo-projeto` | Pasta isolada por cliente/iniciativa |
-| `/mapear-rotinas` | O que você repete vira skill |
+| `/atualizar` | Sincroniza contexto com mudanças recentes |
+| `/novo-projeto` | Cria pasta isolada por cliente ou iniciativa |
+| `/mapear-rotinas` | Transforma tarefas repetitivas em skills |
 
-**Conteúdo / marketing** (quando fizer sentido pro teu perfil):  
-`/carrossel` · `/publicar-tema` · `/seo` · `/responder-avaliacoes` · `/aprovar-post`
+**Marketing e conteúdo:** `/carrossel` · `/publicar-tema` · `/seo` · `/responder-avaliacoes` · `/aprovar-post`
 
-**Ads e produção:**  
-`/anuncio-google` · `/relatorio-ads` · `/analisar-dados` · `/email-profissional`
-
-Estrutura de pastas e ênfase (ex.: pasta de clientes) **depende do perfil**
-que você escolhe no `/instalar` — não é um monólito único pra todo mundo.
+**Ads e operação:** `/anuncio-google` · `/relatorio-ads` · `/analisar-dados` · `/email-profissional`
 
 ---
 
-## Como o INVOS pensa
+## Como funciona
 
-- **`AGENTS.md`** — regras do agente (multi-harness). Fonte da verdade.  
-- **`CLAUDE.md`** — só `@AGENTS.md` (Claude Code lê e segue pro SOT).  
-- **`_memoria/`** — cérebro: empresa, voz, foco da semana. Poucos arquivos.  
-- **`marca/`** — rosto: cores, fonte, logo; skills visuais leem daqui.  
-- **`marketing/` · `saidas/` · `scripts/`** — o que o sistema produz.  
-- **`.agents/skills/`** — skills canônicas (qualquer harness).  
-- **`.claude/skills/`** — symlinks → `.agents/skills/` (só pra Claude Code achar).  
-- **`.agents/squads/`** — times multi-agente (brand, advisory, hormozi). Carrossel = skill.
+```
+projeto/
+├── AGENTS.md          ← Regras do agente (multi-harness). Fonte da verdade.
+├── _memoria/          ← Cérebro: sua empresa, voz, foco da semana.
+├── marca/             ← Rosto: cores, fontes, logo.
+├── marketing/         ← Conteúdo, SEO, campanhas gerados pelas skills.
+├── saidas/            ← Análises, e-mails, documentos.
+├── scripts/           ← Utilitários que o sistema usa.
+├── .agents/skills/    ← Skills canônicas (qualquer harness).
+├── templates/         ← Perfis pré-formatados pra cada tipo de negócio.
+└── packages/cli/      ← CLI do INVOS (`npx invos`).
+```
 
-O sistema não substitui você. Guarda contexto e fecha loops que hoje ficam
-abertos (faz → esquece → reexplica).
+O sistema não substitui você. Ele **guarda contexto** e **fecha loops**
+que hoje ficam abertos — você faz, esquece, e tem que reexplicar tudo
+na próxima sessão. INVOS acaba com isso.
 
 ---
 
-## Atualizações
+## Por que INVOS?
 
-INVOS evolui como app: skill nova, correção, melhoria de entrevista.
-
-Quando o CLI estiver publicado, o fluxo da comunidade é:
-
-```
-npx invos update
-```
-
-Isso puxa o que é **kit** (skills, templates, docs de versão) e **não**
-sobrescreve a tua memória real (`_memoria/`, clientes, marca).
-
-Changelog / o que mudou em cada versão: pasta ou página de release
-(comunidade + `CHANGELOG` no pack) — anuncia lá, roda o update.
+- **Multi-harness:** funciona em Claude Code, Cursor, Grok, Codex, OpenCode — qualquer agente que leia `AGENTS.md`
+- **Memória viva:** seus dados ficam em arquivos Markdown no seu repo, não num banco externo
+- **Skills plugáveis:** de carrossel de Instagram a análise de dados — ative só o que você usa
+- **Open-source (MIT):** livre pra usar, modificar, compartilhar. Sem lock-in, sem surpresa
 
 ---
 
 ## Licença
 
-Uso autorizado pra quem comprou. Ver `LICENSE`.  
-Teu negócio, teus dados, tuas skills personalizadas: teus.  
-Revender o kit como produto: não.
+MIT &mdash; use, estude, modifique, compartilhe. Construído por [Felipe Alves](https://github.com/felipenalves).
 
 ---
 
-## Suporte
-
-Documente.club / canal da compra · produto da INV (Felipe Alves).
+<p align="center">
+  <a href="https://github.com/felipenalves/InvOS">GitHub</a>
+  ·
+  <a href="https://www.npmjs.com/package/invos">npm</a>
+  ·
+  <a href="https://github.com/felipenalves/InvOS/issues">Reportar bug</a>
+  ·
+  <a href="https://github.com/felipenalves/InvOS/discussions">Discussões</a>
+</p>
