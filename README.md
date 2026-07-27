@@ -1,9 +1,14 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/felipenalves/InvOS/main/marca/logo-dark.svg">
-    <img alt="InvOS" src="https://raw.githubusercontent.com/felipenalves/InvOS/main/marca/logo-light.svg" width="420">
-  </picture>
-</p>
+<pre align="center">
+╔══════════════════════════════════════════╗
+║     ___                     ___  ___     ║
+║    |_ _| _ __  ___   ___   / _ \/ __|    ║
+║     | | | '_ \/ __| / _ \ | | | \__ \    ║
+║    |___||_| |_\___| \___/ |_| |_|___/    ║
+║                                          ║
+║  operating system for your AI agents     ║
+║  v2.0.1                                  ║
+╚══════════════════════════════════════════╝
+</pre>
 
 <p align="center">
   <b>O sistema operacional do seu negócio — memória + skills, pra qualquer agente de IA.</b>
@@ -93,7 +98,7 @@ na próxima sessão. INVOS acaba com isso.
 
 ## Licença
 
-MIT &mdash; use, estude, modifique, compartilhe. Construído por [Felipe Alves](https://github.com/felipenalves).
+MIT &mdash; use, estude, modifique, compartilhe. Construído por [Felipe Natanael](https://github.com/felipenalves).
 
 ---
 
