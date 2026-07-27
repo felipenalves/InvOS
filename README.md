@@ -27,77 +27,81 @@
 
 INVOS transforma qualquer agente de IA no **cofundador que você sempre quis**.
 Ele não só entende seu negócio — ele **executa**. Prioriza o dia, rascunha
-proposta no teu tom, audita posicionamento, cria conteúdo. Depois de uma
-entrevista de 5 minutos, seu agente vira um sócio que nunca esquece o contexto
-e tem habilidades prontas pra operação e marketing.
+proposta no teu tom, audita posicionamento, cria conteúdo.
 
 ---
 
-## Começar
+## Como funciona (o fluxo)
 
+**1. CLI cria seu projeto**
 ```bash
 npx invos@latest init --name meu-negocio
-cd meu-negocio
-# abre no seu agente preferido e roda:
+```
+Isso gera uma pasta com a estrutura completa: memória, skills, templates.
+
+**2. Você abre essa pasta no seu agente de IA favorito**
+Claude Code, Cursor, OpenCode, Codex, Grok — qualquer um que leia
+`AGENTS.md`. Dentro do chat do agente, roda:
+
+```
 /instalar
 ```
 
-O `/instalar` te entrevista, monta a memória e escolhe o perfil ideal
-(solopreneur, freelancer, agência, empresa). Depois é uso diário —
-seu cofundador artificial já sabe quem você é e o que fazer hoje.
+O agente lê o `AGENTS.md`, faz uma entrevista de 5 minutos e monta a
+memória do seu negócio: quem você é, o que vende, tom de voz,
+prioridades da semana.
+
+**3. Pronto. Seu cofundador já sabe quem você é.**
+
+Agora é uso diário. Abre o projeto no agente, roda `/abrir` e ele carrega
+o contexto. Pede o que precisar:
+
+| Comando | O que faz |
+|---------|-----------|
+| `/abrir` | Carrega seu contexto no início da sessão |
+| `/carrossel` | Cria post educativo pro Instagram |
+| `/salvar` | Commit + push no GitHub |
+| `/atualizar` | Sincroniza contexto com mudanças recentes |
+| `/analisar-dados` | Planilha → relatório com insights |
+| `/email-profissional` | Escreve e-mail no seu tom |
+| `/anuncio-google` | Estrutura campanha de Google Ads |
+| `/seo` | Audita e sugere melhorias de SEO |
+| `/mapear-rotinas` | Transforma tarefas repetitivas em skills |
+| `/novo-projeto` | Cria pasta isolada por cliente |
 
 Atualizar skills sem perder sua memória:
-
 ```bash
 npx invos@latest update
 ```
 
 ---
 
-## Comandos principais
-
-| Comando | O que faz |
-|---------|-----------|
-| `/abrir` | Carrega seu contexto no início da sessão |
-| `/salvar` | Commit + push no GitHub |
-| `/atualizar` | Sincroniza contexto com mudanças recentes |
-| `/novo-projeto` | Cria pasta isolada por cliente ou iniciativa |
-| `/mapear-rotinas` | Transforma tarefas repetitivas em skills |
-
-**Marketing e conteúdo:** `/carrossel` · `/publicar-tema` · `/seo` · `/responder-avaliacoes` · `/aprovar-post`
-
-**Ads e operação:** `/anuncio-google` · `/relatorio-ads` · `/analisar-dados` · `/email-profissional`
-
----
-
-## Como funciona
+## A estrutura que seu agente enxerga
 
 ```
 projeto/
-├── AGENTS.md          ← Regras do agente (multi-harness). Fonte da verdade.
-├── _memoria/          ← Cérebro: sua empresa, voz, foco da semana.
-├── marca/             ← Rosto: cores, fontes, logo.
-├── marketing/         ← Conteúdo, SEO, campanhas gerados pelas skills.
-├── saidas/            ← Análises, e-mails, documentos.
-├── scripts/           ← Utilitários que o sistema usa.
-├── .agents/skills/    ← Skills canônicas (qualquer harness).
-├── templates/         ← Perfis pré-formatados pra cada tipo de negócio.
-└── packages/cli/      ← CLI do INVOS (`npx invos`).
+├── AGENTS.md          ← Instruções: diz ao agente que ele é um cofundador
+├── CLAUDE.md          ← Só redireciona pra AGENTS.md (multi-harness)
+├── _memoria/          ← Quem você é: empresa, tom de voz, foco da semana
+├── .agents/skills/    ← Habilidades: carrossel, humanizer, ads, SEO…
+├── marca/             ← Cores, fontes, logo (pra posts visuais)
+├── marketing/         ← Conteúdo e campanhas que as skills geram
+├── saidas/            ← Documentos, propostas, relatórios prontos
+├── templates/         ← Perfis pré-formatados (solopreneur, agência…)
+└── packages/cli/      ← Código do CLI (`npx invos`)
 ```
 
-Você continua no comando. O INVOS é o cofundador que **executa o operacional**
-enquanto você pensa no que importa. Memória que não esquece + skills que
-entregam — sem reunião, sem reexplicar, sem perder o fio.
+Tudo em **Markdown puro** — portável, editável no VS Code, versionado no Git.
 
 ---
 
 ## Por que INVOS?
 
 - **Cofundador, não ferramenta:** ele sabe quem você é, o que importa hoje, e executa — prioridade, proposta, conteúdo, decisão
-- **Multi-harness:** Claude, Cursor, Grok, Codex, OpenCode — o cofundador te acompanha em qualquer agente
+- **Funciona em qualquer agente:** Claude, Cursor, Grok, Codex, OpenCode — o cofundador te acompanha
 - **Skills plugáveis:** carrossel de Instagram, análise de dados, humanizer, auditoria de posicionamento — ative só o que precisa
 - **Memória viva:** seus dados ficam em Markdown no seu repo, não num banco externo. Portável, editável, sua
-- **Open-source (MIT):** livre. Sem lock-in, sem surpresa, sem mensalidade
+- **Grátis:** MIT. Sem lock-in, sem surpresa, sem mensalidade
 
 ---
 
