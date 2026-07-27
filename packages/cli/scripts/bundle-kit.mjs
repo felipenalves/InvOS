@@ -16,6 +16,7 @@ const KIT_DST = resolve(CLI, 'kit');
 const SKIP = new Set([
   'node_modules', '.git', '.DS_Store', 'packages', '.claude',
   'INVOS-LOCK.json', '.vercel', 'dist',
+  '.env', '.env.local', '.env.development', '.env.production',
 ]);
 
 function copyTree(src, dst) {

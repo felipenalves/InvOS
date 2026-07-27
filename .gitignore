@@ -28,3 +28,7 @@ dados/*
 # CLI bundled kit (generated)
 packages/cli/kit/
 
+# Segredos do usuário — nunca versionar
+.env
+.env.*
+

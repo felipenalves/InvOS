@@ -12,7 +12,8 @@ function listSkills(agentsDir) {
     const p = resolve(agentsDir, e);
     try {
       return statSync(p).isDirectory() && existsSync(resolve(p, 'SKILL.md'));
-    } catch {
+    } catch (err) {
+      console.error('listSkills: skipping', e, err.message);
       return false;
     }
   });
@@ -30,8 +31,8 @@ export function syncClaudeSymlinks(_kitRoot, targetRoot) {
       try {
         if (readlinkSync(linkPath) === `${REL}/${skill}`) continue;
         unlinkSync(linkPath);
-      } catch {
-        try { unlinkSync(linkPath); } catch { /* ignore */ }
+      } catch (err) {
+        console.error('syncClaudeSymlinks: failed to update', skill, err.message);
       }
     }
     symlinkSync(`${REL}/${skill}`, linkPath);

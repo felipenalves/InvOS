@@ -79,8 +79,12 @@ export function ensureDir(dir) {
 }
 
 export function removeIfExists(path) {
-  if (!existsSync(path)) return;
-  const s = statSync(path);
-  if (s.isDirectory()) rmSync(path, { recursive: true, force: true });
-  else unlinkSync(path);
+  try {
+    if (!existsSync(path)) return;
+    const s = statSync(path);
+    if (s.isDirectory()) rmSync(path, { recursive: true });
+    else unlinkSync(path);
+  } catch (err) {
+    console.error('removeIfExists: could not remove', path, err.message);
+  }
 }
