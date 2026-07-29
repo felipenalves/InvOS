@@ -1,9 +1,9 @@
 # Empresa
 
-> Memoria central do negocio. O agente le esse arquivo antes de cada resposta.
+> Memória central do negócio. O agente lê esse arquivo antes de cada resposta.
 
 **Nome:**
-**Negocio:**
+**Negócio:**
 **O que faz:**
 **Perfil:**
 **Atende clientes:**
