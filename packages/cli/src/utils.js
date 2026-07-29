@@ -16,7 +16,7 @@ function skipDot(name) {
 export function isDenylisted(relPath) {
   const p = relPath.split('/');
   if (p[0] === '.git' || p[0] === 'node_modules' || p[0] === 'packages') return true;
-  if (p[0] === 'INVOS-LOCK.json' || p[0] === '.env' || p[0] === '.claude') return true;
+  if (p[0] === 'INVOS-LOCK.json' || p[0] === '.env' || p[0] === '.env.example' || p[0] === '.claude') return true;
   if (p[0] === '_memoria' || p[0] === 'memoria') return true;
   if (p[0] === 'clientes') return true;
   if (p[0] === 'conteudo') return true;

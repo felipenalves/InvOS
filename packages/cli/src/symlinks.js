@@ -1,6 +1,6 @@
 import {
   existsSync, mkdirSync, symlinkSync, unlinkSync, readlinkSync,
-  readdirSync, statSync,
+  readdirSync, statSync, copyFileSync, cpSync,
 } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 
@@ -27,15 +27,43 @@ export function syncClaudeSymlinks(_kitRoot, targetRoot) {
 
   for (const skill of listSkills(agentsDir)) {
     const linkPath = resolve(claudeDir, skill);
+    const expectedTarget = resolve(agentsDir, skill);
     if (existsSync(linkPath)) {
       try {
-        if (readlinkSync(linkPath) === `${REL}/${skill}`) continue;
+        const currentTarget = resolve(dirname(linkPath), readlinkSync(linkPath));
+        if (resolve(currentTarget) === resolve(expectedTarget)) continue;
         unlinkSync(linkPath);
       } catch (err) {
         console.error('syncClaudeSymlinks: failed to update', skill, err.message);
       }
     }
-    symlinkSync(`${REL}/${skill}`, linkPath);
+    try {
+      symlinkSync(`${REL}/${skill}`, linkPath);
+    } catch (err) {
+      if (err.code === 'EPERM') {
+        console.warn('syncClaudeSymlinks: symlink failed for', skill, '(EPERM), falling back to copy');
+        cpSync(resolve(agentsDir, skill), linkPath, { recursive: true });
+      } else {
+        throw err;
+      }
+    }
+  }
+
+  if (existsSync(claudeDir)) {
+    for (const entry of readdirSync(claudeDir)) {
+      const linkPath = resolve(claudeDir, entry);
+      try {
+        const stat = statSync(linkPath);
+        if (stat.isSymbolicLink()) {
+          const target = resolve(dirname(linkPath), readlinkSync(linkPath));
+          if (!existsSync(target)) {
+            unlinkSync(linkPath);
+          }
+        }
+      } catch {
+        // ignore read errors
+      }
+    }
   }
 }
 

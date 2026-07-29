@@ -45,7 +45,7 @@ export async function doctor(kit, kitRoot, targetDir, args) {
       existsSync(resolve(skillsDir, e, 'SKILL.md')),
     ).length;
     r.push(`  ✓ skills: ${n}`);
-    if (n < 5) ok = false;
+    if (n < 1) ok = false;
   } else {
     r.push('  ✗ .agents/skills');
     ok = false;
@@ -58,7 +58,7 @@ export async function doctor(kit, kitRoot, targetDir, args) {
     ok = false;
   }
 
-  if (fix) {
+  if (fix && !ok) {
     const confirmed = await askFix(!ok);
     if (!confirmed) {
       r.push('  --fix: skipped (not confirmed)');
