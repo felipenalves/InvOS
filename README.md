@@ -147,13 +147,8 @@ Tudo em **Markdown puro** — portável, editável, versionado no Git.
 
 ## Contribuindo
 
-1. Fork o repo
-2. Cria uma branch (`git checkout -b feature/minha-feature`)
-3. Commit (`git commit -m 'feat: minha feature'`)
-4. Push (`git push origin feature/minha-feature`)
-5. Abre um Pull Request
-
-Issues e discussões são bem-vindas: [Issues](https://github.com/felipenalves/InvOS/issues) · [Discussões](https://github.com/felipenalves/InvOS/discussions)
+- **Bug report ou sugestão** → [Issues](https://github.com/felipenalves/InvOS/issues)
+- **Dúvida ou discussão** → [Discussões](https://github.com/felipenalves/InvOS/discussions)
 
 ---
 
