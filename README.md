@@ -35,7 +35,11 @@ proposta no teu tom, audita posicionamento, cria conteúdo.
 
 **1. Crie seu projeto**
 ```bash
+# Pasta nova
 npx invos init --name meu-negocio
+
+# Pasta existente
+cd meu-projeto && npx invos init
 ```
 
 **2. Abra no seu agente de IA e rode `/instalar`**
