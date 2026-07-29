@@ -23,7 +23,7 @@ function copyTree(src, dst) {
   if (statSync(src).isDirectory()) {
     mkdirSync(dst, { recursive: true });
     for (const name of readdirSync(src)) {
-      if (name === 'node_modules' || name === '.git' || name === '.DS_Store' || name === '.claude') continue;
+      if (SKIP.has(name)) continue;
       copyTree(join(src, name), join(dst, name));
     }
     return;

@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
-  collectFiles, copyFileWithDirs, shouldCopyOnInstall, isDevPath,
+  collectFiles, copyFileWithDirs, isDevPath,
 } from '../utils.js';
 import { buildLock, readLock, writeLock } from '../lock.js';
 import { syncClaudeSymlinks } from '../symlinks.js';
@@ -13,16 +13,15 @@ export async function install(kit, kitRoot, targetDir) {
 
   for (const f of files) {
     const dest = resolve(targetDir, f.relPath);
-    if (shouldCopyOnInstall(dest) && !existsSync(dest)) {
-      copyFileWithDirs(f.fullPath, dest);
-      copied++;
-    } else if (existsSync(dest) && !shouldCopyOnInstall(dest)) {
-      skipped++;
-    } else if (existsSync(dest)) {
-      skipped++;
+    if (!existsSync(dest)) {
+      try {
+        copyFileWithDirs(f.fullPath, dest);
+        copied++;
+      } catch (err) {
+        console.error('install: failed to copy', f.relPath, err.message);
+      }
     } else {
-      copyFileWithDirs(f.fullPath, dest);
-      copied++;
+      skipped++;
     }
   }
 
