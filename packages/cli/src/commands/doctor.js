@@ -1,5 +1,6 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { execSync } from 'node:child_process';
 import { loadManifest } from '../manifest.js';
 import { readLock } from '../lock.js';
 import { checkClaudeSymlinks, syncClaudeSymlinks } from '../symlinks.js';
@@ -76,8 +77,20 @@ export async function doctor(kit, kitRoot, targetDir, args) {
   }
 
   const man = loadManifest(resolve(targetDir, 'INVOS.json'));
-  r.push(`  kit ${man?.version || kit?.version || '?'}`);
-  r.push('  update: npm package kit (npx invos@latest update)');
+  const currentVersion = man?.version || kit?.version || '?';
+  r.push(`  kit v${currentVersion}`);
+
+  try {
+    const latest = execSync('npm view invos version --no-optional 2>/dev/null', { encoding: 'utf8', timeout: 5000 }).trim();
+    if (latest && latest !== currentVersion) {
+      r.push(`  → nova versão disponível: v${latest}`);
+      r.push('  update: npx invos@latest update');
+    } else {
+      r.push('  ✓ versão atualizada');
+    }
+  } catch {
+    r.push('  update: npx invos@latest update');
+  }
 
   console.log(r.join('\n'));
   if (!ok) {
