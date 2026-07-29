@@ -55,7 +55,7 @@ O agente faz uma entrevista rápida e monta a memória do seu negócio.
 | Agente | Funciona? | Como ativar |
 |--------|-----------|-------------|
 | Claude Code | ✅ | `CLAUDE.md` carrega automaticamente |
-| Cursor | ✅ | Regras em `.claude/skills/` via symlink |
+| Cursor | ✅ | `AGENTS.md` carrega automaticamente |
 | OpenCode | ✅ | `AGENTS.md` carrega automaticamente |
 | Codex CLI | ✅ | `AGENTS.md` carrega automaticamente |
 | Grok | ✅ | `AGENTS.md` carrega automaticamente |
