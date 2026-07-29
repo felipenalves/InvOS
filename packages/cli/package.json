@@ -11,7 +11,8 @@
   },
   "scripts": {
     "bundle-kit": "node scripts/bundle-kit.mjs",
-    "prepublishOnly": "node scripts/bundle-kit.mjs"
+    "prepublishOnly": "node scripts/bundle-kit.mjs",
+    "test": "node tests/smoke-test.mjs"
   },
   "files": [
     "bin/",
