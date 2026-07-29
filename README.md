@@ -31,34 +31,42 @@ proposta no teu tom, audita posicionamento, cria conteúdo.
 
 ---
 
-## Como funciona (o fluxo)
+## Início rápido (3 passos)
 
-**1. CLI cria seu projeto**
+**1. Crie seu projeto**
 ```bash
-npx invos@latest init --name meu-negocio
-```
-Isso gera uma pasta com a estrutura completa: memória, skills, templates.
-
-**2. Você abre essa pasta no seu agente de IA favorito**
-Claude Code, Cursor, OpenCode, Codex, Grok — qualquer um que leia
-`AGENTS.md`. Dentro do chat do agente, roda:
-
-```
-/instalar
+npx invos init --name meu-negocio
 ```
 
-O agente lê o `AGENTS.md`, faz uma entrevista de 5 minutos e monta a
-memória do seu negócio: quem você é, o que vende, tom de voz,
-prioridades da semana.
+**2. Abra no seu agente de IA e rode `/instalar`**
+
+O agente faz uma entrevista rápida e monta a memória do seu negócio.
 
 **3. Pronto. Seu cofundador já sabe quem você é.**
 
-Agora é uso diário. Abre o projeto no agente, roda `/abrir` e ele carrega
-o contexto. Pede o que precisar:
+---
+
+## Agentes suportados
+
+| Agente | Funciona? | Como ativar |
+|--------|-----------|-------------|
+| Claude Code | ✅ | `CLAUDE.md` carrega automaticamente |
+| Cursor | ✅ | Regras em `.claude/skills/` via symlink |
+| OpenCode | ✅ | `AGENTS.md` carrega automaticamente |
+| Codex CLI | ✅ | `AGENTS.md` carrega automaticamente |
+| Grok | ✅ | `AGENTS.md` carrega automaticamente |
+| Gemini CLI | ✅ | `AGENTS.md` carrega automaticamente |
+
+Qualquer agente que leia `AGENTS.md` funciona.
+
+---
+
+## Comandos do agente
 
 | Comando | O que faz |
 |---------|-----------|
 | `/abrir` | Carrega seu contexto no início da sessão |
+| `/instalar` | Entrevista + monta memória do negócio (primeira vez) |
 | `/carrossel` | Cria post educativo pro Instagram |
 | `/salvar` | Commit + push no GitHub |
 | `/atualizar` | Sincroniza contexto com mudanças recentes |
@@ -69,10 +77,16 @@ o contexto. Pede o que precisar:
 | `/mapear-rotinas` | Transforma tarefas repetitivas em skills |
 | `/novo-projeto` | Cria pasta isolada por cliente |
 
-Atualizar skills sem perder sua memória:
-```bash
-npx invos@latest update
-```
+---
+
+## Comandos da CLI
+
+| Comando | O que faz |
+|---------|-----------|
+| `npx invos init` | Cria projeto novo com kit completo |
+| `npx invos install` | Instala no projeto atual |
+| `npx invos update` | Atualiza kit (preserva memória e dados) |
+| `npx invos doctor` | Diagnostica instalação + avisa se tem versão nova |
 
 ---
 
@@ -87,27 +101,61 @@ projeto/
 ├── marca/             ← Cores, fontes, logo (pra posts visuais)
 ├── marketing/         ← Conteúdo e campanhas que as skills geram
 ├── saidas/            ← Documentos, propostas, relatórios prontos
-├── templates/         ← Perfis pré-formatados (solopreneur, agência…)
-└── packages/cli/      ← Código do CLI (`npx invos`)
+└── templates/         ← Perfis pré-formatados (solopreneur, agência…)
 ```
 
-Tudo em **Markdown puro** — portável, editável no VS Code, versionado no Git.
+Tudo em **Markdown puro** — portável, editável, versionado no Git.
+
+---
+
+## Exemplos do que dá pra fazer
+
+- **Criar carrossel pro Instagram** → `/carrossel` sobre tendências do seu nicho
+- **Escrever proposta comercial** → no seu tom, com dados do cliente
+- **Auditar posicionamento** → advisorboard analisa e sugere ajustes
+- **Analisar planilha** → `/analisar-dados` gera relatório com insights
+- **Criar conteúdo de lançamento** → hormozi-squad monta oferta completa
+- **Email profissional** → no seu tom, pra qualquer contexto
 
 ---
 
 ## Por que INVOS?
 
-- **Cofundador, não ferramenta:** ele sabe quem você é, o que importa hoje, e executa — prioridade, proposta, conteúdo, decisão
-- **Funciona em qualquer agente:** Claude, Cursor, Grok, Codex, OpenCode — o cofundador te acompanha
-- **Skills plugáveis:** carrossel de Instagram, análise de dados, humanizer, auditoria de posicionamento — ative só o que precisa
-- **Memória viva:** seus dados ficam em Markdown no seu repo, não num banco externo. Portável, editável, sua
-- **Grátis:** MIT. Sem lock-in, sem surpresa, sem mensalidade
+- **Cofundador, não ferramenta:** ele sabe quem você é, o que importa hoje, e executa
+- **Funciona em qualquer agente:** Claude, Cursor, Grok, Codex, OpenCode
+- **Skills plugáveis:** ative só o que precisa, crie as suas
+- **Memória viva:** seus dados ficam em Markdown no seu repo. Portável, sua
+- **Grátis:** MIT. Sem lock-in, sem surpresa
+
+---
+
+## Troubleshooting
+
+| Problema | Solução |
+|----------|---------|
+| `command not found: invos` | Use `npx invos` (com npx, não npm) |
+| Skills não aparecem no Claude Code | Rode `npx invos doctor --fix` |
+| Memória sumiu depois de update | Seus dados em `_memoria/` são preservados. Rode `/abrir` |
+| Quero versão específica | `npx invos@2.0.5 init` |
+| Erro no install | Rode `npx invos doctor` e veja o diagnóstico |
+
+---
+
+## Contribuindo
+
+1. Fork o repo
+2. Cria uma branch (`git checkout -b feature/minha-feature`)
+3. Commit (`git commit -m 'feat: minha feature'`)
+4. Push (`git push origin feature/minha-feature`)
+5. Abre um Pull Request
+
+Issues e discussões são bem-vindas: [Issues](https://github.com/felipenalves/InvOS/issues) · [Discussões](https://github.com/felipenalves/InvOS/discussions)
 
 ---
 
 ## Licença
 
-MIT &mdash; use, estude, modifique, compartilhe. Construído por [Felipe Natanael](https://github.com/felipenalves).
+MIT — use, estude, modifique, compartilhe. Construído por [Felipe Natanael](https://github.com/felipenalves).
 
 ---
 
