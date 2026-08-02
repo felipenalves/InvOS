@@ -33,7 +33,7 @@ o que importa hoje e o que foi decidido ontem. Prioriza o dia, rascunha proposta
 teu tom, audita posicionamento, cria conteúdo — com memória que não esquece.
 
 INVOS leva qualquer agente de IA do nível 1 ao nível 2. Zero programação — se você
-abre o Claude ou o Cursor e responde a uma entrevista, já basta. Em ~10 minutos seu
+abre o Claude Code ou o Codex e responde a uma entrevista, já basta. Em ~10 minutos seu
 cofundador de IA está rodando e sabe quem você é.
 
 ### A diferença, lado a lado
