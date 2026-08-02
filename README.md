@@ -14,7 +14,7 @@
 </pre>
 
 <p align="center">
-  <b>Seu cofundador artificial — memória do negócio + habilidades que executam, em qualquer agente de IA.</b>
+  <b>Você já usa IA. Agora é hora de ter um cofundador de IA trabalhando por você.</b>
 </p>
 
 <p align="center">
@@ -25,9 +25,27 @@
 
 ---
 
-INVOS transforma qualquer agente de IA no **cofundador que você sempre quis**.
-Ele não só entende seu negócio — ele **executa**. Prioriza o dia, rascunha
-proposta no teu tom, audita posicionamento, cria conteúdo.
+**Usar IA é o nível 1.** A IA trabalha *com* você: responde quando você pergunta,
+esquece tudo na próxima sessão, e para quando você para.
+
+**Ter um cofundador de IA é o nível 2.** Ele trabalha *por* você: sabe quem você é,
+o que importa hoje e o que foi decidido ontem. Prioriza o dia, rascunha proposta no
+teu tom, audita posicionamento, cria conteúdo — com memória que não esquece.
+
+INVOS leva qualquer agente de IA do nível 1 ao nível 2. Zero programação — se você
+abre o Claude ou o Cursor e responde a uma entrevista, já basta. Em ~10 minutos seu
+cofundador de IA está rodando e sabe quem você é.
+
+### A diferença, lado a lado
+
+| Nível 1 · ferramenta de apoio | Nível 2 · cofundador de IA |
+|---|---|
+| A IA como copiloto: trabalha **com** você | Trabalha **por** você, no automático |
+| Só responde quando você pergunta | Você dá o objetivo, ele executa de ponta a ponta |
+| Faz uma tarefa por vez, e só quando você especifica | Trabalha todos os dias, 24/7 |
+| Você precisa saber exatamente o que pedir | Sabe quem você é, o que importa hoje e o que decidiu ontem |
+| Sem você no meio, ela não faz nada | Opera fluxos e áreas inteiras por você |
+| Esquece tudo na próxima sessão | Memória viva — decisões, clientes, histórico |
 
 ---
 
@@ -126,10 +144,13 @@ Tudo em **Markdown puro** — portável, editável, versionado no Git.
 ## Por que INVOS?
 
 - **Cofundador, não ferramenta:** ele sabe quem você é, o que importa hoje, e executa
+- **Nível 2, não nível 1:** IA que trabalha *por* você, não *com* você
+- **Rapidez:** cofundador rodando em ~10 minutos — entrevista, memória, pronto
 - **Funciona em qualquer agente:** Claude, Cursor, Grok, Codex, OpenCode
 - **Skills plugáveis:** ative só o que precisa, crie as suas
 - **Memória viva:** seus dados ficam em Markdown no seu repo. Portável, sua
 - **Grátis:** MIT. Sem lock-in, sem surpresa
+- **Sem programação:** feito pra quem toca o negócio — o agente guia a instalação
 
 ---
 
