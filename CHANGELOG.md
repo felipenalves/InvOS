@@ -2,6 +2,12 @@
 
 Todas as mudanças notáveis no INVOS. Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.0.7] - 2026-08-23
+
+### Changed
+- Metadata de descoberta no npm: `bugs.url` pras issues do GitHub, keywords pesquisáveis (`claude`, `chatgpt`, `ai-tools`, `productivity`, `solopreneur`...), casing `InvOS` no repository e `author: Felipe Natanael` (nome público único)
+- Bumps sincronizados — kit `INVOS.json` acompanha CLI (2.0.6 → 2.0.7)
+
 ## [2.0.6] - 2026-08-23
 
 ### Fixed

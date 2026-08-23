@@ -1,6 +1,6 @@
 {
   "name": "invos",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "INVOS — OS do negócio em arquivos. Open-source. CLI: init, install, update, doctor.",
   "type": "module",
   "bin": {
@@ -22,17 +22,26 @@
   ],
   "keywords": [
     "invos",
+    "claude",
+    "chatgpt",
     "ai-agents",
-    "memory",
+    "ai-tools",
+    "agents",
+    "productivity",
+    "solopreneur",
     "business-os",
+    "cli",
     "open-source"
   ],
-  "author": "Felipe Alves",
+  "author": "Felipe Natanael",
   "license": "MIT",
   "private": false,
+  "bugs": {
+    "url": "https://github.com/felipenalves/InvOS/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipenalves/invos.git"
+    "url": "git+https://github.com/felipenalves/InvOS.git"
   },
   "homepage": "https://inovadigitalid.com/invos",
   "dependencies": {}
