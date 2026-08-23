@@ -4,11 +4,18 @@
  * roda: node tests/smoke-test.mjs
  */
 import { execSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CLI = resolve(__dirname, '../bin/invos.js');
+
+// Kit pode estar bundled (packages/cli/kit — npm) ou na raiz do repo (dev).
+const bundledKit = resolve(__dirname, '../kit');
+const KIT_DIR = existsSync(resolve(bundledKit, 'INVOS.json'))
+  ? bundledKit
+  : resolve(__dirname, '../../..');
 
 let passed = 0;
 let failed = 0;
@@ -42,9 +49,8 @@ test('--version prints semver', () => {
 });
 
 test('doctor runs on kit dir', () => {
-  const kitDir = resolve(__dirname, '../kit');
   try {
-    const out = run(`node ${CLI} doctor --dir ${kitDir}`);
+    const out = run(`node ${CLI} doctor --dir ${KIT_DIR}`);
     if (!out.includes('Doctor')) throw new Error('missing Doctor header');
   } catch (err) {
     if (err.status === 1) {
@@ -57,9 +63,8 @@ test('doctor runs on kit dir', () => {
 });
 
 test('doctor shows version info', () => {
-  const kitDir = resolve(__dirname, '../kit');
   try {
-    const out = run(`node ${CLI} doctor --dir ${kitDir}`);
+    const out = run(`node ${CLI} doctor --dir ${KIT_DIR}`);
     if (!out.includes('kit v')) throw new Error('missing version info');
   } catch (err) {
     if (err.status === 1) {

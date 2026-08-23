@@ -1,4 +1,4 @@
-﻿---
+---
 name: seo
 description: >
   Fluxo completo de SEO, GEO e Google Ads em 8 passos: pesquisa de demanda, análise de

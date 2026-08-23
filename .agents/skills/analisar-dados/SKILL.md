@@ -1,4 +1,4 @@
-﻿---
+---
 name: analisar-dados
 description: >
   Analisa um arquivo de dados (CSV, Excel, TXT, JSON) e gera um resumo executivo
