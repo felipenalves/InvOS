@@ -1,4 +1,4 @@
-﻿---
+---
 name: publicar-tema
 description: >
   Orquestra a criação completa de uma peça de conteúdo SEO + redes sociais a partir de um tema.

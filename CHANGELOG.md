@@ -2,6 +2,23 @@
 
 Todas as mudanças notáveis no INVOS. Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.0.6] - 2026-08-23
+
+### Fixed
+- BOM UTF-8 removido de 11 `SKILL.md` do kit — quebrava o frontmatter em parsers estritos de skill
+- `/salvar`: typo no prompt de primeiro sync; divergência no primeiro push (README/licença do GitHub) agora orientada explicitamente
+- CLI valida comando desconhecido **antes** de resolver o kit — erro correto em qualquer ambiente
+- `resolveKitRoot`: fallback dev apontava pra `packages/` em vez da raiz do repo (caminho relativo errado pós-reestruturação)
+- Smoke test resolve o kit no layout atual (raiz) com fallback pro bundled — 5/5
+
+### Changed
+- `INVOS.json` do kit volta a acompanhar a versão do CLI (2.0.1 → 2.0.6)
+
+## [2.0.5] - 2026-07-29
+
+### Added
+- `CHANGELOG.md` incluído no bundle do kit
+
 ## [2.0.4] - 2026-07-29
 
 ### Fixed

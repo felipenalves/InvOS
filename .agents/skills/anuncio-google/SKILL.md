@@ -1,4 +1,4 @@
-﻿---
+---
 name: anuncio-google
 description: >
   Cria estrutura completa de campanha do Google Ads a partir de um briefing ou da pesquisa SEO.

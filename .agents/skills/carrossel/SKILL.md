@@ -1,4 +1,4 @@
-﻿---
+---
 name: carrossel
 description: >
   Cria carrosséis e posts visuais pra Instagram, TikTok, LinkedIn com a identidade visual da marca.
