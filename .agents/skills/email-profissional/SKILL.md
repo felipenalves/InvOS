@@ -1,4 +1,4 @@
-﻿---
+---
 name: email-profissional
 description: >
   Rascunha um email profissional a partir de um contexto livre.

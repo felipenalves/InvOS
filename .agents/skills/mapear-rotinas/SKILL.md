@@ -1,4 +1,4 @@
-﻿---
+---
 name: mapear-rotinas
 description: >
   Mapeia tarefas repetitivas que o usuário faz no dia a dia e gera skills personalizadas pra

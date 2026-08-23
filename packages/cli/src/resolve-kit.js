@@ -34,8 +34,8 @@ export function resolveKitRoot() {
   const bundled = resolve(__dirname, '../kit');
   if (existsSync(resolve(bundled, 'INVOS.json'))) return bundled;
 
-  // packages/cli → ../.. = InvOS.v2 root
-  const v2 = resolve(__dirname, '../..');
+  // src/ → ../../.. = raiz do repo (kit na raiz no layout dev)
+  const v2 = resolve(__dirname, '../../..');
   if (existsSync(resolve(v2, 'INVOS.json'))) return v2;
 
   console.error(`

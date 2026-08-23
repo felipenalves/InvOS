@@ -1,4 +1,4 @@
-﻿---
+---
 name: relatorio-ads
 description: >
   Gera relatório semanal de performance de anúncios pagos (Google Ads + Meta Ads). Lê CSVs

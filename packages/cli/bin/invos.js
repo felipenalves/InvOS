@@ -51,6 +51,14 @@ async function main() {
     return;
   }
 
+  // Valida o comando ANTES de resolver o kit — erro de digitação
+  // não pode ser mascarado por "kit não encontrado".
+  if (!['init', 'install', 'update', 'doctor'].includes(cmd)) {
+    console.error('Unknown:', cmd);
+    help();
+    process.exit(1);
+  }
+
   const kitRoot = resolveKitRoot();
   const kit = loadManifest(resolve(kitRoot, 'INVOS.json'));
   if (!kit) {

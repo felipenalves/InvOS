@@ -1,4 +1,4 @@
-﻿---
+---
 name: atualizar
 description: >
   Varre o projeto e atualiza os arquivos de contexto (`_memoria/empresa.md`, `preferencias.md`,

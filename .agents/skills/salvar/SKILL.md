@@ -17,7 +17,7 @@ Skill de uma função só: garantir que o trabalho do usuário está no GitHub. 
 Detectar com `git rev-parse --is-inside-work-tree`. Se falhar:
 
 1. Perguntar:
-   > "Esse é o primeiro syncar. Você já tem um repositório criado no GitHub pra esse workspace?
+   > "Esse é o primeiro sync. Você já tem um repositório criado no GitHub pra esse workspace?
    > 1. Sim, me passa a URL (ex: https://github.com/usuario/nome.git)
    > 2. Não, vou criar agora — me dá um nome pro repositório (ex: meu-invos)"
 
@@ -45,5 +45,5 @@ Detectar com `git rev-parse --is-inside-work-tree`. Se falhar:
 
 - Nunca usar `--force` sem o usuário pedir explicitamente
 - Nunca rodar `git reset --hard` ou outras destrutivas sem confirmação clara
-- Se o push falhar por divergência (alguém comitou no remoto), avisar o usuário e oferecer `git pull --rebase` antes de tentar de novo
+- Se o push falhar por divergência (remoto tem commits — inclusive no primeiro push, quando o GitHub criou README/licença), avisar o usuário e oferecer `git pull --rebase` antes de tentar de novo
 - Se o usuário ainda não tiver `git` configurado (`user.name` / `user.email`), perguntar e configurar com `git config --global` na primeira vez

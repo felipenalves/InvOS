@@ -1,4 +1,4 @@
-﻿---
+---
 name: responder-avaliacoes
 description: >
   Escreve respostas curtas e humanas pras avaliações do Google Meu Negócio.
