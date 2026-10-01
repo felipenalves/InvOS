@@ -1,7 +1,7 @@
 {
   "name": "invos",
   "version": "2.0.7",
-  "description": "INVOS — OS do negócio em arquivos. Open-source. CLI: init, install, update, doctor.",
+  "description": "INVOS — segundo cérebro profissional: memória e workflows em arquivos para agentes de IA.",
   "type": "module",
   "bin": {
     "invos": "bin/invos.js"
@@ -11,8 +11,7 @@
   },
   "scripts": {
     "bundle-kit": "node scripts/bundle-kit.mjs",
-    "prepublishOnly": "node scripts/bundle-kit.mjs",
-    "test": "node tests/smoke-test.mjs"
+    "prepublishOnly": "node scripts/bundle-kit.mjs"
   },
   "files": [
     "bin/",
@@ -22,27 +21,18 @@
   ],
   "keywords": [
     "invos",
-    "claude",
-    "chatgpt",
     "ai-agents",
-    "ai-tools",
-    "agents",
-    "productivity",
-    "solopreneur",
+    "memory",
     "business-os",
-    "cli",
     "open-source"
   ],
   "author": "Felipe Natanael",
   "license": "MIT",
   "private": false,
-  "bugs": {
-    "url": "https://github.com/felipenalves/InvOS/issues"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipenalves/InvOS.git"
+    "url": "git+https://github.com/felipenalves/invos.git"
   },
-  "homepage": "https://github.com/felipenalves/InvOS",
+  "homepage": "https://inovadigitalid.com/invos",
   "dependencies": {}
 }
