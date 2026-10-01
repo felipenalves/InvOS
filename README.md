@@ -24,6 +24,8 @@ do seu trabalho; as skills ajudam a executar fluxos específicos quando você ch
 
 ## Começar
 
+Baixe o [INVOS 2.0.7 em ZIP](downloads/INVOS-2.0.7.zip), extraia e siga o `INSTALAR.md` incluído. Requer Node.js 18 ou superior.
+
 ```bash
 npx invos@latest init --name meu-negocio
 cd meu-negocio

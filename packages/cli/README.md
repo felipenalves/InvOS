@@ -11,10 +11,12 @@ npx invos doctor
 
 ```bash
 cd packages/cli
-npm run bundle-kit        # empacota raiz InvOS.v2 → kit/
 npm version patch
+npm run bundle-zip        # atualiza kit/ e cria downloads/INVOS-<versão>.zip
 npm publish --access public
 ```
+
+O comando `bundle-zip` requer o utilitário `zip` instalado e disponível no `PATH`.
 
 Comunidade: `npx invos@latest update`
 

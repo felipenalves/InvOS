@@ -11,6 +11,7 @@
   },
   "scripts": {
     "bundle-kit": "node scripts/bundle-kit.mjs",
+    "bundle-zip": "npm run bundle-kit && node scripts/bundle-zip.mjs",
     "prepublishOnly": "node scripts/bundle-kit.mjs"
   },
   "files": [

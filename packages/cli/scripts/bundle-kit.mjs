@@ -3,7 +3,7 @@
  * Copia a raiz InvOS.v2 → packages/cli/kit (sem packages/, .git, .claude)
  */
 import {
-  existsSync, mkdirSync, readdirSync, statSync, copyFileSync, rmSync, writeFileSync, readFileSync,
+  existsSync, mkdirSync, readdirSync, lstatSync, copyFileSync, rmSync, writeFileSync, readFileSync,
 } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,12 +15,14 @@ const KIT_DST = resolve(CLI, 'kit');
 
 const SKIP = new Set([
   'node_modules', '.git', '.DS_Store', 'packages', '.claude',
-  'INVOS-LOCK.json', '.vercel', 'dist',
+  'INVOS-LOCK.json', '.vercel', 'dist', 'downloads',
   '.env', '.env.local', '.env.development', '.env.production',
 ]);
 
 function copyTree(src, dst) {
-  if (statSync(src).isDirectory()) {
+  const info = lstatSync(src);
+  if (info.isSymbolicLink()) return;
+  if (info.isDirectory()) {
     mkdirSync(dst, { recursive: true });
     for (const name of readdirSync(src)) {
       if (SKIP.has(name)) continue;
