@@ -7,7 +7,7 @@
     "distribution": "public",
     "license": "MIT",
     "cli": "npx invos",
-    "github": "felipenalves/InvOS"
+    "github": "felipenalves/invos"
   },
   "seed": {
     "skills": [
