@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
- * Copia a raiz InvOS.v2 → packages/cli/kit (sem packages/, .git, .claude)
+ * Copia arquivos versionados da raiz InvOS.v2 → packages/cli/kit,
+ * excluindo dados locais, packages/, .git e .claude.
  */
 import {
-  existsSync, mkdirSync, readdirSync, lstatSync, copyFileSync, rmSync, writeFileSync, readFileSync,
+  existsSync, mkdirSync, lstatSync, copyFileSync, rmSync, writeFileSync, readFileSync,
 } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,24 +17,11 @@ const KIT_DST = resolve(CLI, 'kit');
 
 const SKIP = new Set([
   'node_modules', '.git', '.DS_Store', 'packages', '.claude',
-  'INVOS-LOCK.json', '.vercel', 'dist', 'downloads',
+  'INVOS-LOCK.json', '.vercel', 'dist', 'downloads', 'dados',
+  '_memoria',
   '.env', '.env.local', '.env.development', '.env.production',
 ]);
-
-function copyTree(src, dst) {
-  const info = lstatSync(src);
-  if (info.isSymbolicLink()) return;
-  if (info.isDirectory()) {
-    mkdirSync(dst, { recursive: true });
-    for (const name of readdirSync(src)) {
-      if (SKIP.has(name)) continue;
-      copyTree(join(src, name), join(dst, name));
-    }
-    return;
-  }
-  mkdirSync(dirname(dst), { recursive: true });
-  copyFileSync(src, dst);
-}
+const MEMORY_FILES = ['empresa.md', 'preferencias.md', 'estrategia.md'];
 
 if (!existsSync(join(KIT_SRC, 'INVOS.json'))) {
   console.error('INVOS.json missing at', KIT_SRC);
@@ -43,10 +32,34 @@ console.log('bundle ←', KIT_SRC);
 if (existsSync(KIT_DST)) rmSync(KIT_DST, { recursive: true, force: true });
 mkdirSync(KIT_DST, { recursive: true });
 
-for (const name of readdirSync(KIT_SRC)) {
-  if (SKIP.has(name)) continue;
-  if (name.startsWith('.') && !['.agents', '.gitignore', '.env.example'].includes(name)) continue;
-  copyTree(join(KIT_SRC, name), join(KIT_DST, name));
+const trackedPaths = execFileSync('git', ['ls-files', '-z'], {
+  cwd: KIT_SRC,
+  encoding: 'utf8',
+}).split('\0').filter(Boolean);
+
+for (const relativePath of trackedPaths) {
+  const segments = relativePath.split('/');
+  const isDropZoneReadme = relativePath === 'dados/README.md';
+  if (segments.some(name => SKIP.has(name)) && !isDropZoneReadme) continue;
+  if (segments[0].startsWith('.') && !['.agents', '.gitignore', '.env.example'].includes(segments[0])) continue;
+
+  const source = join(KIT_SRC, relativePath);
+  if (!existsSync(source)) continue;
+  const info = lstatSync(source);
+  if (info.isSymbolicLink() || !info.isFile()) continue;
+
+  const destination = join(KIT_DST, relativePath);
+  mkdirSync(dirname(destination), { recursive: true });
+  copyFileSync(source, destination);
+}
+
+const memoryTemplates = join(CLI, 'templates', 'memory');
+const kitMemory = join(KIT_DST, '_memoria');
+mkdirSync(kitMemory, { recursive: true });
+for (const name of MEMORY_FILES) {
+  const template = join(memoryTemplates, name);
+  if (!existsSync(template)) throw new Error(`memory template missing: ${template}`);
+  copyFileSync(template, join(kitMemory, name));
 }
 
 const pkg = JSON.parse(readFileSync(join(CLI, 'package.json'), 'utf8'));
